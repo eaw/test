@@ -1,1 +1,24 @@
-../phu.css
+/* sans-serif and monospace */
+/*html { font-family: sans-serif; }*/
+body, h1, h2, h3, h4, h5, h6, p, td               { font-family: sans-serif; }
+pre, tt, code, samp, kbd, xmp, listing, plaintext { font-family: monospace; }
+
+/* black text on very light gray background */
+body { color: #000000; background-color: #f0f0f0; }  /* #000000 #d7d7d7 */
+/* blue links and magenta visited links */
+a:link    { color: #0000ff; text-decoration: underline; }  /* #0000f0 */
+a:visited { color: #800080; text-decoration: underline; }  /* #500080 */
+/* red links when hovering */
+/*   - internet explorer 6 doesn't understand a[name]:hover or a[href]:hover */
+a:hover { color: #ff0000; text-decoration: underline; }
+/*   - in mozilla 1, netscape 7 and opera 7, using a:hover will also affect
+ *     <a name="..."> */
+a[name]:hover { color: #000000; text-decoration: none; }
+a[href]:hover { color: #ff0000; text-decoration: underline; }
+
+/* smaller fonts */
+/*   - this isn't very portable among the browsers... */
+/*body, td { font-size: smaller; }*/
+/*body, h1, h2, h3, h4, h5, h6, p, td, li, dt, dd { font-size: smaller; }*/
+/*h1, h2, h3, h4, h5, h6, p, td, li, dt, dd { font-size: smaller; }*/
+
