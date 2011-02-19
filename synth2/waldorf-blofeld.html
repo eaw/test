@@ -1,0 +1,4625 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="generator" content="Phu v0.15 2006-03-22 Erik Warendorph">
+<link rel="stylesheet" type="text/css" href="phu.css">
+<title>Waldorf Blofeld</title>
+</head>
+<body>
+
+<!-- top -->
+<h1 align="center"><a name="_top">Waldorf Blofeld</a></h1>
+<p align="center"><b>v0.02<br>
+<br>
+2010-11-26 .. 2011-02-09<br>
+<br>
+Erik Warendorph <a href="mailto:erik@warendorph.com">&lt;erik@warendorph.com&gt;</a></b></p>
+
+<!-- toc -->
+<hr>
+<a name="_toc"></a>
+<ul>
+<li><a name="_toc0_about_this_document" href="#_toc_about_this_document">About this document</a></li>
+<li><a name="_toc0_shapes,_waveforms,_wavetables_and_samples" href="#_toc_shapes,_waveforms,_wavetables_and_samples">Shapes, waveforms,  wavetables and samples</a></li>
+<li><a name="_toc0_sounds" href="#_toc_sounds">Sounds</a></li>
+<li><a name="_toc0_modulation" href="#_toc_modulation">Modulation</a></li>
+<li><a name="_toc0_parameters" href="#_toc_parameters">Parameters</a></li>
+<li><a name="_toc0_miscellaneous" href="#_toc_miscellaneous">Miscellaneous</a></li>
+</ul>
+<hr width="90%"><ul>
+<li><a name="_toc_about_this_document" href="#about_this_document">About this document</a>
+  <ul>
+  <li><a name="_toc_this_document_in_different_formats" href="#this_document_in_different_formats">This document in different formats</a></li>
+  </ul></li>
+<li><a name="_toc_shapes,_waveforms,_wavetables_and_samples" href="#shapes,_waveforms,_wavetables_and_samples">Shapes, waveforms,  wavetables and samples</a>
+  <ul>
+  <li><a name="_toc_shape_lists" href="#shape_lists">Shape lists</a></li>
+  <li><a name="_toc_shapes_and_sysex" href="#shapes_and_sysex">Shapes and SysEx</a></li>
+  </ul></li>
+<li><a name="_toc_sounds" href="#sounds">Sounds</a>
+  <ul>
+  <li><a name="_toc_sound_categories" href="#sound_categories">Sound categories</a></li>
+  <li><a name="_toc_numerical_and_alphabetical_sound_program_banks" href="#numerical_and_alphabetical_sound_program_banks">Numerical and alphabetical sound program banks</a></li>
+  <li><a name="_toc_factory_sound_categories_and_programs" href="#factory_sound_categories_and_programs">Factory sound categories and programs</a></li>
+  <li><a name="_toc_factory_sound_programs" href="#factory_sound_programs">Factory sound programs</a></li>
+  <li><a name="_toc_easter_sound_programs" href="#easter_sound_programs">Easter sound programs</a></li>
+  <li><a name="_toc_microq_2001_factory_sound_programs" href="#microq_2001_factory_sound_programs">MicroQ 2001 Factory sound programs</a></li>
+  <li><a name="_toc_microq_doct_sound_programs" href="#microq_doct_sound_programs">MicroQ DocT sound programs</a></li>
+  <li><a name="_toc_microq_flakscrambler_sound_programs" href="#microq_flakscrambler_sound_programs">MicroQ Flakscrambler sound programs</a></li>
+  <li><a name="_toc_microq_forumonetwothree_user_sound_programs" href="#microq_forumonetwothree_user_sound_programs">MicroQ ForumOneTwoThree User sound programs</a></li>
+  </ul></li>
+<li><a name="_toc_modulation" href="#modulation">Modulation</a>
+  <ul>
+  <li><a name="_toc_controllers" href="#controllers">Controllers</a></li>
+  </ul></li>
+<li><a name="_toc_parameters" href="#parameters">Parameters</a>
+  <ul>
+  <li><a name="_toc_sound_parameters" href="#sound_parameters">Sound parameters</a></li>
+  <li><a name="_toc_multimode_parameters" href="#multimode_parameters">Multimode parameters</a></li>
+  </ul></li>
+<li><a name="_toc_miscellaneous" href="#miscellaneous">Miscellaneous</a>
+  <ul>
+  <li><a name="_toc_sending_sounds_from_vim_to_the_blofeld" href="#sending_sounds_from_vim_to_the_blofeld">Sending sounds from Vim to the Blofeld</a></li>
+  <li><a name="_toc_my_presets" href="#my_presets">My presets</a></li>
+  </ul></li>
+</ul>
+
+<hr>
+<h1><a name="about_this_document" href="#_toc_about_this_document">About this document</a></h1>
+<p>Waldorf Blofeld synthesizer stuff.</p>
+<p>Related to the Waldorf Blofeld Desktop and the Waldorf Blofeld Keyboard.</p>
+
+<h2><a name="this_document_in_different_formats" href="#_toc_this_document_in_different_formats">This document in different formats</a></h2>
+<ul>
+<li>Plain text <a href="waldorf-blofeld.txt">&lt;URL:waldorf-blofeld.txt&gt;</a></li>
+<li>HTML <a href="waldorf-blofeld.html">&lt;URL:waldorf-blofeld.html&gt;</a></li>
+</ul>
+
+<hr>
+<h1><a name="shapes,_waveforms,_wavetables_and_samples" href="#_toc_shapes,_waveforms,_wavetables_and_samples">Shapes, waveforms,  wavetables and samples</a></h1>
+
+<h2><a name="shape_lists" href="#_toc_shape_lists">Shape lists</a></h2>
+<p><strong>Oscillator shapes and waves</strong></p>
+<p>(From the Blofeld User's Manual, page 36)</p>
+<pre>
+  off
+  Pulse
+  Saw
+  Triangle
+  Sine
+  Alt 1
+  Alt 2
+  Wavetables
+  Samples
+</pre>
+<p>(From 4.1 Oscillator Shapes and Waves from blofeld_sysex_v1_04.txt from
+blofeld_sysex_v1_04.zip from
+<a href="http://www.waldorfmusic.de/en/downloads/tools/424-blofeldsysexv104.html">http://www.waldorfmusic.de/en/downloads/tools/424-blofeldsysexv104.html</a> from
+<a href="http://www.waldorfmusic.de/en/downloads/405-tools.html">http://www.waldorfmusic.de/en/downloads/405-tools.html</a> )</p>
+<pre>
+  No  Shape        No  Shape
+  --  ---------    --  ---------
+   0   off
+   1  Pulse        37  Glassy
+   2  Saw          38  Square HP
+   3  Triangle     39  SawSync 1
+   4  Sine         40  SawSync 2
+   5  Alt 1        41  SawSync 3
+   6  Alt 2        42  PulSync 1
+   7  Resonant     43  PulSync 2
+   8  Resonant2    44  PulSync 3
+   9  MalletSyn    45  SinSync 1
+  10  Sqr-Sweep    46  SinSync 2
+  11  Bellish      47  SinSync 3
+  12  Pul-Sweep    48  PWM Pulse
+  13  Saw-Sweep    49  PWM Saw
+  14  MellowSaw    50  Fuzz Wave
+  15  Feedback     51  Distorted
+  16  Add Harm     52  HeavyFuzz
+  17  Reso 3 HP    53  Fuzz Sync
+  18  Wind Syn     54  K+Strong1
+  19  High Harm    55  K+Strong2
+  20  Clipper      56  K+Strong3
+  21  Organ Syn    57  1-2-3-4-5
+  22  SquareSaw    58  19/twenty
+  23  Formant 1    59  Wavetrip1
+  24  Polated      60  Wavetrip2
+  25  Transient    61  Wavetrip3
+  26  ElectricP    62  Wavetrip4
+  27  Robotic      63  MaleVoice
+  28  StrongHrm    64  Low Piano
+  29  PercOrgan    65  ResoSweep
+  30  ClipSweep    66  Xmas Bell
+  31  ResoHarms    67  FM Piano
+  32  2 Echoes     68  Fat Organ
+  33  Formant 2    69  Vibes
+  34  FmntVocal    70  Chorus 2
+  35  MicroSync    71  True PWM
+  36  Micro PWM    72  UpperWaves
+</pre>
+<p><strong>Wavetables</strong></p>
+<p>(From the Blofeld User's Manual, page 95)</p>
+<pre>
+  No  Wavetable    No  Wavetable
+  --  ---------    --  ---------
+   1  Alt 1        35  SawSync1
+   2  Alt 2        36  SawSync2
+   3  Resonant     37  SawSync3
+   4  Resonant2    38  PulSync1
+   5  MalletSyn    39  PulSync2
+   6  Sqr-Sweep    40  PulSync3
+   7  Bellish      41  SinSync1
+   8  Pul-Sweep    42  SinSync2
+   9  Saw-Sweep    43  SinSync3
+  10  MellowSaw    44  PWM Pulse
+  11  Feedback     45  PWM Saw
+  12  Add Harm     46  Fuzz Wave
+  13  Reso 3 HP    47  Distorted
+  14  Wind Syn     48  HeavyFuzz
+  15  HighHarm     49  Fuzz Sync
+  16  Clipper      50  K+Strong1
+  17  OrganSyn     51  K+Strong2
+  18  SquareSaw    52  K+Strong3
+  19  Formant1     53  1-2-3-4-5
+  20  Polated      54  19/twenty
+  21  Transient    55  Wavetrip1
+  22  ElectricP    56  Wavetrip2
+  23  Robotic      57  Wavetrip3
+  24  StrongHrm    58  Wavetrip4
+  25  PercOrgan    59  MaleVoice
+  26  ClipSweep    60  Low Piano
+  27  ResoHarms    61  ResoSweep
+  28  2 Echoes     62  Xmas Bell
+  29  Formant2     63  FM Piano
+  30  FmntVocal    64  Fat Organ
+  31  MicroSync    65  Vibes
+  32  MicroPWM     66  Chorus 2
+  33  Glassy       67  True PWM
+  34  SquareHP     68  UpperWaves
+</pre>
+<p><strong>Samples</strong></p>
+<p>(From <a href="http://www.waldorfmusic.de/en/license-sl-sample-option.html">http://www.waldorfmusic.de/en/license-sl-sample-option.html</a> )</p>
+<pre>
+  Clav
+  Piano
+  Acoustic Gtr
+  Zither
+  E-Organ
+  Mixed Choir
+  Ney Flute
+  Marimba
+  French Horn
+  Kalimba
+  Strings
+  Tubular Bell
+  Pizzicato
+  Hi Hat Open
+  Hi Hat Closed
+  Ride Cymbal
+  Cymbal
+  Crash Cymbal
+  Cymbal Bell
+  Tambourine
+  Triangle
+  Guiro
+  Bongo Low
+  Bongo High
+  Agogo
+  Infinite Ending
+  Sad Strings
+  String Chord
+  Sweet String
+  Score Spectrum
+  Gong Spectrum
+  Soft Gong
+  Hose
+  Electricity
+  AC 230/50 Hz
+  AC 110/60 Hz
+  Machine
+  Shellak Viny Noise
+  Sonar
+  Spring
+  Impulse
+</pre>
+<p><strong>Wavetable origins (first)</strong></p>
+<p>(From the Microwave II/XT/XTk manual)</p>
+<p>PGP Wave Computer</p>
+<pre>
+  Wavetable  1 .. 8
+</pre>
+<p>PGP Wave 2.2</p>
+<pre>
+  Wavetable  1 .. 8
+  Wavetable  9 .. 30
+</pre>
+<p>Waldorf Microwave</p>
+<pre>
+  Wavetable  1 .. 8
+  Wavetable  9 .. 30
+  Wavetable 31 .. 64
+</pre>
+<p><strong>Wavetable origins (last)</strong></p>
+<p>Waldorf Q / Waldorf Micro Q:</p>
+<pre>
+  Alt1
+  Alt2
+</pre>
+<p>Waldorf Wave / Waldorf Microwave II / Waldorf Microwave XT:</p>
+<pre>
+  Wavetable 1  Resonant
+  ..
+  Wavetable 64 Chorus 2
+</pre>
+<p>Waldorf Microwave XT:</p>
+<pre>
+  Wavetable 65  True PWM
+</pre>
+<p>PPG Wave:</p>
+<pre>
+  Wavetable 66 UpperWaves
+</pre>
+<p><strong>Wavetable origins (all)</strong></p>
+<pre>
+  Synth                 Wavetables
+  --------------------  --------------------------------------
+  PGP Wave Computer                1..8
+  PGP Wave 2.2                     1..8  9..30
+  Waldorf Microwave                1..8  9..30  31..64
+  Waldorf Q             Alt1 Alt2
+  Waldorf Micro Q       Alt1 Alt2
+  Waldorf Wave                     1..8  9..30  31..64
+  Waldorf Microwave II             1..8  9..30  31..64
+  Waldorf Microwave XT             1..8  9..30  31..64  65
+  PPG Wave                                                  66
+</pre>
+<p><strong>All shapes:  Waveforms, wavetables and samples</strong></p>
+<p>Taken from the default shapes from the Blofeld keyboard.</p>
+<p>In addition, the User Wavetables 80..97 are taken from the file UWT.mid from
+UWT.zip from <a href="http:///synth.stromeko.net/sounds/UWT.zip">http:///synth.stromeko.net/sounds/UWT.zip</a> from
+<a href="http://synth.stromeko.net/Downloads.html/">http://synth.stromeko.net/Downloads.html/</a> where they have the following
+description:</p>
+<pre>
+  - Wavetable 80: synthetic saw—tri—reverse saw wavetable, spectrally enhanced
+  - Wavetable 81–82: ROM waves of the Prophet VS
+  - Wavetable 83–87: ROM waves of the microWave
+  - Wavetable 88–95: ROM waves of the SQ80
+  - Wavetable 96: Wavetrip 1 recreated as a user wavetable
+  - Wavetable 97: Wavetrip 2 recreated as a user wavetable
+</pre>
+<p>Shapes:</p>
+<pre>
+  Num  Name + (Bank - Num) for samples
+  ---  ------------------------------------------------------------------------
+    0    off
+
+    1  Pulse
+    2  Saw
+    3  Triangle
+    4  Sine
+
+    5  Wavetable     Alt 1
+    6  Wavetable     Alt 2
+
+    7  Wavetable 1   Resonant
+    8  Wavetable 2   Resonant2
+    9  Wavetable 3   MalletSyn
+   10  Wavetable 4   Sqr-Sweep
+   11  Wavetable 5   Bellish
+   12  Wavetable 6   Pul-Sweep
+   13  Wavetable 7   Saw-Sweep
+   14  Wavetable 8   MellowSaw
+   15  Wavetable 9   Feedback
+   16  Wavetable 10  Add Harm
+   17  Wavetable 11  Reso 3 HP
+   18  Wavetable 12  Wind Syn
+   19  Wavetable 13  High Harm
+   20  Wavetable 14  Clipper
+   21  Wavetable 15  Organ Syn
+   22  Wavetable 16  SquareSaw
+   23  Wavetable 17  Formant 1
+   24  Wavetable 18  Polated
+   25  Wavetable 19  Transient
+   26  Wavetable 20  ElectricP
+   27  Wavetable 21  Robotic
+   28  Wavetable 22  StrongHrm
+   29  Wavetable 23  PercOrgan
+   30  Wavetable 24  ClipSweep
+   31  Wavetable 25  ResoHarms
+   32  Wavetable 26  2 Echoes
+   33  Wavetable 27  Formant 2
+   34  Wavetable 28  FmntVocal
+   35  Wavetable 29  MicroSync
+   36  Wavetable 30  Micro PWM
+   37  Wavetable 31  Glassy
+   38  Wavetable 32  Square HP
+   39  Wavetable 33  SawSync 1
+   40  Wavetable 34  SawSync 2
+   41  Wavetable 35  SawSync 3
+   42  Wavetable 36  PulSync 1
+   43  Wavetable 37  PulSync 2
+   44  Wavetable 38  PulSync 3
+   45  Wavetable 39  SinSync 1
+   46  Wavetable 40  SinSync 2
+   47  Wavetable 41  SinSync 3
+   48  Wavetable 42  PWM Pulse
+   49  Wavetable 43  PWM Saw
+   50  Wavetable 44  Fuzz Wave
+   51  Wavetable 45  Distorted
+   52  Wavetable 46  HeavyFuzz
+   53  Wavetable 47  Fuzz Sync
+   54  Wavetable 48  K+Strong1
+   55  Wavetable 49  K+Strong2
+   56  Wavetable 50  K+Strong3
+   57  Wavetable 51  1-2-3-4-5
+   58  Wavetable 52  19/twenty
+   59  Wavetable 53  Wavetrip1
+   60  Wavetable 54  Wavetrip2
+   61  Wavetable 55  Wavetrip3
+   62  Wavetable 56  Wavetrip4
+   63  Wavetable 57  MaleVoice
+   64  Wavetable 58  Low Piano
+   65  Wavetable 59  ResoSweep
+   66  Wavetable 60  Xmas Bell
+   67  Wavetable 61  FM Piano
+   68  Wavetable 62  Fat Organ
+   69  Wavetable 63  Vibes
+   70  Wavetable 64  Chorus 2
+   71  Wavetable 65  True PWM
+
+   72  Wavetable 66  UpperWaves
+
+   73  Wavetable 67  reserved
+   74  Wavetable 68  reserved
+   75  Wavetable 69  reserved
+   76  Wavetable 70  reserved
+   77  Wavetable 71  reserved
+   78  Wavetable 72  reserved
+   79  Wavetable 73  reserved
+   80  Wavetable 74  reserved
+   81  Wavetable 75  reserved
+   82  Wavetable 76  reserved
+   83  Wavetable 77  reserved
+   84  Wavetable 78  reserved
+   85  Wavetable 79  reserved
+
+   86  Wavetable 80  User Wavetable - SawWM enhanced (saw-tri-rvs_saw spec enh)
+   87  Wavetable 81  User Wavetable - VS-ROM 32-95   (Prophet VS)
+   88  Wavetable 82  User Wavetable - VS-ROM 64-127  (Prophet VS)
+   89  Wavetable 83  User Wavetable - MW-ROM 1-64    (Waldorf Microwave)
+   90  Wavetable 84  User Wavetable - MW-ROM 65-128  (Waldorf Microwave)
+   91  Wavetable 85  User Wavetable - MW-ROM 129-192 (Waldorf Microwave)
+   92  Wavetable 86  User Wavetable - MW-ROM 193-256 (Waldorf Microwave)
+   93  Wavetable 87  User Wavetable - MW-ROM 257-320 (Waldorf Microwave)
+   94  Wavetable 88  User Wavetable - SQ-ROM 1-64    (Ensoniq SQ80)
+   95  Wavetable 89  User Wavetable - SQ-ROM 65-128  (Ensoniq SQ80)
+   96  Wavetable 90  User Wavetable - SQ-ROM 129-192 (Ensoniq SQ80)
+   97  Wavetable 91  User Wavetable - SQ-ROM 193-256 (Ensoniq SQ80)
+   98  Wavetable 92  User Wavetable - SQ-ROM 257-320 (Ensoniq SQ80)
+   99  Wavetable 93  User Wavetable - SQ-ROM 321-384 (Ensoniq SQ80)
+  100  Wavetable 94  User Wavetable - SQ-ROM 385-448 (Ensoniq SQ80)
+  101  Wavetable 95  User Wavetable - SQ-ROM 449-512 (Ensoniq SQ80)
+  102  Wavetable 96  User Wavetable - Wavetrip1 UW   (Waldorf Wave/µWave II/XT)
+  103  Wavetable 97  User Wavetable - Wavetrip2 UW   (Waldorf Wave/µWave II/XT)
+
+  104  Wavetable 98  User Wavetable
+  105  Wavetable 99  User Wavetable
+  106  Wavetable 100 User Wavetable
+  107  Wavetable 101 User Wavetable
+  108  Wavetable 102 User Wavetable
+  109  Wavetable 103 User Wavetable
+  110  Wavetable 104 User Wavetable
+  111  Wavetable 105 User Wavetable
+  112  Wavetable 106 User Wavetable
+  113  Wavetable 107 User Wavetable
+  114  Wavetable 108 User Wavetable
+  115  Wavetable 109 User Wavetable
+  116  Wavetable 110 User Wavetable
+  117  Wavetable 111 User Wavetable
+  118  Wavetable 112 User Wavetable
+  119  Wavetable 113 User Wavetable
+  120  Wavetable 114 User Wavetable
+  121  Wavetable 115 User Wavetable
+  122  Wavetable 116 User Wavetable
+  123  Wavetable 117 User Wavetable
+  124  Wavetable 118 User Wavetable
+
+  125  Sample A1     Clavinet           (1 -  0)
+  126  Sample A2     Piano              (1 -  1)
+  127  Sample A3     Acoustic Gtr       (1 -  2)
+  128  Sample A4     Zither             (1 -  3)
+  129  Sample A5     E-Organ            (1 -  4)
+  130  Sample A6     Mixed Choir        (1 -  5)
+  131  Sample A7     Ney Flute          (1 -  6)
+  132  Sample A8     Marimba            (1 -  7)
+  133  Sample A9     French Horn        (1 -  8)
+  134  Sample A10    Kalimba            (1 -  9)
+  135  Sample A11    Strings            (1 - 10)
+  136  Sample A12    Tubular Bell       (1 - 11)
+  137  Sample A13    Pizzicato          (1 - 12)
+  138  Sample A14    Hi Hat Open        (1 - 13)
+  139  Sample A15    Hi Hat Closed      (1 - 14)
+  140  Sample A16    Ride Cymbal        (1 - 15)
+  141  Sample A17    Cymbal             (1 - 16)
+  142  Sample A18    Crash Cymbal       (1 - 17)
+  143  Sample A19    Cymbal Bell        (1 - 18)
+  144  Sample A10    Tambourine         (1 - 19)
+  145  Sample A21    Triangle           (1 - 20)
+  146  Sample A22    Guiro              (1 - 21)
+  147  Sample A23    Bongo Low          (1 - 22)
+  148  Sample A24    Bongo High         (1 - 23)
+  149  Sample A25    Agogo              (1 - 24)
+  150  Sample A26    Infinite Ending    (1 - 25)
+  151  Sample A27    Sad Strings        (1 - 26)
+  152  Sample A28    String Chord       (1 - 27)
+  153  Sample A29    Sweet String       (1 - 28)
+  154  Sample A30    Score Spectrum     (1 - 29)
+  155  Sample A31    Gong Spectrum      (1 - 30)
+  156  Sample A32    Soft Gong          (1 - 31)
+  157  Sample A33    Hose               (1 - 32)
+  158  Sample A34    Electricity        (1 - 33)
+  159  Sample A35    AC230/50Hz         (1 - 34)
+  160  Sample A36    AC110/60Hz         (1 - 35)
+  161  Sample A37    Machine            (1 - 36)
+  162  Sample A38    Shellac            (1 - 37)
+  163  Sample A39    Sonar              (1 - 38)
+  164  Sample A40    Spring             (1 - 39)
+  165  Sample A41    Impulse            (1 - 40)
+
+  166  Sample A42      --               (1 - 41)
+</pre>
+
+<h2><a name="shapes_and_sysex" href="#_toc_shapes_and_sysex">Shapes and SysEx</a></h2>
+<p><strong>Shapes and SysEx/Data byte offsets</strong></p>
+<pre>
+             Data         SysEx
+  Osc      Bank  Num    Bank  Num
+  -----    ----  ---    ----  ---
+  Osc 1      15    8      22   15
+  Osc 2      31   24      38   31
+  Osc 3      47   40      54   47
+</pre>
+
+<hr>
+<h1><a name="sounds" href="#_toc_sounds">Sounds</a></h1>
+
+<h2><a name="sound_categories" href="#_toc_sound_categories">Sound categories</a></h2>
+<p>(From 4.16 Categories and 4.18 Category Filters from blofeld_sysex_v1_04.txt
+from blofeld_sysex_v1_04.zip from
+<a href="http://www.waldorfmusic.de/en/downloads/tools/424-blofeldsysexv104.html">http://www.waldorfmusic.de/en/downloads/tools/424-blofeldsysexv104.html</a> from
+<a href="http://www.waldorfmusic.de/en/downloads/405-tools.html">http://www.waldorfmusic.de/en/downloads/405-tools.html</a> )</p>
+<pre>
+  Categories    Category Filters
+  ----------    ----------------
+  No  Cat       No  Cat
+  --  ----      --  ----
+                 0  off
+   0  Init       1  Init
+   1  Arp        2  Arp
+   2  Atmo       3  Atmo
+   3  Bass       4  Bass
+   4  Drum       5  Drum
+   5  FX         6  FX
+   6  Keys       7  Keys
+   7  Lead       8  Lead
+   8  Mono       9  Mono
+   9  Pad       10  Pad
+  10  Perc      11  Perc
+  11  Poly      12  Poly
+  12  Seq       13  Seq
+</pre>
+<p>(From
+<a href="http://blog.tonylongmusic.co.uk/keyboards-and-modules/waldorf-blofeld-synth-module-review/">http://blog.tonylongmusic.co.uk/keyboards-and-modules/waldorf-blofeld-synth-module-review/</a>
+)</p>
+<pre>
+  Cat   Num
+  ----  ---
+  Off
+  Init
+  Arp    97
+  Atmo   85
+  Bass  130
+  Drum    1
+  FX     68
+  Keys   72
+  Lead   18
+  Mono   73
+  Pad   168
+  Perc   73
+  Poly  194
+  Seq    45
+</pre>
+
+<h2><a name="numerical_and_alphabetical_sound_program_banks" href="#_toc_numerical_and_alphabetical_sound_program_banks">Numerical and alphabetical sound program banks</a></h2>
+<pre>
+  0 = A
+  1 = B
+  2 = C
+  3 = D
+  4 = E
+  5 = F
+  6 = G
+  7 = H
+</pre>
+
+<h2><a name="factory_sound_categories_and_programs" href="#_toc_factory_sound_categories_and_programs">Factory sound categories and programs</a></h2>
+<pre>
+  Pad:     a-001             Pad:  With Love    WMF
+  Atmo:    a-002             Atmo: ScaramangAtmo  T
+  Arp:     a-003             Arp:  Handy      H2SCD
+  Pad:     a-004             Pad:  Angels Cry    JL
+  Pad:     a-005             Pad:  Chorus       WMF
+  Keys:    a-006             Keys: ModWheelOrganSCD
+  Poly:    a-007             Poly: SyncMush    DocT
+  Bass:    a-008             Bass: Yummi       DocT
+  Poly:    a-009             Poly: Pussy Galore   T
+  Lead:    a-010             Lead: Clinics      WMF
+  Lead:    a-011             Lead: CtrlAltDel  DocT
+  Keys:    a-012             Keys: Tines&amp;Bars   WMF
+  Lead:    a-013             Lead: Unstable    DocT
+
+  Pad:     a-014             Pad:  Deepspace 9   ST
+  Lead:    a-015             Lead: DrivingLicnsDocT
+  Arp:     a-016             Arp:  FlangedHeavenSCD
+  Pad:     a-017             Pad:  Heaven        JL
+  Pad:     a-018             Pad:  Hmm, lecker  WMF
+  Arp:     a-019             Arp:  Horse Trip   SCD
+  Atmo:    a-020             Atmo: Inversion   DocT
+  Poly:    a-021             Poly: JMX vs. DeLeon
+  Keys:    a-022             Keys: LA Woman   H2SCD
+  Seq:     a-023             Seq:  Minor Chords
+  Mono:    a-024             Mono: MoogSolo 2
+  Keys:    a-025             Keys: OhMyLord    DocT
+  Poly:    a-026             Poly: PPG Bells    WMF
+  Pad:     a-027             Pad:  PPGesus      SCD
+  Lead:    a-028             Lead: Quadratur   DocT
+  FX:      a-029             FX:   RingmodFart  SCD
+  Lead:    a-030             Lead: SchnoerkelosDocT
+  Arp:     a-031             Arp:  Schulze?     SCD
+  Arp:     a-032             Arp:  shArp       DocT
+  Keys:    a-033             Keys: Space Echo   SCD
+  Pad:     a-034             Pad:  Synthline     JL
+  Arp:     a-035             Arp:  Taken!       SCD
+  Bass:    a-036             Bass: TouchyBuggerDocT
+  Arp:     a-037             Arp:  UpperWarp    SCD
+  Poly:    a-038             Poly: WhatYouSay?  SCD
+  Poly:    a-039             Poly: WT mess     SCD
+
+  Poly:    a-040             Poly: 10VoicePS3100SCD
+  Pad:     a-041             Pad:  ArcoStrings  TEK
+  Keys:    a-042             Keys: Blocked      SCD
+  Keys:    a-043             Keys: Blolitzer    SCD
+  Keys:    a-044             Keys: BloodyFeld   SCD
+  Lead:    a-045             Lead: BloSync     DocT
+  Pad:     a-046             Pad:  Blovachord   SCD
+  Keys:    a-047             Keys: Boele Keys   SCD
+  Bass:    a-048             Bass: Bonker Bass   ST
+  FX:      a-049             FX:   Camel Saw   DocT
+  FX:      a-050             FX:   Cream S+H    SCD
+  Mono:    a-051             Mono: CS4O RingMod
+  Arp:     a-052             Arp:  DalaiDelayMa SCD
+  Keys:    a-053             Keys: Dirty Organ  SCD
+  Arp:     a-054             Arp:  Dr.Blo      DocT
+  Bass:    a-055             Bass: Driven      DocT
+  Lead:    a-056             Lead: Euro Clubber  ST
+  Keys:    a-057             Keys: Flangelized  SCD
+  Bass:    a-058             Bass: Funky Bass    JL
+  Pad:     a-059             Pad:  Goldfinger Pad T
+  Lead:    a-060             Lead: HardSaw       ST
+  Atmo:    a-061             Atmo: Heimweh     DocT
+  Bass:    a-062             Bass: Honey House
+  Bass:    a-063             Bass: Horny Bass    ST
+  Pad:     a-064             Pad:  HP PPG       SCD
+  Lead:    a-065             Lead: Hyper       DocT
+  Bass:    a-066             Bass: I'm Evil     WMF
+  Atmo:    a-067             Atmo: InfinitesimaDocT
+  Mono:    a-068             Mono: Jankorgel    SCD
+  Mono:    a-069             Mono: Leading      SCD
+  Atmo:    a-070             Atmo: Maximum Zorin  T
+  Pad:     a-071             Pad:  MeetInTheSky SCD
+  Keys:    a-072             Keys: Meridian    DocT
+  Poly:    a-073             Poly: Messing     DocT
+  Bass:    a-074             Bass: Minimal Bass JL
+  Bass:    a-075             Bass: Morph Bass    ST
+  Pad:     a-076             Pad:  Moving       SCD
+  Atmo:    a-077             Atmo: NearlyInTune SCD
+  Pad:     a-078             Pad:  Neocrest      ST
+  Pad:     a-079             Pad:  Octopussy Pad  T
+  Keys:    a-080             Keys: Organella
+  Lead:    a-081             Lead: Partyhupe     ST
+  Atmo:    a-082             Atmo: Pastry      DocT
+  Bass:    a-083             Bass: Persecutor  DocT
+  Pad:     a-084             Pad:  Phalanx       ST
+  Poly:    a-085             Poly: Pick It Up!  SCD
+  Poly:    a-086             Poly: Pienzchen   DocT
+  Poly:    a-087             Poly: Pigs X-Mod   TEK
+  Bass:    a-088             Bass: PlainBass   DocT
+  FX:      a-089             FX:   PolterBlofeldSCD
+  Lead:    a-090             Lead: Poly Lead    SCD
+  Keys:    a-091             Keys: PPG Piano    SCD
+  Bass:    a-092             Bass: PPG T40 like TEK
+  Bass:    a-093             Bass: PredictaBass WMF
+  Keys:    a-094             Keys: Pressure    DocT
+  FX:      a-095             FX:   Principia   DocT
+  Poly:    a-096             Poly: Pure        DocT
+  Lead:    a-097             Lead: Reset       DocT
+  Arp:     a-098             Arp:  Ricochet2008 SCD
+  FX:      a-099             FX:   RingThemBellsSCD
+  Pad:     a-100             Pad:  Robotic       JL
+  Pad:     a-101             Pad:  Saw Orgy     SCD
+  Arp:     a-102             Arp:  Seq 1        SCD
+  Keys:    a-103             Keys: Seven Ties   SCD
+  Atmo:    a-104             Atmo: S&amp;Hatmo
+  Atmo:    a-105             Atmo: Sobstuff    DocT
+  Poly:    a-106             Poly: Soft Brass 2DocT
+  Arp:     a-107             Arp:  SpatialDrive1SCD
+  Arp:     a-108             Arp:  SpatialDrive2SCD
+  Poly:    a-109             Poly: Stenzelized  SCD
+  Arp:     a-110             Arp:  Stop Bass    SCD
+  Atmo:    a-111             Atmo: SunOfTheDogs WMF
+  Lead:    a-112             Lead: Supersaw      ST
+  Pad:     a-113             Pad:  Tabloid     DocT
+  Poly:    a-114             Poly: Telenovela  DocT
+  Arp:     a-115             Arp:  Thrill Arp   SCD
+  Lead:    a-116             Lead: Utmost      DocT
+  Arp:     a-117             Arp:  Variator    DocT
+  Atmo:    a-118             Atmo: Wave Mayhem DocT
+  Keys:    a-119             Keys: WavEpiano    SCD
+  Arp:     a-120             Arp:  West Wave  H2SCD
+
+  FX:      a-121             FX:   AfterConcert SCD
+  Bass:    a-122             Bass: AnalogBass   SCD
+  Poly:    a-123             Poly: Barbarie BrassST
+  Bass:    a-124             Bass: Basster Keaton
+  FX:      a-125             FX:   Bend Me     DocT
+  Pad:     a-126             Pad:  Bioshock      JL
+  FX:      a-127             FX:   Blubber      TEK
+  FX:      a-128             FX:   Diving Echos TEK
+  Bass:    b-001             Bass: Flups Bass    ST
+  Arp:     b-002             Arp:  Goonraker   DocT
+  Poly:    b-003             Poly: microQ Plus
+  FX:      b-004             FX:   MiniMoogThnd TEK
+  Bass:    b-005             Bass: Octa Bass     ST
+  Bass:    b-006             Bass: Porno Bass    ST
+  Mono:    b-007             Mono: ReSolotion   WMF
+  Keys:    b-008             Keys: Roadies Keyb TEK
+  Keys:    b-009             Keys: Spynett     DocT
+  Poly:    b-010             Poly: Tines       DocT
+  Arp:     b-011             Arp:  Velo Drive   SCD
+  Atmo:    b-012             Atmo: Vangelibells SCD
+
+  Keys:    b-013 .. b-038    Keys: Bellflutes       .. Keys: Jazz Creeper  HS
+  Lead:    b-039             Lead: LA-Pipe       HS
+  Keys:    b-040 .. b-066    Keys: LoFi Organ    SK .. Keys: Yamlitzer
+
+  Poly:    b-067 .. c-112    Poly: 7th Sense     SK .. Poly: Zombie Nation  T
+
+  Pad:     c-113 .. e-002    Pad:  50s Pad          .. Pad:  Zeitlos        T
+
+  Mono:    e-003 .. e-058    Mono: 11KHz Solo       .. Mono: RoughTough
+  Lead:    e-059 .. e-060    Lead: Saw 1 Osc    WMF .. Lead: MiniLead 1    AT
+  Mono:    e-061 .. e-072    Mono: Sonic Six        .. Mono: ZlatnaPlanega
+
+  Seq:     e-073 .. e-116    Seq:  ArpeggyBells     .. Seq:  Zap Melody
+
+  Arp:     e-117 .. f-067    Arp:  1DrunkenStenz    .. Arp:  ZZ-you
+
+  Bass:    f-068 .. g-050    Bass: 2Step Bass       .. Bass: Woofer FM
+
+  Atmo:    g-051 .. g-123    Atmo: 20 Whiny         .. Atmo: Waterworld
+
+  FX:      g-124 .. h-052    FX:   70ies NoDrugs    .. FX:   ZischDeep
+
+  Perc:    h-053 .. h-057    Perc: Agogo Scrape     .. Perc: AnalogStick 1
+  Drum:    h-058             Drum: Bass Drum    WMF
+  Perc:    h-059 .. h-084    Perc: BD 90ies Drum    .. Perc: Deep Bell
+  Pad:     h-085             Pad:  DivX Pad
+  Perc:    h-086 .. h-119    Perc: DoubleHHclose    .. Perc: Tombola 1
+  Drum:    h-120             Drum: TR66 Hihat   WMF
+  Perc:    h-121 .. h-128    Perc: Various Metal    .. Perc: Zwitscher 1
+</pre>
+
+<h2><a name="factory_sound_programs" href="#_toc_factory_sound_programs">Factory sound programs</a></h2>
+<p>Differences between various versions of the factory sets:</p>
+<pre>
+  The sounds that came with my Waldorf Blofeld:
+    [ ] factory-a-001  Atmo: With Love    WMF
+  Factory Set 2008-02-23 and Factory Set 2008-01-03:
+    [ ] factory-a-001  Pad:  With Love    WMF
+  (It's possible that the one that came with my Waldorf Blofeld also had the
+  category "Pad")
+
+  Factory Set 2008-01-03 and the sounds that came with my Waldorf Blofeld:
+    [ ] factory-a-015  Init: DrivingLicnsDocT
+  Factory Set 2008-02-23 and Factory Set 2008-01-03:
+    [ ] factory-a-015  Lead: DrivingLicnsDocT
+</pre>
+<p>(The names below was originally taken from the file "Cakewalk Instrument
+Description/Waldorf Blofeld.ins" from factory_080223_windows.zip from
+patchscripts.zip from
+<a href="http://www.waldorfmusic.de/en/downloads/tools/425-patchscripts.html">http://www.waldorfmusic.de/en/downloads/tools/425-patchscripts.html</a>
+<a href="http://www.waldorfmusic.de/en/downloads/405-tools.html">http://www.waldorfmusic.de/en/downloads/405-tools.html</a> (2007))</p>
+<p>(The categories and names below was taken from the file
+factory-set-2008-02-23-all-sounds.syx generated from the file
+factory-set-2008-02-23-all-sounds.mid)</p>
+<p><strong>Bank FACTORY-A 0-A (0-0)</strong></p>
+<pre>
+  [ ] factory-a-001  Pad:  With Love    WMF
+  [ ] factory-a-002  Atmo: ScaramangAtmo  T
+  [ ] factory-a-003  Arp:  Handy      H2SCD
+  [ ] factory-a-004  Pad:  Angels Cry    JL
+  [ ] factory-a-005  Pad:  Chorus       WMF
+  [ ] factory-a-006  Keys: ModWheelOrganSCD
+  [ ] factory-a-007  Poly: SyncMush    DocT
+  [ ] factory-a-008  Bass: Yummi       DocT
+  [ ] factory-a-009  Poly: Pussy Galore   T
+  [ ] factory-a-010  Lead: Clinics      WMF
+  [ ] factory-a-011  Lead: CtrlAltDel  DocT
+  [ ] factory-a-012  Keys: Tines&amp;Bars   WMF
+  [ ] factory-a-013  Lead: Unstable    DocT
+  [ ] factory-a-014  Pad:  Deepspace 9   ST
+  [ ] factory-a-015  Lead: DrivingLicnsDocT
+  [ ] factory-a-016  Arp:  FlangedHeavenSCD
+  [ ] factory-a-017  Pad:  Heaven        JL
+  [ ] factory-a-018  Pad:  Hmm, lecker  WMF
+  [ ] factory-a-019  Arp:  Horse Trip   SCD
+  [ ] factory-a-020  Atmo: Inversion   DocT
+  [ ] factory-a-021  Poly: JMX vs. DeLeon
+  [ ] factory-a-022  Keys: LA Woman   H2SCD
+  [ ] factory-a-023  Seq:  Minor Chords
+  [ ] factory-a-024  Mono: MoogSolo 2
+  [ ] factory-a-025  Keys: OhMyLord    DocT
+  [ ] factory-a-026  Poly: PPG Bells    WMF
+  [ ] factory-a-027  Pad:  PPGesus      SCD
+  [ ] factory-a-028  Lead: Quadratur   DocT
+  [ ] factory-a-029  FX:   RingmodFart  SCD
+  [ ] factory-a-030  Lead: SchnoerkelosDocT
+  [ ] factory-a-031  Arp:  Schulze?     SCD
+  [ ] factory-a-032  Arp:  shArp       DocT
+
+  [ ] factory-a-033  Keys: Space Echo   SCD
+  [ ] factory-a-034  Pad:  Synthline     JL
+  [ ] factory-a-035  Arp:  Taken!       SCD
+  [ ] factory-a-036  Bass: TouchyBuggerDocT
+  [ ] factory-a-037  Arp:  UpperWarp    SCD
+  [ ] factory-a-038  Poly: WhatYouSay?  SCD
+  [ ] factory-a-039  Poly: WT mess     SCD
+  [ ] factory-a-040  Poly: 10VoicePS3100SCD
+  [ ] factory-a-041  Pad:  ArcoStrings  TEK
+  [ ] factory-a-042  Keys: Blocked      SCD
+  [ ] factory-a-043  Keys: Blolitzer    SCD
+  [ ] factory-a-044  Keys: BloodyFeld   SCD
+  [ ] factory-a-045  Lead: BloSync     DocT
+  [ ] factory-a-046  Pad:  Blovachord   SCD
+  [ ] factory-a-047  Keys: Boele Keys   SCD
+  [ ] factory-a-048  Bass: Bonker Bass   ST
+  [ ] factory-a-049  FX:   Camel Saw   DocT
+  [ ] factory-a-050  FX:   Cream S+H    SCD
+  [ ] factory-a-051  Mono: CS4O RingMod
+  [ ] factory-a-052  Arp:  DalaiDelayMa SCD
+  [ ] factory-a-053  Keys: Dirty Organ  SCD
+  [ ] factory-a-054  Arp:  Dr.Blo      DocT
+  [ ] factory-a-055  Bass: Driven      DocT
+  [ ] factory-a-056  Lead: Euro Clubber  ST
+  [ ] factory-a-057  Keys: Flangelized  SCD
+  [ ] factory-a-058  Bass: Funky Bass    JL
+  [ ] factory-a-059  Pad:  Goldfinger Pad T
+  [ ] factory-a-060  Lead: HardSaw       ST
+  [ ] factory-a-061  Atmo: Heimweh     DocT
+  [ ] factory-a-062  Bass: Honey House
+  [ ] factory-a-063  Bass: Horny Bass    ST
+  [ ] factory-a-064  Pad:  HP PPG       SCD
+
+  [ ] factory-a-065  Lead: Hyper       DocT
+  [ ] factory-a-066  Bass: I'm Evil     WMF
+  [ ] factory-a-067  Atmo: InfinitesimaDocT
+  [ ] factory-a-068  Mono: Jankorgel    SCD
+  [ ] factory-a-069  Mono: Leading      SCD
+  [ ] factory-a-070  Atmo: Maximum Zorin  T
+  [ ] factory-a-071  Pad:  MeetInTheSky SCD
+  [ ] factory-a-072  Keys: Meridian    DocT
+  [ ] factory-a-073  Poly: Messing     DocT
+  [ ] factory-a-074  Bass: Minimal Bass JL
+  [ ] factory-a-075  Bass: Morph Bass    ST
+  [ ] factory-a-076  Pad:  Moving       SCD
+  [ ] factory-a-077  Atmo: NearlyInTune SCD
+  [ ] factory-a-078  Pad:  Neocrest      ST
+  [ ] factory-a-079  Pad:  Octopussy Pad  T
+  [ ] factory-a-080  Keys: Organella
+  [ ] factory-a-081  Lead: Partyhupe     ST
+  [ ] factory-a-082  Atmo: Pastry      DocT
+  [ ] factory-a-083  Bass: Persecutor  DocT
+  [ ] factory-a-084  Pad:  Phalanx       ST
+  [ ] factory-a-085  Poly: Pick It Up!  SCD
+  [ ] factory-a-086  Poly: Pienzchen   DocT
+  [ ] factory-a-087  Poly: Pigs X-Mod   TEK
+  [ ] factory-a-088  Bass: PlainBass   DocT
+  [ ] factory-a-089  FX:   PolterBlofeldSCD
+  [ ] factory-a-090  Lead: Poly Lead    SCD
+  [ ] factory-a-091  Keys: PPG Piano    SCD
+  [ ] factory-a-092  Bass: PPG T40 like TEK
+  [ ] factory-a-093  Bass: PredictaBass WMF
+  [ ] factory-a-094  Keys: Pressure    DocT
+  [ ] factory-a-095  FX:   Principia   DocT
+  [ ] factory-a-096  Poly: Pure        DocT
+
+  [ ] factory-a-097  Lead: Reset       DocT
+  [ ] factory-a-098  Arp:  Ricochet2008 SCD
+  [ ] factory-a-099  FX:   RingThemBellsSCD
+  [ ] factory-a-100  Pad:  Robotic       JL
+  [ ] factory-a-101  Pad:  Saw Orgy     SCD
+  [ ] factory-a-102  Arp:  Seq 1        SCD
+  [ ] factory-a-103  Keys: Seven Ties   SCD
+  [ ] factory-a-104  Atmo: S&amp;Hatmo
+  [ ] factory-a-105  Atmo: Sobstuff    DocT
+  [ ] factory-a-106  Poly: Soft Brass 2DocT
+  [ ] factory-a-107  Arp:  SpatialDrive1SCD
+  [ ] factory-a-108  Arp:  SpatialDrive2SCD
+  [ ] factory-a-109  Poly: Stenzelized  SCD
+  [ ] factory-a-110  Arp:  Stop Bass    SCD
+  [ ] factory-a-111  Atmo: SunOfTheDogs WMF
+  [ ] factory-a-112  Lead: Supersaw      ST
+  [ ] factory-a-113  Pad:  Tabloid     DocT
+  [ ] factory-a-114  Poly: Telenovela  DocT
+  [ ] factory-a-115  Arp:  Thrill Arp   SCD
+  [ ] factory-a-116  Lead: Utmost      DocT
+  [ ] factory-a-117  Arp:  Variator    DocT
+  [ ] factory-a-118  Atmo: Wave Mayhem DocT
+  [ ] factory-a-119  Keys: WavEpiano    SCD
+  [ ] factory-a-120  Arp:  West Wave  H2SCD
+  [ ] factory-a-121  FX:   AfterConcert SCD
+  [ ] factory-a-122  Bass: AnalogBass   SCD
+  [ ] factory-a-123  Poly: Barbarie BrassST
+  [ ] factory-a-124  Bass: Basster Keaton
+  [ ] factory-a-125  FX:   Bend Me     DocT
+  [ ] factory-a-126  Pad:  Bioshock      JL
+  [ ] factory-a-127  FX:   Blubber      TEK
+  [ ] factory-a-128  FX:   Diving Echos TEK
+</pre>
+<p><strong>Bank FACTORY-B 0-B (0-1)</strong></p>
+<pre>
+  [ ] factory-b-001  Bass: Flups Bass    ST
+  [ ] factory-b-002  Arp:  Goonraker   DocT
+  [ ] factory-b-003  Poly: microQ Plus
+  [ ] factory-b-004  FX:   MiniMoogThnd TEK
+  [ ] factory-b-005  Bass: Octa Bass     ST
+  [ ] factory-b-006  Bass: Porno Bass    ST
+  [ ] factory-b-007  Mono: ReSolotion   WMF
+  [ ] factory-b-008  Keys: Roadies Keyb TEK
+  [ ] factory-b-009  Keys: Spynett     DocT
+  [ ] factory-b-010  Poly: Tines       DocT
+  [ ] factory-b-011  Arp:  Velo Drive   SCD
+  [ ] factory-b-012  Atmo: Vangelibells SCD
+  [ ] factory-b-013  Keys: Bellflutes
+  [ ] factory-b-014  Keys: Bellissimo
+  [ ] factory-b-015  Keys: Bells'E.Piano RZ
+  [ ] factory-b-016  Keys: Cheap Organ
+  [ ] factory-b-017  Keys: Chorgany      SK
+  [ ] factory-b-018  Keys: Combuder Orgs SK
+  [ ] factory-b-019  Keys: Crunge Organ  SK
+  [ ] factory-b-020  Keys: DeepHouse     SK
+  [ ] factory-b-021  Keys: Dirty Organ1 WMF
+  [ ] factory-b-022  Keys: Driven Keys
+  [ ] factory-b-023  Keys: Dull Bells
+  [ ] factory-b-024  Keys: DX-ClassiQ    HS
+  [ ] factory-b-025  Keys: DX-Pipe       HS
+  [ ] factory-b-026  Keys: Easy Piano    HS
+  [ ] factory-b-027  Keys: ElectricOrgan
+  [ ] factory-b-028  Keys: ElectricPiano
+  [ ] factory-b-029  Keys: Fat Sine Keys
+  [ ] factory-b-030  Keys: FM KeysMelody
+  [ ] factory-b-031  Keys: FM Roads
+  [ ] factory-b-032  Keys: Full Organ    HS
+
+  [ ] factory-b-033  Keys: Glockenspiel
+  [ ] factory-b-034  Keys: GS-Piano      HS
+  [ ] factory-b-035  Keys: Harpsi        HS
+  [ ] factory-b-036  Keys: Hippy Freuds  HS
+  [ ] factory-b-037  Keys: House         HM
+  [ ] factory-b-038  Keys: Jazz Creeper  HS
+  [ ] factory-b-039  Lead: LA-Pipe       HS
+  [ ] factory-b-040  Keys: LoFi Organ    SK
+  [ ] factory-b-041  Keys: Lounge Morph  HS
+  [ ] factory-b-042  Keys: Lower Steam   HS
+  [ ] factory-b-043  Keys: Marimboid     HS
+  [ ] factory-b-044  Keys: Modern House  SK
+  [ ] factory-b-045  Keys: Modern Keys
+  [ ] factory-b-046  Keys: Noise Toys    HS
+  [ ] factory-b-047  Keys: Ode to Joy    HS
+  [ ] factory-b-048  Keys: Oil Well
+  [ ] factory-b-049  Keys: Organ #2       S
+  [ ] factory-b-050  Keys: Quad-Square
+  [ ] factory-b-051  Keys: Reso Organ
+  [ ] factory-b-052  Keys: ResOrgan      SK
+  [ ] factory-b-053  Keys: Rhodos Corso WMF
+  [ ] factory-b-054  Keys: RhodosFlango WMF
+  [ ] factory-b-055  Keys: Rodesque      HS
+  [ ] factory-b-056  Keys: Schwebend     jh
+  [ ] factory-b-057  Keys: Shed          HM
+  [ ] factory-b-058  Keys: Sick FM       SK
+  [ ] factory-b-059  Keys: SpaceChimes   SK
+  [ ] factory-b-060  Keys: The Oily Way  HS
+  [ ] factory-b-061  Keys: Thin Organ    HS
+  [ ] factory-b-062  Keys: Troubadour
+  [ ] factory-b-063  Keys: Wartz Piano1  HM
+  [ ] factory-b-064  Keys: Wooden E     WMF
+
+  [ ] factory-b-065  Keys: Wurlitzer104b HM
+  [ ] factory-b-066  Keys: Yamlitzer
+  [ ] factory-b-067  Poly: 7th Sense     SK
+  [ ] factory-b-068  Poly: 80sFM Analog  SK
+  [ ] factory-b-069  Poly: Aggreppo       T
+  [ ] factory-b-070  Poly: Analog Lute   HS
+  [ ] factory-b-071  Poly: Analog Quest  SK
+  [ ] factory-b-072  Poly: Aphazing      SK
+  [ ] factory-b-073  Poly: Bell like     RZ
+  [ ] factory-b-074  Poly: BestOfThe80s   T
+  [ ] factory-b-075  Poly: Blakes 7 Str  AT
+  [ ] factory-b-076  Poly: B-Lead        SK
+  [ ] factory-b-077  Poly: Bounty Synth
+  [ ] factory-b-078  Poly: Brass Comp    HM
+  [ ] factory-b-079  Poly: Brass-lead   SCD
+  [ ] factory-b-080  Poly: Brassy House  SK
+  [ ] factory-b-081  Poly: Bright Sync
+  [ ] factory-b-082  Poly: Brownies     WMF
+  [ ] factory-b-083  Poly: CareFull      RZ
+  [ ] factory-b-084  Poly: Caspoly      WMF
+  [ ] factory-b-085  Poly: Chamber High  HS
+  [ ] factory-b-086  Poly: Chamber Low   HS
+  [ ] factory-b-087  Poly: Chord-Hose     T
+  [ ] factory-b-088  Poly: Chord Revival SK
+  [ ] factory-b-089  Poly: Classic Dance
+  [ ] factory-b-090  Poly: Classic Synth
+  [ ] factory-b-091  Poly: Clavinetro    jh
+  [ ] factory-b-092  Poly: Clock&amp;Bells   RZ
+  [ ] factory-b-093  Poly: Combi Saws    SK
+  [ ] factory-b-094  Poly: Compromise K  HM
+  [ ] factory-b-095  Poly: Concertino   SCD
+  [ ] factory-b-096  Poly: Cool Porta    HM
+
+  [ ] factory-b-097  Poly: Crawlers      SK
+  [ ] factory-b-098  Poly: Crispy Saw    SK
+  [ ] factory-b-099  Poly: CyberLeader   SK
+  [ ] factory-b-100  Poly: Dawn Organ
+  [ ] factory-b-101  Poly: Deep Synth    DK
+  [ ] factory-b-102  Poly: Delead It!    SK
+  [ ] factory-b-103  Poly: DirtyLead     SK
+  [ ] factory-b-104  Poly: D-NoiZer      SK
+  [ ] factory-b-105  Poly: DollarBells  ugh
+  [ ] factory-b-106  Poly: Dr. Motte      T
+  [ ] factory-b-107  Poly: Energee!      SK
+  [ ] factory-b-108  Poly: Enough Power   T
+  [ ] factory-b-109  Poly: EthnoPerc     SK
+  [ ] factory-b-110  Poly: Euro-Zeichen  HS
+  [ ] factory-b-111  Poly: ExploreChords SK
+  [ ] factory-b-112  Poly: Fat 8-Osc     SK
+  [ ] factory-b-113  Poly: Filigrano     SK
+  [ ] factory-b-114  Poly: FilterFM Keys
+  [ ] factory-b-115  Poly: FloorFilla    SK
+  [ ] factory-b-116  Poly: FM Chords     SK
+  [ ] factory-b-117  Poly: FM Melodies
+  [ ] factory-b-118  Poly: FMod Saws     SK
+  [ ] factory-b-119  Poly: FM-sono Saw
+  [ ] factory-b-120  Poly: French        RZ
+  [ ] factory-b-121  Poly: Fun Man
+  [ ] factory-b-122  Poly: Gated 80's
+  [ ] factory-b-123  Poly: Gattaca       SK
+  [ ] factory-b-124  Poly: Gimme Five!   SK
+  [ ] factory-b-125  Poly: Glitter Power HS
+  [ ] factory-b-126  Poly: Good Air      SK
+  [ ] factory-b-127  Poly: High Sequence jh
+  [ ] factory-b-128  Poly: HitMeQuick!   SK
+</pre>
+<p><strong>Bank FACTORY-C 0-C (0-2)</strong></p>
+<pre>
+  [ ] factory-c-001  Poly: Human Touch   SK
+  [ ] factory-c-002  Poly: Ice Bells     SK
+  [ ] factory-c-003  Poly: Illbient Mind
+  [ ] factory-c-004  Poly: It's Digital
+  [ ] factory-c-005  Poly: Jembala      WMF
+<b>  [?] factory-c-006  Poly: JMX jun.</b>
+        - Mod-Wheel: 80%
+  [ ] factory-c-007  Poly: Juno Soul     DK
+  [ ] factory-c-008  Poly: KlingKlang'02 jh
+  [ ] factory-c-009  Poly: La Sirena     SK
+  [ ] factory-c-010  Poly: Late Ring     HS
+  [ ] factory-c-011  Poly: Leadrunner
+  [ ] factory-c-012  Poly: Legal Resins  HS
+  [ ] factory-c-013  Poly: LikeClinics  WMF
+  [ ] factory-c-014  Poly: Liquid Mel   WMF
+  [ ] factory-c-015  Poly: Liquid Var   WMF
+  [ ] factory-c-016  Poly: LoFi 1oscPoly
+  [ ] factory-c-017  Poly: LoFi Lead    WMF
+  [ ] factory-c-018  Poly: Minor Chord   RZ
+  [ ] factory-c-019  Poly: Modulizer     SK
+  [ ] factory-c-020  Poly: Move Sound
+  [ ] factory-c-021  Poly: My Ol' House  SK
+<b>  [?] factory-c-022  Poly: Net Profit    HS</b>
+        - From: Creep Show
+  [ ] factory-c-023  Poly: Neu * Utz     HM
+  [ ] factory-c-024  Poly: NewClassicLd  SK
+  [ ] factory-c-025  Poly: No. 5 lives    T
+  [ ] factory-c-026  Poly: OB-One Knobi  HS
+  [ ] factory-c-027  Poly: OBX Purple5 PROX
+  [ ] factory-c-028  Poly: Old * Uck     HM
+  [ ] factory-c-029  Poly: Organistic    SK
+  [ ] factory-c-030  Poly: Papathanasiou
+  [ ] factory-c-031  Poly: Patagonia     HS
+  [ ] factory-c-032  Poly: PEG Horns     HM
+
+  [ ] factory-c-033  Poly: Phased FM     SK
+  [ ] factory-c-034  Poly: Play It Sam!  jh
+  [ ] factory-c-035  Poly: Poly Flutes   HS
+  [ ] factory-c-036  Poly: PolySequencer
+  [ ] factory-c-037  Poly: PowerLead    WMF
+  [ ] factory-c-038  Poly: Harp
+  [ ] factory-c-039  Poly: PPG Nylons  PROX
+  [ ] factory-c-040  Poly: Pure Keys
+  [ ] factory-c-041  Poly: PWMaster      SK
+  [ ] factory-c-042  Poly: Qazzio        HS
+  [ ] factory-c-043  Poly: Qddicted!     SK
+  [ ] factory-c-044  Poly: Qtronix      ugh
+  [ ] factory-c-045  Poly: Quake FM      SK
+  [ ] factory-c-046  Poly: Quintage       T
+  [ ] factory-c-047  Poly: Quinter 007   SK
+  [ ] factory-c-048  Poly: RaveLover     SK
+  [ ] factory-c-049  Poly: Really Insane
+  [ ] factory-c-050  Poly: Romeo         DK
+  [ ] factory-c-051  Poly: RoundTheHorn  HS
+  [ ] factory-c-052  Poly: SawTheLight   SK
+  [ ] factory-c-053  Poly: Sax And Dregs
+  [ ] factory-c-054  Poly: Schubduese     T
+  [ ] factory-c-055  Poly: ShatterWaves  SK
+  [ ] factory-c-056  Poly: Siegessaeule   T
+  [ ] factory-c-057  Poly: Simple Melo   jh
+  [ ] factory-c-058  Poly: Smash It!     SK
+  [ ] factory-c-059  Poly: Solo Harp
+  [ ] factory-c-060  Poly: Speed
+<b>  [?] factory-c-061  Poly: Spice         SK</b>
+  [ ] factory-c-062  Poly: Spring Clean
+  [ ] factory-c-063  Poly: Stabs!
+  [ ] factory-c-064  Poly: Stack with you
+
+  [ ] factory-c-065  Poly: SteaLead      SK
+<b>  [?] factory-c-066  Poly: String Poly   HS</b>
+  [ ] factory-c-067  Poly: String Thing  HS
+  [ ] factory-c-068  Poly: Stuermer 1   WMF
+  [ ] factory-c-069  Poly: Stylotub      SK
+  [ ] factory-c-070  Poly: SyncCity
+  [ ] factory-c-071  Poly: Synchronic    SK
+  [ ] factory-c-072  Poly: SynthPiano    SK
+  [ ] factory-c-073  Poly: Synth X
+<b>  [?] factory-c-074  Poly: Tea @ Eight   HS</b>
+<b>  [?] factory-c-075  Poly: Tech.Lead 1</b>
+<b>  [?] factory-c-076  Poly: Tech.Lead 2</b>
+  [ ] factory-c-077  Poly: TelephoneSyn ugh
+  [ ] factory-c-078  Poly: Telepromter  ugh
+<b>  [?] factory-c-079  Poly: The Big 80s</b>
+  [ ] factory-c-080  Poly: The Cutter    SK
+  [ ] factory-c-081  Poly: Titanomania   SK
+  [ ] factory-c-082  Poly: TranceHarp    HM
+<b>  [?] factory-c-083  Poly: Trance Plant  HS</b>
+  [ ] factory-c-084  Poly: Trancer       SK
+  [ ] factory-c-085  Poly: TrashCan!     SK
+<b>  [?] factory-c-086  Poly: TributeTo DX WMF</b>
+  [ ] factory-c-087  Poly: Tron Flutes   HM
+  [ ] factory-c-088  Poly: Tsching Lead   T
+  [ ] factory-c-089  Poly: TuBerkel      DK
+  [ ] factory-c-090  Poly: Typ Reso      RZ
+<b>  [?] factory-c-091  Poly: UltraFatPoly WMF</b>
+  [ ] factory-c-092  Poly: UltraSynC     jh
+  [ ] factory-c-093  Poly: UltraWave     SK
+  [ ] factory-c-094  Poly: Unisono Bass  DK
+  [ ] factory-c-095  Poly: Utopia!       SK
+  [ ] factory-c-096  Poly: VeloFreak     jh
+
+  [ ] factory-c-097  Poly: Vintage Days  SK
+  [ ] factory-c-098  Poly: VintageSpringWMF
+  [ ] factory-c-099  Poly: Vitalica      SK
+  [ ] factory-c-100  Poly: Wank         WMF
+<b>  [?] factory-c-101  Poly: Wank Lead    WMF</b>
+        - Vary Filter2 Cutoff and Q
+<b>  [?] factory-c-102  Poly: Wanna Noise?? jh</b>
+<b>  [?] factory-c-103  Poly: Warm PWM Lead SK</b>
+        - Decrease Filter Cutoff
+  [ ] factory-c-104  Poly: Warm Verse
+  [ ] factory-c-105  Poly: WaveLayer     SK
+  [ ] factory-c-106  Poly: Wells'Tripod WMF
+  [ ] factory-c-107  Poly: YourChords    SK
+  [ ] factory-c-108  Poly: Zapper        SK
+  [ ] factory-c-109  Poly: Zawichords    HS
+  [ ] factory-c-110  Poly: Zing Thing    HS
+  [ ] factory-c-111  Poly: Zippy 2       HM
+  [ ] factory-c-112  Poly: Zombie Nation  T
+  [ ] factory-c-113  Pad:  50s Pad
+  [ ] factory-c-114  Pad:  Airpad
+  [ ] factory-c-115  Pad:  AirSpacePad   SK
+  [ ] factory-c-116  Pad:  AmbientSweep  SK
+  [ ] factory-c-117  Pad:  Analog Pad 1
+  [ ] factory-c-118  Pad:  Analog Pad 2
+  [ ] factory-c-119  Pad:  Analog Pad 3
+  [ ] factory-c-120  Pad:  Angel Pad
+  [ ] factory-c-121  Pad:  Antarktis Pad jh
+  [ ] factory-c-122  Pad:  Archangel
+  [ ] factory-c-123  Pad:  Attacke      WMF
+  [ ] factory-c-124  Pad:  BackStrings  WMF
+  [ ] factory-c-125  Pad:  Bandpad      ugh
+  [ ] factory-c-126  Pad:  BandSpass
+  [ ] factory-c-127  Pad:  Bend Pad
+  [ ] factory-c-128  Pad:  Big Bad Pad
+</pre>
+<p><strong>Bank FACTORY-D 0-D (0-3)</strong></p>
+<pre>
+  [ ] factory-d-001  Pad:  Bounty
+<b>  [?] factory-d-002  Pad:  BrightHallPad SK</b>
+        - Vary filters
+  [ ] factory-d-003  Pad:  Brightseite    T
+  [ ] factory-d-004  Pad:  Broadway     ugh
+  [ ] factory-d-005  Pad:  Butter Pat
+  [ ] factory-d-006  Pad:  Changing...   jh
+  [ ] factory-d-007  Pad:  ChromaParlong AT
+  [ ] factory-d-008  Pad:  Classic Pad
+  [ ] factory-d-009  Pad:  CS100          T
+  [ ] factory-d-010  Pad:  CS500         AT
+  [ ] factory-d-011  Pad:  Dark Quiet Pad
+  [ ] factory-d-012  Pad:  deMotivation
+  [ ] factory-d-013  Pad:  di-Fusion
+  [ ] factory-d-014  Pad:  Digitize Me!
+  [ ] factory-d-015  Pad:  Discreet Pad
+  [ ] factory-d-016  Pad:  Discreet Pad 2
+  [ ] factory-d-017  Pad:  DisharmonicPad
+  [ ] factory-d-018  Pad:  Dizzyland    WMF
+  [ ] factory-d-019  Pad:  Don't Ask    WMF
+  [ ] factory-d-020  Pad:  Drive Sweep
+  [ ] factory-d-021  Pad:  DuMonde Wash WMF
+  [ ] factory-d-022  Pad:  DuneSdTrak    HM
+  [ ] factory-d-023  Pad:  Eel Pad
+  [ ] factory-d-024  Pad:  Event Horizon
+  [ ] factory-d-025  Pad:  Fairy Tale
+  [ ] factory-d-026  Pad:  Famous Sweep
+  [ ] factory-d-027  Pad:  FaMtastic     jh
+  [ ] factory-d-028  Pad:  Fat Sweep
+  [ ] factory-d-029  Pad:  Fat Synthpad  SK
+  [ ] factory-d-030  Pad:  F.E.O.S.phere
+  [ ] factory-d-031  Pad:  FlimmerStringsDK
+  [ ] factory-d-032  Pad:  GabrielsPad PROX
+
+  [ ] factory-d-033  Pad:  Geiler Lurch
+  [ ] factory-d-034  Pad:  Glasklar
+  [ ] factory-d-035  Pad:  Go to Pad
+  [ ] factory-d-036  Pad:  Gran Canyon
+  [ ] factory-d-037  Pad:  Harsh Pad
+  [ ] factory-d-038  Pad:  HellsbugsIntroHM
+  [ ] factory-d-039  Pad:  Hollow Man
+  [ ] factory-d-040  Pad:  House of Ice
+  [ ] factory-d-041  Pad:  Incoming Rezz
+  [ ] factory-d-042  Pad:  In My Dreams
+  [ ] factory-d-043  Pad:  In the woods
+  [ ] factory-d-044  Pad:  Jetlack Pad   SK
+  [ ] factory-d-045  Pad:  Kiddings      HM
+  [ ] factory-d-046  Pad:  Late at night RZ
+  [ ] factory-d-047  Pad:  LateNight Pad
+  [ ] factory-d-048  Pad:  LggSit
+  [ ] factory-d-049  Pad:  Like Wool     HM
+  [ ] factory-d-050  Pad:  Liquid Strg  WMF
+  [ ] factory-d-051  Pad:  Living Sweep
+  [ ] factory-d-052  Pad:  LoFi Choir
+  [ ] factory-d-053  Pad:  LoFi Strings
+  [ ] factory-d-054  Pad:  Long Sweep
+  [ ] factory-d-055  Pad:  LoveMoviePad  SK
+  [ ] factory-d-056  Pad:  Magic         HM
+  [ ] factory-d-057  Pad:  Majestic
+  [ ] factory-d-058  Pad:  Mantovani
+  [ ] factory-d-059  Pad:  Mega Drone    HM
+  [ ] factory-d-060  Pad:  MegaStrings   AT
+  [ ] factory-d-061  Pad:  Mellow Tron
+  [ ] factory-d-062  Pad:  Mercury       jh
+  [ ] factory-d-063  Pad:  MI5 Pad      ugh
+  [ ] factory-d-064  Pad:  Millenium
+
+  [ ] factory-d-065  Pad:  Mist Mountain
+  [ ] factory-d-066  Pad:  Motivation Pad
+  [ ] factory-d-067  Pad:  Namlooking     T
+  [ ] factory-d-068  Pad:  Noisy Tapes
+  [ ] factory-d-069  Pad:  No Wavetables
+  [ ] factory-d-070  Pad:  ObiWahnPad    SK
+  [ ] factory-d-071  Pad:  Om mani padme HM
+  [ ] factory-d-072  Pad:  Onyx         ugh
+  [ ] factory-d-073  Pad:  OrchestralPad SK
+  [ ] factory-d-074  Pad:  Overdrive Pad
+  [ ] factory-d-075  Pad:  Padagogy       T
+  [ ] factory-d-076  Pad:  Padings       HM
+  [ ] factory-d-077  Pad:  Palisades
+  [ ] factory-d-078  Pad:  Pass Sweep
+  [ ] factory-d-079  Pad:  PhaserStrings jh
+  [ ] factory-d-080  Pad:  Phazer PWM'02 jh
+  [ ] factory-d-081  Pad:  Polaris       HM
+  [ ] factory-d-082  Pad:  Prelude Patch
+  [ ] factory-d-083  Pad:  ProducersPad ugh
+  [ ] factory-d-084  Pad:  Q-rious?     WMF
+  [ ] factory-d-085  Pad:  Q-Sweep2      TK
+  [ ] factory-d-086  Pad:  Queen-mom     HM
+  [ ] factory-d-087  Pad:  QuintaSweep   SK
+  [ ] factory-d-088  Pad:  RainAfterSun  SK
+  [ ] factory-d-089  Pad:  Raising Sun
+  [ ] factory-d-090  Pad:  Score Pad 1
+  [ ] factory-d-091  Pad:  Score Pad 2
+  [ ] factory-d-092  Pad:  Score Pad 3
+  [ ] factory-d-093  Pad:  S&amp;H&amp;Pad&amp;Nice WMF
+  [ ] factory-d-094  Pad:  Simple&amp;Sold  WMF
+  [ ] factory-d-095  Pad:  Slow Wavetrip  T
+  [ ] factory-d-096  Pad:  Soap          HM
+
+  [ ] factory-d-097  Pad:  Soar          HM
+  [ ] factory-d-098  Pad:  Soft  Pad      S
+  [ ] factory-d-099  Pad:  Sonnenaufgang  T
+  [ ] factory-d-100  Pad:  Speak &amp; Hold
+  [ ] factory-d-101  Pad:  Straight Pad  SK
+  [ ] factory-d-102  Pad:  String&amp;AirPad SK
+  [ ] factory-d-103  Pad:  Stringer      SK
+  [ ] factory-d-104  Pad:  StringOrchid WMF
+  [ ] factory-d-105  Pad:  Sublime
+  [ ] factory-d-106  Pad:  Sweepy Sync   SK
+  [ ] factory-d-107  Pad:  SyncSanity
+  [ ] factory-d-108  Pad:  SynthetiChoir
+  [ ] factory-d-109  Pad:  TableSweep    SK
+  [ ] factory-d-110  Pad:  TableSync
+  [ ] factory-d-111  Pad:  The Beginning  T
+  [ ] factory-d-112  Pad:  The Blues    ugh
+  [ ] factory-d-113  Pad:  The Bridge
+  [ ] factory-d-114  Pad:  The Carpet
+  [ ] factory-d-115  Pad:  Thin Pulsepad
+  [ ] factory-d-116  Pad:  Tranquilizer
+  [ ] factory-d-117  Pad:  TripleStringsWMF
+  [ ] factory-d-118  Pad:  Ultimaterial  jh
+  [ ] factory-d-119  Pad:  unTuned
+  [ ] factory-d-120  Pad:  Wake Up      WMF
+  [ ] factory-d-121  Pad:  Wartofsky      T
+  [ ] factory-d-122  Pad:  Wavescapes 1
+  [ ] factory-d-123  Pad:  Wavescapes 2
+  [ ] factory-d-124  Pad:  Wavescapes 3
+  [ ] factory-d-125  Pad:  Wave: Doom
+  [ ] factory-d-126  Pad:  Weddingday    SK
+  [ ] factory-d-127  Pad:  Wide'n'Thin
+  [ ] factory-d-128  Pad:  Wide Saw Pad   S
+</pre>
+<p><strong>Bank FACTORY-E 0-E (0-4)</strong></p>
+<pre>
+  [ ] factory-e-001  Pad:  WideWarmWash WMF
+  [ ] factory-e-002  Pad:  Zeitlos        T
+  [ ] factory-e-003  Mono: 11KHz Solo
+  [ ] factory-e-004  Mono: 12dB Monster
+  [ ] factory-e-005  Mono: Alt Vibes
+  [ ] factory-e-006  Mono: Anna Powers
+  [ ] factory-e-007  Mono: Autobahn
+  [ ] factory-e-008  Mono: Bach Whistler
+  [ ] factory-e-009  Mono: Bad, bad Q!
+  [ ] factory-e-010  Mono: Bass-to-Lead
+  [ ] factory-e-011  Mono: ButtKicker
+  [ ] factory-e-012  Mono: ByteBass
+  [ ] factory-e-013  Mono: Captain Cork
+  [ ] factory-e-014  Mono: Chord-A-Must!
+  [ ] factory-e-015  Mono: CosmoSpace
+  [ ] factory-e-016  Mono: Crazy Diamond
+  [ ] factory-e-017  Mono: Crazy Parade
+  [ ] factory-e-018  Mono: Crungy Lead
+  [ ] factory-e-019  Mono: CS4O Vangelis
+  [ ] factory-e-020  Mono: DeepDriveLead
+  [ ] factory-e-021  Mono: Dirty-Q-uinta
+  [ ] factory-e-022  Mono: DiscoPhonic
+  [ ] factory-e-023  Mono: DistoQuak
+  [ ] factory-e-024  Mono: Dre's Solo
+  [ ] factory-e-025  Mono: Eff Emmd!
+  [ ] factory-e-026  Mono: ElectricDance
+  [ ] factory-e-027  Mono: FictionGuitar
+  [ ] factory-e-028  Mono: FuzzyLogicFM
+  [ ] factory-e-029  Mono: Ghost
+  [ ] factory-e-030  Mono: Guitar 1
+  [ ] factory-e-031  Mono: Guitar 2
+  [ ] factory-e-032  Mono: Leaderlich 1
+
+  [ ] factory-e-033  Mono: Leaderlich 2
+  [ ] factory-e-034  Mono: LoFi 1oscLead
+  [ ] factory-e-035  Mono: Lowdown Lead
+  [ ] factory-e-036  Mono: MC-202 Solo 2
+  [ ] factory-e-037  Mono: MiniDuke Solo
+  [ ] factory-e-038  Mono: Moany
+  [ ] factory-e-039  Mono: Modulator
+  [ ] factory-e-040  Mono: MonoBeatLead
+  [ ] factory-e-041  Mono: Monofat
+  [ ] factory-e-042  Mono: Monoguitar
+  [ ] factory-e-043  Mono: Monolith
+  [ ] factory-e-044  Mono: MonoSyncLead
+  [ ] factory-e-045  Mono: Nightmares
+  [ ] factory-e-046  Mono: NoisyLead
+  [ ] factory-e-047  Mono: Notch It!
+  [ ] factory-e-048  Mono: Old Squares
+  [ ] factory-e-049  Mono: Orient Flute
+  [ ] factory-e-050  Mono: OverdriveLead
+  [ ] factory-e-051  Mono: ParaToxic
+  [ ] factory-e-052  Mono: Popcorn
+  [ ] factory-e-053  Mono: Portemon
+  [ ] factory-e-054  Mono: Powered By...
+  [ ] factory-e-055  Mono: Pulsar Solo
+  [ ] factory-e-056  Mono: PulZer
+  [ ] factory-e-057  Mono: Q or Pulse?
+  [ ] factory-e-058  Mono: RoughTough
+  [ ] factory-e-059  Lead: Saw 1 Osc    WMF
+  [ ] factory-e-060  Lead: MiniLead 1    AT
+  [ ] factory-e-061  Mono: Sonic Six
+  [ ] factory-e-062  Mono: Starline
+  [ ] factory-e-063  Mono: Starweed
+  [ ] factory-e-064  Mono: SteelDrum
+
+  [ ] factory-e-065  Mono: Tri-Sync
+  [ ] factory-e-066  Mono: TronFlute 2
+  [ ] factory-e-067  Mono: Valium
+  [ ] factory-e-068  Mono: VoiceChords
+  [ ] factory-e-069  Mono: Waily
+  [ ] factory-e-070  Mono: Weird&amp;Wicked
+  [ ] factory-e-071  Mono: X-Feels
+  [ ] factory-e-072  Mono: ZlatnaPlanega
+  [ ] factory-e-073  Seq:  ArpeggyBells
+  [ ] factory-e-074  Seq:  Asian Vibes
+  [ ] factory-e-075  Seq:  Capt.Future 2
+  [ ] factory-e-076  Seq:  Comb Sequence
+  [ ] factory-e-077  Seq:  Dr. Strange
+  [ ] factory-e-078  Seq:  DX Sequencer
+  [ ] factory-e-079  Seq:  Fast &amp; Furious
+  [ ] factory-e-080  Seq:  FMe!
+  [ ] factory-e-081  Seq:  Gate Synth
+  [ ] factory-e-082  Seq:  HighFly
+  [ ] factory-e-083  Seq:  Hybrid Harp
+  [ ] factory-e-084  Seq:  KarmaKoma
+  [ ] factory-e-085  Seq:  LFO sequenzer
+  [ ] factory-e-086  Seq:  Minor Seven
+  [ ] factory-e-087  Seq:  Nano Sequence
+  [ ] factory-e-088  Seq:  Noisophon
+  [ ] factory-e-089  Seq:  NotchSequence
+  [ ] factory-e-090  Seq:  Out Of Japan
+  [ ] factory-e-091  Seq:  OverHigh
+  [ ] factory-e-092  Seq:  OverHP Sequ.
+  [ ] factory-e-093  Seq:  PassSequ.
+  [ ] factory-e-094  Seq:  Percussive SQ
+  [ ] factory-e-095  Seq:  Phantastica 2
+  [ ] factory-e-096  Seq:  Pick It!
+
+  [ ] factory-e-097  Seq:  Pop Spot
+  [ ] factory-e-098  Seq:  PrincessBellsWMF
+  [ ] factory-e-099  Seq:  PW-Steps
+  [ ] factory-e-100  Seq:  Q-uirly
+  [ ] factory-e-101  Seq:  Ringmoding
+  [ ] factory-e-102  Seq:  Ring Sequel
+  [ ] factory-e-103  Seq:  Schmatz
+  [ ] factory-e-104  Seq:  S-Friends
+  [ ] factory-e-105  Seq:  Short Bleeps
+  [ ] factory-e-106  Seq:  SpaceGuitar
+  [ ] factory-e-107  Seq:  SqrBassSwing WMF
+  [ ] factory-e-108  Seq:  Steelon Morph
+  [ ] factory-e-109  Seq:  Storchennest
+  [ ] factory-e-110  Seq:  Sync Sequ.
+  [ ] factory-e-111  Seq:  Tankin'
+  [ ] factory-e-112  Seq:  TinkaBelle
+  [ ] factory-e-113  Seq:  Tiny Brushes
+  [ ] factory-e-114  Seq:  Too Fast
+  [ ] factory-e-115  Seq:  Vanille Keys
+  [ ] factory-e-116  Seq:  Zap Melody
+  [ ] factory-e-117  Arp:  1DrunkenStenz
+  [ ] factory-e-118  Arp:  A*R*P
+  [ ] factory-e-119  Arp:  ARPacadabra
+  [ ] factory-e-120  Arp:  ARP Attack
+  [ ] factory-e-121  Arp:  AthmoDrops
+<b>  [?] factory-e-122  Arp:  Attacke</b>
+  [ ] factory-e-123  Arp:  BoubleBouble
+  [ ] factory-e-124  Arp:  BP Runner
+  [ ] factory-e-125  Arp:  Caribian Lead
+  [ ] factory-e-126  Arp:  cARPet
+  [ ] factory-e-127  Arp:  ChorusPattern
+  [ ] factory-e-128  Arp:  Cosmic Slides
+</pre>
+<p><strong>Bank FACTORY-F 0-F (0-5)</strong></p>
+<pre>
+  [ ] factory-f-001  Arp:  Cracy!Cracy!
+  [ ] factory-f-002  Arp:  CryBaby
+  [ ] factory-f-003  Arp:  DeepLine FM
+  [ ] factory-f-004  Arp:  Demons Rising
+  [ ] factory-f-005  Arp:  DetuneDaHouse
+  [ ] factory-f-006  Arp:  Dirty Peggio
+  [ ] factory-f-007  Arp:  Dockstader
+  [ ] factory-f-008  Arp:  Dot. Groove
+  [ ] factory-f-009  Arp:  DriveMeCrazy
+  [ ] factory-f-010  Arp:  Einstein
+  [ ] factory-f-011  Arp:  Electric HArp
+  [ ] factory-f-012  Arp:  ElectriX
+  [ ] factory-f-013  Arp:  E-Motion
+  [ ] factory-f-014  Arp:  Expensive    WMF
+  [ ] factory-f-015  Arp:  DeluXaflex    RJ
+  [ ] factory-f-016  Arp:  EyesWideOpen
+  [ ] factory-f-017  Arp:  Fast'n'Smart
+  [ ] factory-f-018  Arp:  Filter Games
+  [ ] factory-f-019  Arp:  FM Drops
+  [ ] factory-f-020  Arp:  FromBass2Dawn
+  [ ] factory-f-021  Arp:  From Germany
+  [ ] factory-f-022  Arp:  Furby Arp '02
+  [ ] factory-f-023  Arp:  GeeGaGooQ
+  [ ] factory-f-024  Arp:  Grammophone
+  [ ] factory-f-025  Arp:  Groove &amp; Bass
+  [ ] factory-f-026  Arp:  High Voltage!
+  [ ] factory-f-027  Arp:  HouseMasterS
+  [ ] factory-f-028  Arp:  HP Runner
+  [ ] factory-f-029  Arp:  Juanita
+  [ ] factory-f-030  Arp:  Jupiter Synth
+<b>  [?] factory-f-031  Arp:  Milky Way</b>
+  [ ] factory-f-032  Arp:  Nowseq 2
+
+  [ ] factory-f-033  Arp:  Panner Echoes
+  [ ] factory-f-034  Arp:  PassPortament
+  [ ] factory-f-035  Arp:  Patsy OB Pad
+  [ ] factory-f-036  Arp:  PeeWee Lead
+  [ ] factory-f-037  Arp:  PercoBeats
+  [ ] factory-f-038  Arp:  Perc School
+  [ ] factory-f-039  Arp:  PhoeniX Arp
+  [ ] factory-f-040  Arp:  Rhythm Arp
+  [ ] factory-f-041  Arp:  Ringmodular
+<b>  [?] factory-f-042  Arp:  Saturn</b>
+        - Mod-Wheel: +/-
+  [ ] factory-f-043  Arp:  schARPing
+  [ ] factory-f-044  Arp:  Selbstlaeufer
+  [ ] factory-f-045  Arp:  Sierra Velone
+  [ ] factory-f-046  Arp:  Slow Pop
+  [ ] factory-f-047  Arp:  Smack Me Up!
+  [ ] factory-f-048  Arp:  SnappyInstr.
+  [ ] factory-f-049  Arp:  Space Arp 1
+  [ ] factory-f-050  Arp:  Space Arp 2
+  [ ] factory-f-051  Arp:  Spiffing
+  [ ] factory-f-052  Arp:  SquareBoubles
+  [ ] factory-f-053  Arp:  Square Fun!
+  [ ] factory-f-054  Arp:  stARPower
+  [ ] factory-f-055  Arp:  StarSoldiers
+  [ ] factory-f-056  Arp:  Sumeria Trek
+  [ ] factory-f-057  Arp:  SupportersRun
+  [ ] factory-f-058  Arp:  Synthi Pap
+  [ ] factory-f-059  Arp:  Technica
+  [ ] factory-f-060  Arp:  TranceMania 2
+  [ ] factory-f-061  Arp:  Two Lines
+  [ ] factory-f-062  Arp:  Visions of Q
+  [ ] factory-f-063  Arp:  Waven
+  [ ] factory-f-064  Arp:  Weirdo FX
+
+  [ ] factory-f-065  Arp:  WhatIcallPulZ
+  [ ] factory-f-066  Arp:  Wizzard's Run
+  [ ] factory-f-067  Arp:  ZZ-you
+  [ ] factory-f-068  Bass: 2Step Bass
+  [ ] factory-f-069  Bass: 08/15 Bass
+  [ ] factory-f-070  Bass: 12dB PW-Bass
+  [ ] factory-f-071  Bass: 303 Wanna Be
+  [ ] factory-f-072  Bass: 707Bass
+  [ ] factory-f-073  Bass: Acid Bubbles
+  [ ] factory-f-074  Bass: Acrylic Bass
+  [ ] factory-f-075  Bass: Agnostic Bass
+  [ ] factory-f-076  Bass: Analog Pass
+  [ ] factory-f-077  Bass: Ass age:101   HM
+  [ ] factory-f-078  Bass: AthmoBass     SK
+  [ ] factory-f-079  Bass: Bassanova
+  [ ] factory-f-080  Bass: BassPhase
+  [ ] factory-f-081  Bass: Bassreflex
+  [ ] factory-f-082  Bass: BassStation
+  [ ] factory-f-083  Bass: Bended Bass
+  [ ] factory-f-084  Bass: Blubba
+  [ ] factory-f-085  Bass: BoubleBass
+  [ ] factory-f-086  Bass: Captain Bass
+  [ ] factory-f-087  Bass: CascadeVCF
+  [ ] factory-f-088  Bass: Classic Zirp
+  [ ] factory-f-089  Bass: Clear Bass
+  [ ] factory-f-090  Bass: Clear Square
+  [ ] factory-f-091  Bass: ClickBass
+  [ ] factory-f-092  Bass: CongaBass
+  [ ] factory-f-093  Bass: CrossOsTanker
+  [ ] factory-f-094  Bass: Da Bazz
+  [ ] factory-f-095  Bass: Damper Bass
+  [ ] factory-f-096  Bass: DaScrubber
+
+  [ ] factory-f-097  Bass: Deep Bass 9
+  [ ] factory-f-098  Bass: Deeper Love
+  [ ] factory-f-099  Bass: Deep Square
+  [ ] factory-f-100  Bass: DigiBass
+  [ ] factory-f-101  Bass: Dirty One
+  [ ] factory-f-102  Bass: Dooms Bass
+  [ ] factory-f-103  Bass: DowLow
+  [ ] factory-f-104  Bass: Driveline
+  [ ] factory-f-105  Bass: Drum'n'Bass 1
+  [ ] factory-f-106  Bass: Drum'n'Bass 2
+  [ ] factory-f-107  Bass: Drum'n'Bass 3
+  [ ] factory-f-108  Bass: Dry ResoBass
+  [ ] factory-f-109  Bass: Dub Bass
+  [ ] factory-f-110  Bass: Elastique
+  [ ] factory-f-111  Bass: Fat Resonatic
+  [ ] factory-f-112  Bass: Flapper Bass
+  [ ] factory-f-113  Bass: Fonky Fonky
+  [ ] factory-f-114  Bass: Frittenlos
+  [ ] factory-f-115  Bass: Full Pulse!
+  [ ] factory-f-116  Bass: Got Balls.
+  [ ] factory-f-117  Bass: Gum Bass
+  [ ] factory-f-118  Bass: Heaviside
+  [ ] factory-f-119  Bass: Hollow Bass
+  [ ] factory-f-120  Bass: Huge Whoop
+  [ ] factory-f-121  Bass: Jamiro-Q-ai
+  [ ] factory-f-122  Bass: JV HardBass
+  [ ] factory-f-123  Bass: Knorz Bass
+  [ ] factory-f-124  Bass: K's Smacks
+  [ ] factory-f-125  Bass: LaserBass
+  [ ] factory-f-126  Bass: Long Wires
+  [ ] factory-f-127  Bass: LoPulse
+  [ ] factory-f-128  Bass: Low Tension
+</pre>
+<p><strong>Bank FACTORY-G 0-G (0-6)</strong></p>
+<pre>
+  [ ] factory-g-001  Bass: Machine Bass
+  [ ] factory-g-002  Bass: Mars Mouse
+  [ ] factory-g-003  Bass: Metal Bass
+  [ ] factory-g-004  Bass: ModMeBass
+  [ ] factory-g-005  Bass: Mo'Grass
+  [ ] factory-g-006  Bass: Mono PW Bass
+  [ ] factory-g-007  Bass: Narrow
+  [ ] factory-g-008  Bass: Noise Bass 2
+  [ ] factory-g-009  Bass: NoreBass#2
+  [ ] factory-g-010  Bass: Oberton Bass
+  [ ] factory-g-011  Bass: Ouw Bass
+  [ ] factory-g-012  Bass: Phalanx Bass
+  [ ] factory-g-013  Bass: PulsatingBass
+  [ ] factory-g-014  Bass: Pulse Bass 1
+  [ ] factory-g-015  Bass: Pulse Bass 2
+  [ ] factory-g-016  Bass: Pulse Bass 4
+  [ ] factory-g-017  Bass: Pulse Bass 6
+  [ ] factory-g-018  Bass: Pulsified SaW
+  [ ] factory-g-019  Bass: Q-Timps
+  [ ] factory-g-020  Bass: Qubik Bass
+  [ ] factory-g-021  Bass: Ringmono
+  [ ] factory-g-022  Bass: RumbleHumble
+  [ ] factory-g-023  Bass: Sawproof 3
+  [ ] factory-g-024  Bass: Sawproof 5
+  [ ] factory-g-025  Bass: Scrawl Bass
+  [ ] factory-g-026  Bass: Serious Bass
+  [ ] factory-g-027  Bass: Silicon Base
+  [ ] factory-g-028  Bass: Simple Square
+  [ ] factory-g-029  Bass: Slapper
+  [ ] factory-g-030  Bass: Smaq Bass
+  [ ] factory-g-031  Bass: Snudge Bass
+  [ ] factory-g-032  Bass: Solo FM Bass
+
+  [ ] factory-g-033  Bass: Specralizer
+  [ ] factory-g-034  Bass: SteelOBass
+  [ ] factory-g-035  Bass: Subsonic
+  [ ] factory-g-036  Bass: Talking Bass
+  [ ] factory-g-037  Bass: The Pulse
+  [ ] factory-g-038  Bass: TockTock
+  [ ] factory-g-039  Bass: Ultra Deep
+  [ ] factory-g-040  Bass: Ultra Sub 1
+  [ ] factory-g-041  Bass: Ultra Sub 2
+  [ ] factory-g-042  Bass: Unpredictable
+  [ ] factory-g-043  Bass: VelocityBass1
+  [ ] factory-g-044  Bass: VelocityBass2
+  [ ] factory-g-045  Bass: Veloquity
+  [ ] factory-g-046  Bass: VeloReso
+  [ ] factory-g-047  Bass: VocodaBass
+  [ ] factory-g-048  Bass: Wah Basses
+  [ ] factory-g-049  Bass: WhopWhop
+  [ ] factory-g-050  Bass: Woofer FM
+  [ ] factory-g-051  Atmo: 20 Whiny
+  [ ] factory-g-052  Atmo: Acostic Glue
+  [ ] factory-g-053  Atmo: AdventurBell
+  [ ] factory-g-054  Atmo: AliasingLayer
+  [ ] factory-g-055  Atmo: Ambishous
+  [ ] factory-g-056  Atmo: Antarktis2000
+  [ ] factory-g-057  Atmo: Arctica
+  [ ] factory-g-058  Atmo: Atlantis
+  [ ] factory-g-059  Atmo: Atmo Harp
+  [ ] factory-g-060  Atmo: Atmostrobe
+  [ ] factory-g-061  Atmo: Background
+  [ ] factory-g-062  Atmo: Baraka
+  [ ] factory-g-063  Atmo: Beautiful Sky
+  [ ] factory-g-064  Atmo: Clink Clash
+
+  [ ] factory-g-065  Atmo: Comb Tree
+  [ ] factory-g-066  Atmo: Cousteau 2001
+  [ ] factory-g-067  Atmo: Deep Space
+  [ ] factory-g-068  Atmo: Diginferno
+  [ ] factory-g-069  Atmo: Dreamware
+  [ ] factory-g-070  Atmo: Drift
+  [ ] factory-g-071  Atmo: Electro Pop
+  [ ] factory-g-072  Atmo: Fear'n'Loath
+  [ ] factory-g-073  Atmo: Filter Organ
+  [ ] factory-g-074  Atmo: Filter Pad
+  [ ] factory-g-075  Atmo: Flinker
+  [ ] factory-g-076  Atmo: FlowMotion
+  [ ] factory-g-077  Atmo: FM World Pad
+  [ ] factory-g-078  Atmo: Frankenstein
+  [ ] factory-g-079  Atmo: Ganimed
+  [ ] factory-g-080  Atmo: Glas
+  [ ] factory-g-081  Atmo: Glidebells
+  [ ] factory-g-082  Atmo: Highlander
+  [ ] factory-g-083  Atmo: Introduction
+  [ ] factory-g-084  Atmo: Intruder
+  [ ] factory-g-085  Atmo: Jp8 TRACER
+  [ ] factory-g-086  Atmo: Kristallglas
+  [ ] factory-g-087  Atmo: Lettland
+  [ ] factory-g-088  Atmo: LoFi E-Pad
+  [ ] factory-g-089  Atmo: Metallica
+  [ ] factory-g-090  Atmo: Not guilty2!
+  [ ] factory-g-091  Atmo: Octave Jumper
+  [ ] factory-g-092  Atmo: Oooh Choir
+  [ ] factory-g-093  Atmo: Orthanc
+  [ ] factory-g-094  Atmo: Overflow
+  [ ] factory-g-095  Atmo: PANamericana
+  [ ] factory-g-096  Atmo: Polarkappe
+
+  [ ] factory-g-097  Atmo: PPG-Verb
+  [ ] factory-g-098  Atmo: Pulsating
+  [ ] factory-g-099  Atmo: RePression
+  [ ] factory-g-100  Atmo: Royalties
+  [ ] factory-g-101  Atmo: Schmalspur
+  [ ] factory-g-102  Atmo: ScoreTraX
+  [ ] factory-g-103  Atmo: Solaris
+  [ ] factory-g-104  Atmo: SoundScapes 1
+  [ ] factory-g-105  Atmo: Spektrum Pad
+  [ ] factory-g-106  Atmo: Sphere
+  [ ] factory-g-107  Atmo: Spitzbergen
+  [ ] factory-g-108  Atmo: Stratosphere
+  [ ] factory-g-109  Atmo: Swiss Atmo
+  [ ] factory-g-110  Atmo: The 5th Atmo
+  [ ] factory-g-111  Atmo: The Fog
+  [ ] factory-g-112  Atmo: The Year 3000
+  [ ] factory-g-113  Atmo: Thin Ice
+  [ ] factory-g-114  Atmo: ThrillerOrgan
+  [ ] factory-g-115  Atmo: THX Spot
+  [ ] factory-g-116  Atmo: Tire-Guy
+  [ ] factory-g-117  Atmo: TschingHisCan
+  [ ] factory-g-118  Atmo: Upstream
+  [ ] factory-g-119  Atmo: ValeyPad
+  [ ] factory-g-120  Atmo: Vanilla Sky
+  [ ] factory-g-121  Atmo: VeryCompleqs
+  [ ] factory-g-122  Atmo: Warbirds
+  [ ] factory-g-123  Atmo: Waterworld
+  [ ] factory-g-124  FX:   70ies NoDrugs
+  [ ] factory-g-125  FX:   Animals
+  [ ] factory-g-126  FX:   Apex Triplet
+  [ ] factory-g-127  FX:   Bone Soup
+  [ ] factory-g-128  FX:   Bubble World
+</pre>
+<p><strong>Bank FACTORY-H 0-H (0-7)</strong></p>
+<pre>
+  [ ] factory-h-001  FX:   Captain Kirk
+  [ ] factory-h-002  FX:   ChopperSweep
+  [ ] factory-h-003  FX:   ComputerGames
+  [ ] factory-h-004  FX:   Cyber Farm
+  [ ] factory-h-005  FX:   DCS3 Bubbles
+  [ ] factory-h-006  FX:   Duck Lambada
+  [ ] factory-h-007  FX:   EffEmmEffIxx
+  [ ] factory-h-008  FX:   Fade FX.
+  [ ] factory-h-009  FX:   Final Choice
+  [ ] factory-h-010  FX:   FlangedNoise WMF
+  [ ] factory-h-011  FX:   FlangeplosionWMF
+  [ ] factory-h-012  FX:   Flying Teapot
+  [ ] factory-h-013  FX:   FM Comb FX
+  [ ] factory-h-014  FX:   FM Noises
+  [ ] factory-h-015  FX:   Gastrology
+  [ ] factory-h-016  FX:   HawaiGlider
+  [ ] factory-h-017  FX:   Into Mouth
+  [ ] factory-h-018  FX:   LFO  Speeddwn
+  [ ] factory-h-019  FX:   LFO  Speedup
+  [ ] factory-h-020  FX:   LilaBells
+  [ ] factory-h-021  FX:   Living Water
+  [ ] factory-h-022  FX:   LosAngeles2019
+  [ ] factory-h-023  FX:   Maschinenraum
+  [ ] factory-h-024  FX:   Newtronic
+  [ ] factory-h-025  FX:   Noise Move
+  [ ] factory-h-026  FX:   NoiseSlapper
+  [ ] factory-h-027  FX:   NoRobotsHere
+  [ ] factory-h-028  FX:   Power Down
+  [ ] factory-h-029  FX:   Q Wars
+  [ ] factory-h-030  FX:   Reverse-ecioV
+  [ ] factory-h-031  FX:   RingDaBell
+  [ ] factory-h-032  FX:   Ring Steps
+
+  [ ] factory-h-033  FX:   Rise&amp;Fall
+  [ ] factory-h-034  FX:   Robotalk =:b
+  [ ] factory-h-035  FX:   Score FX Pad
+  [ ] factory-h-036  FX:   Shoot Goose!
+  [ ] factory-h-037  FX:   Shore
+  [ ] factory-h-038  FX:   Short Moment
+  [ ] factory-h-039  FX:   Shot Tool
+  [ ] factory-h-040  FX:   Sine Down
+  [ ] factory-h-041  FX:   Skywalker
+  [ ] factory-h-042  FX:   SubSineSweep WMF
+  [ ] factory-h-043  FX:   The Assault
+  [ ] factory-h-044  FX:   The BORG
+  [ ] factory-h-045  FX:   Thunderain
+  [ ] factory-h-046  FX:   ThunderDrums
+  [ ] factory-h-047  FX:   Tron Ring Game
+  [ ] factory-h-048  FX:   Tuxedosun
+  [ ] factory-h-049  FX:   Why?
+  [ ] factory-h-050  FX:   Wind Athmo
+  [ ] factory-h-051  FX:   WipeOut
+  [ ] factory-h-052  FX:   ZischDeep
+  [ ] factory-h-053  Perc: Agogo Scrape
+  [ ] factory-h-054  Perc: All Thumbs
+  [ ] factory-h-055  Perc: AnalogBongo 1
+  [ ] factory-h-056  Perc: Analog HH op
+  [ ] factory-h-057  Perc: AnalogStick 1
+  [ ] factory-h-058  Drum: Bass Drum    WMF
+  [ ] factory-h-059  Perc: BD 90ies Drum
+  [ ] factory-h-060  Perc: BD 808 @ 2002
+  [ ] factory-h-061  Perc: BD analg80ies
+  [ ] factory-h-062  Perc: BD analog 02
+  [ ] factory-h-063  Perc: BD analog 03
+  [ ] factory-h-064  Perc: BD AnalogRand
+
+  [ ] factory-h-065  Perc: BD Club 01
+  [ ] factory-h-066  Perc: BD Deep Zap
+  [ ] factory-h-067  Perc: BD Disto 808
+  [ ] factory-h-068  Perc: BD DoorSlam
+  [ ] factory-h-069  Perc: BD Hardcore
+  [ ] factory-h-070  Perc: BD HighKick
+  [ ] factory-h-071  Perc: BD On Stage
+  [ ] factory-h-072  Perc: BD Plock!
+  [ ] factory-h-073  Perc: BD Smack It!
+  [ ] factory-h-074  Perc: BD SpectroZap
+  [ ] factory-h-075  Perc: BD SubDrum
+  [ ] factory-h-076  Perc: BD Woof&amp;Pock
+  [ ] factory-h-077  Perc: BD ZapDrum
+  [ ] factory-h-078  Perc: Bended Metal
+  [ ] factory-h-079  Perc: Brush HH
+  [ ] factory-h-080  Perc: Clap 01
+  [ ] factory-h-081  Perc: Clap 03
+  [ ] factory-h-082  Perc: Clap 04
+  [ ] factory-h-083  Perc: ClapsMuehle
+  [ ] factory-h-084  Perc: Deep Bell
+  [ ] factory-h-085  Pad:  DivX Pad
+  [ ] factory-h-086  Perc: DoubleHHclose
+  [ ] factory-h-087  Perc: Dry BD
+  [ ] factory-h-088  Perc: Dry BD 2
+  [ ] factory-h-089  Perc: FM HHcl
+  [ ] factory-h-090  Perc: FM HHop
+  [ ] factory-h-091  Perc: HammerBell
+  [ ] factory-h-092  Perc: HH closed 01
+  [ ] factory-h-093  Perc: HH closed 02
+  [ ] factory-h-094  Perc: HH closed 03
+  [ ] factory-h-095  Perc: HH closed 04
+  [ ] factory-h-096  Perc: HH closed 05
+
+  [ ] factory-h-097  Perc: HH closed 06
+  [ ] factory-h-098  Perc: HH closed 08
+  [ ] factory-h-099  Perc: HH closed 09
+  [ ] factory-h-100  Perc: HH open 01
+  [ ] factory-h-101  Perc: HH open 02
+  [ ] factory-h-102  Perc: HH open 03
+  [ ] factory-h-103  Perc: HH open 06
+  [ ] factory-h-104  Perc: HH open 07
+  [ ] factory-h-105  Perc: HH open 08
+  [ ] factory-h-106  Perc: High PulseZap
+  [ ] factory-h-107  Perc: PPG Zaps
+  [ ] factory-h-108  Perc: Punchy SN
+  [ ] factory-h-109  Perc: Q-La Shaker
+  [ ] factory-h-110  Perc: Skellington
+  [ ] factory-h-111  Perc: SN NeoAnalog
+  [ ] factory-h-112  Perc: SN Real Snare
+  [ ] factory-h-113  Perc: SN RimSnare
+  [ ] factory-h-114  Perc: SN SnAir ;-)
+  [ ] factory-h-115  Perc: SN Thinny
+  [ ] factory-h-116  Perc: SN Zappada
+  [ ] factory-h-117  Perc: SN ZapSnare
+  [ ] factory-h-118  Perc: Surrr
+  [ ] factory-h-119  Perc: Tombola 1
+<b>  [?] factory-h-120  Drum: TR66 Hihat   WMF</b>
+  [ ] factory-h-121  Perc: Various Metal
+  [ ] factory-h-122  Perc: Woodpicker
+  [ ] factory-h-123  Perc: Zap 1
+  [ ] factory-h-124  Perc: Zap 2
+  [ ] factory-h-125  Perc: Zap BD
+  [ ] factory-h-126  Perc: Zappy :)
+  [ ] factory-h-127  Perc: Zap Stick
+  [ ] factory-h-128  Perc: Zwitscher 1
+</pre>
+
+<h2><a name="easter_sound_programs" href="#_toc_easter_sound_programs">Easter sound programs</a></h2>
+<p><strong>Bank EASTER-A 0-A (0-0)</strong></p>
+<pre>
+  [ ] easter-a-001  Arp:  Start Up       T
+  [ ] easter-a-002  Pad:  70s Pad        T
+  [ ] easter-a-003  Arp:  Tschingeling SCD
+  [ ] easter-a-004  Keys: XT Close     SCD
+  [ ] easter-a-005  Arp:  Digital JP4  SCD
+  [ ] easter-a-006  Pad:  BloChoir       T
+  [ ] easter-a-007  Lead: Sync Different T
+  [ ] easter-a-008  Keys: TearsFromCombSCD
+  [ ] easter-a-009  Bass: Click Bass     T
+  [ ] easter-a-010  Atmo: Myst 6         T
+  [ ] easter-a-011  Lead: Sander Lead    T
+  [ ] easter-a-012  Poly: Bladerunner    T
+  [ ] easter-a-013  Pad:  BloStrings     T
+  [ ] easter-a-014  Arp:  ArpDelayLFO? SCD
+  [ ] easter-a-015  Bass: Dahlbeck Bass  T
+  [ ] easter-a-016  Atmo: CopiedByLargo  T
+  [ ] easter-a-017  Arp:  JustResonanceSCD
+  [ ] easter-a-018  Poly: IntensiveCareSCD
+  [ ] easter-a-019  Pad:  Planet Ice     T
+  [ ] easter-a-020  Pad:  Pad Brown      T
+  [ ] easter-a-021  Pad:  Rasenflaeche   T
+  [ ] easter-a-022  Pad:  PWM&lt;-&gt;SWM    SCD
+  [ ] easter-a-023  Pad:  SuperPulse   SCD
+  [ ] easter-a-024  Pad:  Eyes Wide Open T
+  [ ] easter-a-025  Pad:  BriteWhitePad  T
+  [ ] easter-a-026  Pad:  Chronos        T
+  [ ] easter-a-027  Pad:  Ambientity     T
+  [ ] easter-a-028  Pad:  Lothlorien     T
+  [ ] easter-a-029  Pad:  Boelissimo     T
+  [ ] easter-a-030  Pad:  Inglorious Pad T
+  [ ] easter-a-031  Pad:  PitchShifter SCD
+  [ ] easter-a-032  Pad:  X-File Pad     T
+
+  [ ] easter-a-033  Pad:  AmbienTable    T
+  [ ] easter-a-034  Pad:  ShortWave      T
+  [ ] easter-a-035  Pad:  CS100          T
+  [ ] easter-a-036  Pad:  Slightly Pad   T
+  [ ] easter-a-037  Pad:  FlyingDutchman T
+  [ ] easter-a-038  Pad:  BoelesBrass SCD
+  [ ] easter-a-039  Pad:  Phase 5        T
+  [ ] easter-a-040  Pad:  RingCon        T
+  [ ] easter-a-041  Lead: LeadING        T
+  [ ] easter-a-042  Lead: Chord Hose     T
+  [ ] easter-a-043  Lead: Chordalis      T
+  [ ] easter-a-044  Lead: Deadmau5 Chord T
+  [ ] easter-a-045  Lead: JigSaw         T
+  [ ] easter-a-046  Lead: Fat Pig        T
+  [ ] easter-a-047  Lead: Leadgut        T
+  [ ] easter-a-048  Lead: Crying Lead    T
+  [ ] easter-a-049  Lead: AggLead        T
+  [ ] easter-a-050  Lead: Overdrive      T
+  [ ] easter-a-051  Lead: Lead Keen      T
+<b>  [?] easter-a-052  Lead: Van Doorn      T</b>
+<b>  [?] easter-a-053  Lead: Gummi Lead     T</b>
+  [ ] easter-a-054  Lead: Static Leads   T
+  [ ] easter-a-055  Lead: Sync By FM   SCD
+  [ ] easter-a-056  Lead: Enganged       T
+  [ ] easter-a-057  Bass: Hummer         T
+  [ ] easter-a-058  Lead: Old School     T
+  [ ] easter-a-059  Lead: Handjob        T
+  [ ] easter-a-060  Lead: Slipping Lead  T
+  [ ] easter-a-061  Mono: Glidelis     SCD
+  [ ] easter-a-062  Lead: Rave On        T
+  [ ] easter-a-063  Lead: SynChaos       T
+  [ ] easter-a-064  Lead: Airy Lead      T
+
+<b>  [?] easter-a-065  Lead: Airy Lead 2    T</b>
+        - Filter1: Decrease Envelope
+  [ ] easter-a-066  Arp:  Tiestofeld   SCD
+  [ ] easter-a-067  Arp:  ARPollinaris   T
+  [ ] easter-a-068  Arp:  Driving Line   T
+  [ ] easter-a-069  Arp:  TD 2010      SCD
+  [ ] easter-a-070  Arp:  SawmodulationSCD
+  [ ] easter-a-071  Arp:  Bram A.      SCD
+  [ ] easter-a-072  Arp:  Laidback     SCD
+  [ ] easter-a-073  Arp:  Reseq        SCD
+<b>  [*] easter-a-074  Arp:  S&amp;H Drive    SCD</b>
+  [ ] easter-a-075  Arp:  Mouth Arp    SCD
+  [ ] easter-a-076  Arp:  ADHD         SCD
+  [ ] easter-a-077  Arp:  mARPledust     T
+  [ ] easter-a-078  Arp:  305 Bassline   T
+  [ ] easter-a-079  Arp:  WArpeggiator   T
+  [ ] easter-a-080  Arp:  ARPower        T
+  [ ] easter-a-081  Arp:  Drumloop       T
+  [ ] easter-a-082  Arp:  OnTheRun       T
+  [ ] easter-a-083  Arp:  LFO Delay 2  SCD
+  [ ] easter-a-084  Arp:  LFOWahDelay  SCD
+  [ ] easter-a-085  Arp:  The End      SCD
+  [ ] easter-a-086  Bass: Deadmau5 Bass  T
+  [ ] easter-a-087  Bass: Pulse Drive    T
+  [ ] easter-a-088  Bass: FM Bass        T
+  [ ] easter-a-089  Bass: Oizo Bass      T
+  [ ] easter-a-090  Bass: Pickup Bass    T
+  [ ] easter-a-091  Bass: BassTrap     SCD
+  [ ] easter-a-092  Bass: Wide Bass      T
+  [ ] easter-a-093  Bass: Dirty Bass     T
+  [ ] easter-a-094  Bass: Rev Pulse Bass T
+  [ ] easter-a-095  Bass: C64 Bass       T
+  [ ] easter-a-096  Seq:  Tranceptor     T
+
+  [ ] easter-a-097  Seq:  Short Trance   T
+  [ ] easter-a-098  Pad:  Sauron Pad     T
+  [ ] easter-a-099  Atmo: Ghost On Mars  T
+  [ ] easter-a-100  Atmo: ImpulseResp. SCD
+  [ ] easter-a-101  Atmo: CombDeBoele  SCD
+  [ ] easter-a-102  Atmo: SpaceDigde     T
+  [ ] easter-a-103  Poly: The 1980s      T
+  [ ] easter-a-104  Poly: Pulse3+      SCD
+<b>  [*] easter-a-105  Poly: Dig. Modular SCD</b>
+        - From Solaris soundtrack
+  [ ] easter-a-106  Keys: VA*FM        SCD
+  [ ] easter-a-107  Keys: PPGenious    SCD
+  [ ] easter-a-108  Keys: TriangleDanceSCD
+  [ ] easter-a-109  Keys: Wave Voices  SCD
+  [ ] easter-a-110  Keys: Piano E      SCD
+  [ ] easter-a-111  Keys: SimpleSeq    SCD
+  [ ] easter-a-112  Keys: Chopshop3.0  SCD
+  [ ] easter-a-113  Keys: OrganClav      T
+  [ ] easter-a-114  Keys: Wit Licht    SCD
+  [ ] easter-a-115  Keys: Morphorgan     T
+  [ ] easter-a-116  Poly: My Keys      SCD
+  [ ] easter-a-117  Keys: Warning      SCD
+  [ ] easter-a-118  Keys: InYourRoom   SCD
+  [ ] easter-a-119  Keys: Bad Highpass SCD
+  [ ] easter-a-120  Keys: ChildOfMine  SCD
+  [ ] easter-a-121  Keys: 2 Cats       SCD
+  [ ] easter-a-122  Poly: PPG 2        SCD
+  [ ] easter-a-123  Poly: FlangerSaw   SCD
+  [ ] easter-a-124  Keys: ChainSaw     SCD
+  [ ] easter-a-125  Keys: BloAttack    SCD
+  [ ] easter-a-126  Poly: Sines        SCD
+  [ ] easter-a-127  Poly: BloodLife    SCD
+  [ ] easter-a-128  Atmo: Delerium       T
+</pre>
+
+<h2><a name="microq_2001_factory_sound_programs" href="#_toc_microq_2001_factory_sound_programs">MicroQ 2001 Factory sound programs</a></h2>
+<p>(a-001..100 b-001..100 c-001..099)</p>
+<p><strong>Bank MQFACTORY-A 0-A (0-0)</strong></p>
+<pre>
+  [ ] mqfactory-a-001  FX:   LosAngeles2019 T
+  [ ] mqfactory-a-002  Pad:  Rain         WMF
+<b>  [*] mqfactory-a-003  Pad:  Chor 2.0       S</b>
+  [ ] mqfactory-a-004  Pad:  Zeitlos        T
+  [ ] mqfactory-a-005  Arp:  Expensive    WMF
+  [ ] mqfactory-a-006  Lead: OBX Purple5 PROX
+  [ ] mqfactory-a-007  Pad:  Queen-mom     HM
+  [ ] mqfactory-a-008  Arp:  Juanita       HM
+  [ ] mqfactory-a-009  Lead: Demolition    DK
+  [ ] mqfactory-a-010  FX:   The Showroom   T
+  [ ] mqfactory-a-011  Pad:  Wartofsky      T
+  [ ] mqfactory-a-012  Atmo: Cut-Verb    WMF
+  [ ] mqfactory-a-013  Arp:  Visions of Q  jh
+  [ ] mqfactory-a-014  Pad:  MI5 Pad      ugh
+  [ ] mqfactory-a-015  Atmo: Tank Girl      T
+  [ ] mqfactory-a-016  Arp:  Attacke      WMF
+  [ ] mqfactory-a-017  Lead: 11KHz Solo    DK
+  [ ] mqfactory-a-018  Bass: Ass age:101   HM
+  [ ] mqfactory-a-019  Arp:  Hypnose 2.0    S
+  [ ] mqfactory-a-020  Arp:  Cleanline 303 jh
+  [ ] mqfactory-a-021  Arp:  www.arp.com    T
+  [ ] mqfactory-a-022  Arp:  Giedi Prime    T
+  [ ] mqfactory-a-023  Arp:  Vince Clark 3 jh
+  [ ] mqfactory-a-024  Arp:  Night Flight   S
+  [ ] mqfactory-a-025  Arp:  EyesWideOpen  jh
+  [ ] mqfactory-a-026  Arp:  Heart Bass FM DK
+  [ ] mqfactory-a-027  Arp:  Sh-ARP         T
+  [ ] mqfactory-a-028  Arp:  KrautedHaus  ugh
+  [ ] mqfactory-a-029  Arp:  DEF           HM
+  [ ] mqfactory-a-030  Atmo: Kakophonia 1  HM
+  [ ] mqfactory-a-031  Poly: BackStrings  WMF
+  [ ] mqfactory-a-032  Pad:  Flinker      WMF
+
+  [ ] mqfactory-a-033  Poly: TheWidestEverWMF
+  [ ] mqfactory-a-034  Atmo: DuneSdTrak    HM
+  [ ] mqfactory-a-035  Poly: PrincessStrgsWMF
+  [ ] mqfactory-a-036  Pad:  Namlooking     T
+  [ ] mqfactory-a-037  Pad:  Fiftyfive    SKY
+  [ ] mqfactory-a-038  Poly: Liquid Strg  WMF
+  [ ] mqfactory-a-039  Pad:  CS100          T
+  [ ] mqfactory-a-040  Poly: Enough Power   T
+<b>  [*] mqfactory-a-041  Lead: Alphaville ?! jh</b>
+  [ ] mqfactory-a-042  Lead: Breit...     MiB
+  [ ] mqfactory-a-043  Lead: Chord-Hose     T
+  [ ] mqfactory-a-044  Lead: Cool Porta    HM
+  [ ] mqfactory-a-045  Lead: Trennkost      S
+  [ ] mqfactory-a-046  Lead: Deep Synth    DK
+  [ ] mqfactory-a-047  Lead: Sounds BP     DK
+  [ ] mqfactory-a-048  Lead: SH 2001       DK
+  [ ] mqfactory-a-049  Lead: Vibro-Hook    HM
+<b>  [*] mqfactory-a-050  Lead: Stuermer 2   WMF</b>
+<b>  [?] mqfactory-a-051  Bass: Killer Bass   DK</b>
+<b>  [?] mqfactory-a-052  Bass: 707Bass       HM</b>
+<b>  [?] mqfactory-a-053  Bass: Narrow        HM</b>
+  [ ] mqfactory-a-054  Bass: Gum Bass     WMF
+  [ ] mqfactory-a-055  Bass: NoreBass#2    HM
+  [ ] mqfactory-a-056  Bass: Phalanx Bass  HM
+  [ ] mqfactory-a-057  Keys: CCCP 70 E     HM
+  [ ] mqfactory-a-058  Keys: Comb Clavi    HM
+  [ ] mqfactory-a-059  Keys: FM-Rhodes 1   HM
+  [ ] mqfactory-a-060  Keys: Shed          HM
+  [ ] mqfactory-a-061  Keys: Wartz Piano1  HM
+  [ ] mqfactory-a-062  Keys: Dirty Organ1 WMF
+  [ ] mqfactory-a-063  Seq:  Tankin`       HM
+  [ ] mqfactory-a-064  Poly: Old * Uck     HM
+
+  [ ] mqfactory-a-065  Lead: Testosteron   HM
+  [ ] mqfactory-a-066  Lead: Juno Soul     DK
+  [ ] mqfactory-a-067  Poly: PEG Horns     HM
+  [ ] mqfactory-a-068  Atmo: Polaris       HM
+  [ ] mqfactory-a-069  FX:   PrincessBellsWMF
+  [ ] mqfactory-a-070  FX:   Bells        WMF
+<b>  [?] mqfactory-a-071  FX:   TributeTo DX WMF</b>
+<b>  [?] mqfactory-a-072  FX:   DollarBells  ugh</b>
+  [ ] mqfactory-a-073  FX:   Clock&amp;Bells   RZ
+  [ ] mqfactory-a-074  Pad:  RainAfterSun  SK
+  [ ] mqfactory-a-075  Pad:  Phazer PWM    jh
+<b>  [?] mqfactory-a-076  Pad:  Choir Pad      S</b>
+  [ ] mqfactory-a-077  Pad:  Ultimaterial  jh
+  [ ] mqfactory-a-078  Pad:  Broadway     ugh
+  [ ] mqfactory-a-079  Pad:  Dizzyland    WMF
+  [ ] mqfactory-a-080  Pad:  WaveDrone     FH
+  [ ] mqfactory-a-081  Pad:  Major Matrix MiB
+  [ ] mqfactory-a-082  Pad:  Pop Melodee   jh
+  [ ] mqfactory-a-083  Atmo: Jp8 TRACER    MS
+  [ ] mqfactory-a-084  Poly: HornsOfJerichojh
+<b>  [?] mqfactory-a-085  Perc: Meteor       WMF</b>
+<b>  [?] mqfactory-a-086  Atmo: CombTutorial WMF</b>
+  [ ] mqfactory-a-087  Atmo: TschingHisCan  T
+  [ ] mqfactory-a-088  Arp:  Phazed Chordz  S
+  [ ] mqfactory-a-089  Arp:  Panreduction WMF
+  [ ] mqfactory-a-090  Arp:  Pluto         HM
+  [ ] mqfactory-a-091  Arp:  One Note BP   DK
+  [ ] mqfactory-a-092  Arp:  Ritual        HM
+  [ ] mqfactory-a-093  Arp:  He's here!!!  jh
+  [ ] mqfactory-a-094  Arp:  Rubber        HM
+  [ ] mqfactory-a-095  Arp:  Buzzer 3     WMF
+  [ ] mqfactory-a-096  Arp:  Sierra Velone SK
+
+  [ ] mqfactory-a-097  Arp:  TheQBots      CC
+  [ ] mqfactory-a-098  Arp:  Bassline 3O3  jh
+  [ ] mqfactory-a-099  Arp:  Basssser      DK
+  [ ] mqfactory-a-100  Arp:  Moogish 2     DK
+</pre>
+<p><strong>Bank MQFACTORY-B 0-B (0-1)</strong></p>
+<pre>
+  [ ] mqfactory-b-001  Keys: Jazz Percssn WMF
+  [ ] mqfactory-b-002  Keys: Wurlitzer104b HM
+  [ ] mqfactory-b-003  Keys: Organ #2       S
+  [ ] mqfactory-b-004  Keys: Funky Q       DK
+  [ ] mqfactory-b-005  Keys: Wurlitzer     DK
+  [ ] mqfactory-b-006  Keys: Ring Sequel PROX
+  [ ] mqfactory-b-007  Perc: Bellophon     jh
+  [ ] mqfactory-b-008  Perc: Qvation      WMF
+<b>  [?] mqfactory-b-009  Perc: Plucked Nylon  S</b>
+  [ ] mqfactory-b-010  Perc: Pizzicated   WMF
+  [ ] mqfactory-b-011  Pad:  Sonnenaufgang  T
+  [ ] mqfactory-b-012  Pad:  FilterDenKammWMF
+  [ ] mqfactory-b-013  Pad:  Qool Water   MiB
+<b>  [?] mqfactory-b-014  Poly: Dark Strings  jh</b>
+<b>  [?] mqfactory-b-015  Pad:  Q-Sweep2      TK</b>
+<b>  [?] mqfactory-b-016  Pad:  Score Edition jh</b>
+<b>  [?] mqfactory-b-017  Pad:  Soap          HM</b>
+<b>  [?] mqfactory-b-018  Pad:  Soft  Pad      S</b>
+  [ ] mqfactory-b-019  Pad:  Wide Saw Pad   S
+<b>  [?] mqfactory-b-020  Pad:  FaMtastic     jh</b>
+  [ ] mqfactory-b-021  Pad:  Kiddings      HM
+<b>  [?] mqfactory-b-022  Poly: Poor Prophets HM</b>
+  [ ] mqfactory-b-023  Pad:  LggSit        HM
+  [ ] mqfactory-b-024  Pad:  Like Wool     HM
+  [ ] mqfactory-b-025  Pad:  FlimmerStringsDK
+<b>  [?] mqfactory-b-026  Pad:  Padagogy       T</b>
+  [ ] mqfactory-b-027  Pad:  PhaserStrings jh
+  [ ] mqfactory-b-028  Pad:  FMBP Sweep    jh
+  [ ] mqfactory-b-029  Pad:  Q-rious?     WMF
+  [ ] mqfactory-b-030  Pad:  ProducersPad ugh
+  [ ] mqfactory-b-031  Atmo: FransenHarfe  HM
+  [ ] mqfactory-b-032  Pad:  Western Wind ugh
+
+  [ ] mqfactory-b-033  Atmo: Giga Prune    HM
+<b>  [*] mqfactory-b-034  Pad:  Acostic Glue   S</b>
+<b>  [?] mqfactory-b-035  Pad:  Chor 16'       S</b>
+  [ ] mqfactory-b-036  Lead: JMX vs. DeLeon T
+  [ ] mqfactory-b-037  Lead: HighpassFixer jh
+<b>  [?] mqfactory-b-038  Lead: Kl0ppelspitze HM</b>
+  [ ] mqfactory-b-039  Lead: Mono Sync     jh
+  [ ] mqfactory-b-040  Lead: MurkSolo      HM
+  [ ] mqfactory-b-041  Lead: Cry Baby      DK
+  [ ] mqfactory-b-042  Lead: VintageSpringWMF
+  [ ] mqfactory-b-043  Lead: Liquid Mel   WMF
+  [ ] mqfactory-b-044  Lead: Zombie Nation  T
+  [ ] mqfactory-b-045  Lead: PWMaster      SK
+<b>  [?] mqfactory-b-046  Lead: Qliniqs !!!  MiB</b>
+  [ ] mqfactory-b-047  Lead: Quintage       T
+  [ ] mqfactory-b-048  Lead: "Up And Down" jh
+  [ ] mqfactory-b-049  Lead: Siegessaeule   T
+  [ ] mqfactory-b-050  Lead: Saw Lead      HM
+  [ ] mqfactory-b-051  Lead: Schubduese     T
+  [ ] mqfactory-b-052  Lead: Sparkle Solo  DK
+  [ ] mqfactory-b-053  Lead: TQ 303        DK
+  [ ] mqfactory-b-054  Lead: Phat Beat     jh
+  [ ] mqfactory-b-055  Lead: Moany         HM
+<b>  [?] mqfactory-b-056  Lead: Naap! 3       HM</b>
+<b>  [?] mqfactory-b-057  Poly: Matrone       HM</b>
+  [ ] mqfactory-b-058  Poly: Tiny Solo     DK
+  [ ] mqfactory-b-059  Poly: TuBerkel      DK
+  [ ] mqfactory-b-060  Poly: Wells'Tripod WMF
+  [ ] mqfactory-b-061  Lead: Crunchy Nuts  jh
+  [ ] mqfactory-b-062  Lead: Aggreppo       T
+  [ ] mqfactory-b-063  Lead: Tsching Lead   T
+  [ ] mqfactory-b-064  Lead: Compromise K  HM
+
+  [ ] mqfactory-b-065  Poly: Pressure DriveDK
+  [ ] mqfactory-b-066  Lead: Freaky Syncro jh
+  [ ] mqfactory-b-067  Poly: No Drive3     DK
+  [ ] mqfactory-b-068  Bass: Juno Sound    DK
+  [ ] mqfactory-b-069  Bass: DropBass 2001 jh
+  [ ] mqfactory-b-070  Bass: Knurrhahn    WMF
+  [ ] mqfactory-b-071  Bass: Bass-Turbation T
+  [ ] mqfactory-b-072  Bass: Pulse Bass 1  DK
+  [ ] mqfactory-b-073  Bass: Pulse P.41    jh
+  [ ] mqfactory-b-074  Bass: PWM ResoBass  jh
+  [ ] mqfactory-b-075  Bass: NoreBass#5    HM
+  [ ] mqfactory-b-076  Bass: NoreBass#7    HM
+  [ ] mqfactory-b-077  Bass: Q-Bass        TK
+  [ ] mqfactory-b-078  Bass: Sawproof Bass jh
+  [ ] mqfactory-b-079  Bass: NoAttackBass ugh
+  [ ] mqfactory-b-080  Bass: Occybas       HM
+  [ ] mqfactory-b-081  Bass: Deep Bass 9   jh
+  [ ] mqfactory-b-082  Bass: FM SmurfBs    HM
+  [ ] mqfactory-b-083  Bass: Conehead 1    HM
+  [ ] mqfactory-b-084  Keys: Buzzer        DK
+  [ ] mqfactory-b-085  Bass: FilterFM BassWMF
+  [ ] mqfactory-b-086  Bass: Dust Brothers  T
+  [ ] mqfactory-b-087  Arp:  Q Visions   jh+T
+  [ ] mqfactory-b-088  Arp:  Love Van Dyke MS
+  [ ] mqfactory-b-089  Arp:  Diana-01      HM
+  [ ] mqfactory-b-090  Arp:  Alt Wave ArP  DK
+  [ ] mqfactory-b-091  Arp:  Torment       HM
+  [ ] mqfactory-b-092  Arp:  Tranceomania  jh
+  [ ] mqfactory-b-093  Arp:  Waver         HM
+  [ ] mqfactory-b-094  Arp:  hARPo          T
+  [ ] mqfactory-b-095  Arp:  GeeGaGooQ    WMF
+  [ ] mqfactory-b-096  Arp:  Limbo         HM
+
+  [ ] mqfactory-b-097  Arp:  Philicorda2   DK
+  [ ] mqfactory-b-098  Arp:  DanceSequence jh
+  [ ] mqfactory-b-099  Arp:  DeviantSerge  MS
+  [ ] mqfactory-b-100  Arp:  Furby Arp     jh
+</pre>
+<p><strong>Bank MQFACTORY-C 0-C (0-2)</strong></p>
+<pre>
+  [ ] mqfactory-c-001  Poly: The Beginning  T
+  [ ] mqfactory-c-002  Atmo: Atmotion       T
+  [ ] mqfactory-c-003  Atmo: VeryCompleqs WMF
+  [ ] mqfactory-c-004  Pad:  Brightseite    T
+  [ ] mqfactory-c-005  Atmo: TheDarkPlanet  T
+  [ ] mqfactory-c-006  Poly: Q Tables      jh
+  [ ] mqfactory-c-007  Atmo: Trance-Port   HM
+  [ ] mqfactory-c-008  Poly: Slow Wavetrip  T
+  [ ] mqfactory-c-009  Atmo: PDQ ;-) WT13 TEK
+  [ ] mqfactory-c-010  Atmo: Tranquilizer  HM
+  [ ] mqfactory-c-011  Atmo: S&amp;H&amp;Pad&amp;Nice WMF
+  [ ] mqfactory-c-012  Atmo: Arctica      SKY
+  [ ] mqfactory-c-013  Atmo: The BORG       T
+  [ ] mqfactory-c-014  Atmo: Deep Space     T
+  [ ] mqfactory-c-015  Atmo: Kairos       STB
+  [ ] mqfactory-c-016  Atmo: The Fog      ugh
+  [ ] mqfactory-c-017  FX:   HellsbugsIntroHM
+  [ ] mqfactory-c-018  Atmo: feel WAVE    TEK
+  [ ] mqfactory-c-019  FX:   VocodaBass    SK
+  [ ] mqfactory-c-020  FX:   Maschinenraum  S
+  [ ] mqfactory-c-021  FX:   Animals       DK
+  [ ] mqfactory-c-022  Atmo: Tire-Guy      HM
+  [ ] mqfactory-c-023  FX:   Spiders2001   EY
+  [ ] mqfactory-c-024  FX:   Waterfone2001 EY
+  [ ] mqfactory-c-025  Drum: BD-Q0Q       MiB
+  [ ] mqfactory-c-026  Drum: Electric Drum jh
+  [ ] mqfactory-c-027  Drum: Bee Drum      JF
+  [ ] mqfactory-c-028  Drum: 909 Kick 1   WMF
+  [ ] mqfactory-c-029  Drum: 909 Kick 2   WMF
+  [ ] mqfactory-c-030  Drum: Q 808         jh
+  [ ] mqfactory-c-031  Drum: ClipDrum      jh
+  [ ] mqfactory-c-032  Drum: House Kick     T
+
+  [ ] mqfactory-c-033  Drum: Techno Kick    T
+  [ ] mqfactory-c-034  Drum: Linniskus     HM
+  [ ] mqfactory-c-035  Drum: El Snare 1    JF
+  [ ] mqfactory-c-036  Drum: E-Snare 2     jh
+  [ ] mqfactory-c-037  Drum: Fast Snare    jh
+  [ ] mqfactory-c-038  Drum: 808 Snare 1  WMF
+  [ ] mqfactory-c-039  Drum: 808 Snare 2  WMF
+  [ ] mqfactory-c-040  Drum: Thin Snare   WMF
+  [ ] mqfactory-c-041  Drum: Snare 1      WMF
+  [ ] mqfactory-c-042  Drum: Snare 2      WMF
+  [ ] mqfactory-c-043  Drum: Metalic Snare DK
+  [ ] mqfactory-c-044  Drum: SimmonsSnare   T
+  [ ] mqfactory-c-045  Drum: Reso Snare    jh
+  [ ] mqfactory-c-046  Drum: Noisy Snare   jh
+  [ ] mqfactory-c-047  Drum: ClapsMuehle    T
+  [ ] mqfactory-c-048  Drum: Claps Rev      T
+  [ ] mqfactory-c-049  Drum: Claps 1      WMF
+  [ ] mqfactory-c-050  Drum: Claps 2      WMF
+  [ ] mqfactory-c-051  Drum: Claps 3      WMF
+  [ ] mqfactory-c-052  Drum: High Head      T
+  [ ] mqfactory-c-053  Drum: HH Closed 2   jh
+  [ ] mqfactory-c-054  Drum: Band Hihat   WMF
+  [ ] mqfactory-c-055  Drum: www.hihat.com  T
+  [ ] mqfactory-c-056  Drum: Heavy HiHat  WMF
+  [ ] mqfactory-c-057  Drum: El HiHat op   JF
+  [ ] mqfactory-c-058  Drum: Open HiHat     T
+  [ ] mqfactory-c-059  Drum: HH Open       jh
+  [ ] mqfactory-c-060  Drum: TR66 Sidestk WMF
+  [ ] mqfactory-c-061  Drum: Tom Lo         T
+  [ ] mqfactory-c-062  Drum: Tom Hi         T
+  [ ] mqfactory-c-063  Drum: Tom Mid        T
+  [ ] mqfactory-c-064  Perc: Tympani       HM
+
+  [ ] mqfactory-c-065  Drum: LoFi Perc      T
+  [ ] mqfactory-c-066  Drum: Shot 1       WMF
+  [ ] mqfactory-c-067  Drum: African Perc. jh
+  [ ] mqfactory-c-068  Drum: Peer Cussion   T
+  [ ] mqfactory-c-069  Drum: Percy Noises  jh
+  [ ] mqfactory-c-070  Drum: Strom        WMF
+  [ ] mqfactory-c-071  Drum: Tron Ring Game T
+  [ ] mqfactory-c-072  Drum: Eperc A      ugh
+  [ ] mqfactory-c-073  Drum: Fat Zaps      jh
+  [ ] mqfactory-c-074  Drum: Zap Snap      jh
+  [ ] mqfactory-c-075  FX:   FM Noises     jh
+  [ ] mqfactory-c-076  FX:   LFO  Speeddwn jh
+  [ ] mqfactory-c-077  FX:   LFO  Speedup  jh
+  [ ] mqfactory-c-078  FX:   No way!        S
+  [ ] mqfactory-c-079  FX:   Flash         DK
+  [ ] mqfactory-c-080  FX:   Chinese Gong  jh
+  [ ] mqfactory-c-081  Drum: Quiro        WMF
+  [ ] mqfactory-c-082  FX:   Shattering FX jh
+  [ ] mqfactory-c-083  FX:   Tribbles      DK
+  [ ] mqfactory-c-084  FX:   Star Trek 1   jh
+  [ ] mqfactory-c-085  FX:   Star Wars     jh
+  [ ] mqfactory-c-086  FX:   Lenco Clean   HM
+  [ ] mqfactory-c-087  Init: ZeitlosVocoder T
+  [ ] mqfactory-c-088  Init: Comb+/-Vocoder T
+  [ ] mqfactory-c-089  Init: FM Vocoder    jh
+  [ ] mqfactory-c-090  Init: Crazy Vocoder  T
+  [ ] mqfactory-c-091  Init: Dr. Vocoder    T
+  [ ] mqfactory-c-092  Init: VocoderStrings T
+  [ ] mqfactory-c-093  Init: Arp+Voc=???    T
+  [ ] mqfactory-c-094  Init: Ext.Input FX   T
+  [ ] mqfactory-c-095  Init: Ext.InputCrazy T
+  [ ] mqfactory-c-096  Arp:  Arp Init
+
+  [ ] mqfactory-c-097  Init: Bass Init
+  [ ] mqfactory-c-098  Init: Lead Init
+  [ ] mqfactory-c-099  Init: Pad Init
+</pre>
+
+<h2><a name="microq_doct_sound_programs" href="#_toc_microq_doct_sound_programs">MicroQ DocT sound programs</a></h2>
+<p>(a-001..128 b-001..128 c-001..084)</p>
+<p><strong>Bank MQDOCT-A 0-A (0-0)</strong></p>
+<pre>
+  [ ] mqdoct-a-001  FX:   Press~s~se DocT
+  [ ] mqdoct-a-002  Lead: Syncin'Soon;)Doc
+  [ ] mqdoct-a-003  Poly: eXTended Q  DocT
+  [ ] mqdoct-a-004  Arp:  Lokomotive DocT
+  [ ] mqdoct-a-005  Poly: Drown'inRev DocT
+  [ ] mqdoct-a-006  Poly: Nachtfrost  DocT
+  [ ] mqdoct-a-007  Keys: Categ:Keys  DocT
+  [ ] mqdoct-a-008  Pad:  Eisvogel    DocT
+  [ ] mqdoct-a-009  Atmo: Ton-Muehle DocT
+  [ ] mqdoct-a-010  FX:   Dschungel DocT
+  [ ] mqdoct-a-011  FX:   Hexenkessel DocT
+  [ ] mqdoct-a-012  Pad:  Digital Gates DT
+  [ ] mqdoct-a-013  FX:   Elfen   DocT
+  [ ] mqdoct-a-014  Bass: Fettsack DocT
+  [ ] mqdoct-a-015  Atmo: Dauerwelle DocT
+  [ ] mqdoct-a-016  Keys: Bend to Bars Doc
+  [ ] mqdoct-a-017  FX:   Atomuhr DocT
+  [ ] mqdoct-a-018  Bass: PulseDrive DocT
+  [ ] mqdoct-a-019  Bass: PulseDrive2DocT
+  [ ] mqdoct-a-020  Bass: PulseDrive3DocT
+  [ ] mqdoct-a-021  Bass: PulseDrive4DocT
+  [ ] mqdoct-a-022  Bass: PulseDrive5DocT
+  [ ] mqdoct-a-023  FX:   ResoBells  DocT
+  [ ] mqdoct-a-024  FX:   Tropfstein DocT
+  [ ] mqdoct-a-025  FX:   PerpetuumDocT
+  [ ] mqdoct-a-026  Arp:  MWh-Machine DocT
+  [ ] mqdoct-a-027  Perc: Blech     DocT
+  [ ] mqdoct-a-028  FX:   Combuter2  DocT
+  [ ] mqdoct-a-029  Bass: Fundament  DocT
+  [ ] mqdoct-a-030  Lead: Pulpitis   DocT
+  [ ] mqdoct-a-031  Keys: Harpsi  DocT mQk
+  [ ] mqdoct-a-032  Pad:  Nochwas ? DocT
+
+  [ ] mqdoct-a-033  Bass: Slap        DocT
+  [ ] mqdoct-a-034  Keys: No Idea     DocT
+  [ ] mqdoct-a-035  Lead: Tabasco   DocT
+  [ ] mqdoct-a-036  Bass: Nocheinbass DocT
+  [ ] mqdoct-a-037  FX:   Elec-Chimes DocT
+  [ ] mqdoct-a-038  FX:   Jemand da ? DocT
+  [ ] mqdoct-a-039  FX:   Giftkueche DocT
+  [ ] mqdoct-a-040  Pad:  Rundherum DocT
+  [ ] mqdoct-a-041  FX:   We are here DocT
+  [ ] mqdoct-a-042  Atmo: LFO-Kanon  DocT
+  [ ] mqdoct-a-043  FX:   Schlagschrauber3
+  [ ] mqdoct-a-044  FX:   Schlagschrauber2
+  [ ] mqdoct-a-045  FX:   GermanPsychoDocT
+  [ ] mqdoct-a-046  Lead: Baeuerchen DocT
+  [ ] mqdoct-a-047  Lead: Hall-Boerp  DocT
+  [ ] mqdoct-a-048  FX:   RelVelEnerg DocT
+  [ ] mqdoct-a-049  Lead: BrauneButterDocT
+  [ ] mqdoct-a-050  Lead: Suenck DocT
+  [ ] mqdoct-a-051  Seq:  Trops DocT
+  [ ] mqdoct-a-052  Keys: PerkyWheels DocT
+  [ ] mqdoct-a-053  Arp:  Hypno-TB DocT
+  [ ] mqdoct-a-054  Keys: LoFi Clav DocT
+  [ ] mqdoct-a-055  Bass: Akku-Bass DocT
+  [ ] mqdoct-a-056  FX:   FM-Birdies  DocT
+  [ ] mqdoct-a-057  Bass: FFM-Bass1 DocT
+  [ ] mqdoct-a-058  Pad:  Kitschig DocT
+  [ ] mqdoct-a-059  Arp:  Velo-Fuge DocT
+  [ ] mqdoct-a-060  Keys: Bend to morph
+  [ ] mqdoct-a-061  Arp:  HarpArp DocT
+  [ ] mqdoct-a-062  Seq:  FXlessDelays Doc
+  [ ] mqdoct-a-063  Pad:  Voll Normal DocT
+  [ ] mqdoct-a-064  Lead: 1000mal gehoert
+
+  [ ] mqdoct-a-065  Bass: RoehrenBassDocT
+  [ ] mqdoct-a-066  FX:   Halle 8     DocT
+  [ ] mqdoct-a-067  Bass: FFM-ClassicDocT
+  [ ] mqdoct-a-068  Arp:  VoiceSnatch DocT
+  [ ] mqdoct-a-069  Poly: JaJa       DocT
+  [ ] mqdoct-a-070  Seq:  Haeppchen  DocT
+  [ ] mqdoct-a-071  FX:   REM-Phase  DocT
+  [ ] mqdoct-a-072  Pad:  Rectangle DocT
+  [ ] mqdoct-a-073  FX:   RandRing    DocT
+  [ ] mqdoct-a-074  Poly: PePeDschee! DocT
+  [ ] mqdoct-a-075  Poly: Wave2V boxed DcT
+  [ ] mqdoct-a-076  FX:   Zitter     DocT
+  [ ] mqdoct-a-077  Pad:  Orch&amp;Harp DocT
+  [ ] mqdoct-a-078  Lead: TableSax DocT
+  [ ] mqdoct-a-079  FX:   Flex       DocT
+  [ ] mqdoct-a-080  Bass: Trumm&amp;Bass DocT
+  [ ] mqdoct-a-081  Bass: Manometer  DocT
+  [ ] mqdoct-a-082  Bass: Schmatz    DocT
+  [ ] mqdoct-a-083  Keys: Ampere    DocT
+  [ ] mqdoct-a-084  FX:   Eintopf(C3)DocT
+  [ ] mqdoct-a-085  Poly: Watchin'   DocT
+  [ ] mqdoct-a-086  Pad:  Fat&amp;Useless DocT
+  [ ] mqdoct-a-087  FX:   Excenter   DocT
+  [ ] mqdoct-a-088  FX:   Richtwerk  DocT
+  [ ] mqdoct-a-089  Lead: Wellaform  DocT
+  [ ] mqdoct-a-090  Bass: 1 OscBass  DocT
+  [ ] mqdoct-a-091  Perc: FM-Snappy DocT
+  [ ] mqdoct-a-092  Seq:  YellowSteel DocT
+<b>  [?] mqdoct-a-093  FX:   Alufolie DocT</b>
+  [ ] mqdoct-a-094  FX:   Nur mal so DocT
+  [ ] mqdoct-a-095  FX:   DroidDrill DocT
+  [ ] mqdoct-a-096  Seq:  Comb Harp DocT
+
+  [ ] mqdoct-a-097  Perc: Duenn     DocT
+  [ ] mqdoct-a-098  FX:   Equalizer DocT
+  [ ] mqdoct-a-099  Pad:  Spaetlese  DocT
+  [ ] mqdoct-a-100  Init: Init Sound 2.0
+  [ ] mqdoct-a-101  Atmo: Intro       DocT
+  [ ] mqdoct-a-102  Lead: Electrotom  DocT
+  [ ] mqdoct-a-103  Arp:  Blue-Mechs2 DocT
+  [ ] mqdoct-a-104  Atmo: SoonTheLight Doc
+  [ ] mqdoct-a-105  FX:   Die Voegel  DocT
+  [ ] mqdoct-a-106  Pad:  Nostalgia   DocT
+  [ ] mqdoct-a-107  FX:   Algo 12     DocT
+  [ ] mqdoct-a-108  Lead: Massa&amp;Slave DocT
+  [ ] mqdoct-a-109  Pad:  CombOrch    DocT
+  [ ] mqdoct-a-110  Keys: Split 70ies DocT
+  [ ] mqdoct-a-111  FX:   Unreal      DocT
+  [ ] mqdoct-a-112  FX:   HFOs        DocT
+  [ ] mqdoct-a-113  Bass: Garage-Amp DocT
+  [ ] mqdoct-a-114  FX:   GlissDown   DocT
+  [ ] mqdoct-a-115  FX:   Alt-Thunder DocT
+  [ ] mqdoct-a-116  FX:   3D-Bikers   DocT
+  [ ] mqdoct-a-117  Pad:  Klischee    DocT
+  [ ] mqdoct-a-118  Arp:  Ganz gut... DocT
+  [ ] mqdoct-a-119  FX:   HoldBell    DocT
+  [ ] mqdoct-a-120  Pad:  ReQuiem     DocT
+  [ ] mqdoct-a-121  Lead: Ring-Viola  DocT
+  [ ] mqdoct-a-122  FX:   ContrVolt.  DocT
+  [ ] mqdoct-a-123  FX:   Jemand da ? DocT
+  [ ] mqdoct-a-124  Atmo: Dome Mover DocT
+  [ ] mqdoct-a-125  Lead: What else ? DocT
+  [ ] mqdoct-a-126  Bass: Krake       DocT
+  [ ] mqdoct-a-127  Pad:  Sonatina    DocT
+  [ ] mqdoct-a-128  FX:   RingTFM     DocT
+</pre>
+<p><strong>Bank MQDOCT-B 0-B (0-1)</strong></p>
+<pre>
+  [ ] mqdoct-b-001  Keys: SA-Draht-EP DocT
+  [ ] mqdoct-b-002  Keys: Table1 EP   DocT
+  [ ] mqdoct-b-003  FX:   Synchrotron DocT
+  [ ] mqdoct-b-004  Arp:  NotAnalog  DocT
+  [ ] mqdoct-b-005  Bass: Who needs ? DocT
+  [ ] mqdoct-b-006  Pad:  Spectra-Pad DocT
+  [ ] mqdoct-b-007  Pad:  Potala      DocT
+  [ ] mqdoct-b-008  Lead: Angeber    DocT
+  [ ] mqdoct-b-009  FX:   DSPoverload DocT
+  [ ] mqdoct-b-010  Pad:  Dino        DocT
+  [ ] mqdoct-b-011  Lead: micro-power DocT
+  [ ] mqdoct-b-012  Lead: 3 Trumpets  DocT
+  [ ] mqdoct-b-013  Pad:  HP-Energy   DocT
+  [ ] mqdoct-b-014  Pad:  Silvery     DocT
+  [ ] mqdoct-b-015  Bass: EffEmm+Filt DocT
+  [ ] mqdoct-b-016  Keys: KindofB3    DocT
+  [ ] mqdoct-b-017  Lead: LiveUseOnly DocT
+  [ ] mqdoct-b-018  FX:   MajorSeven  DocT
+  [ ] mqdoct-b-019  Atmo: Combustible DocT
+  [ ] mqdoct-b-020  Lead: Skalpell    DocT
+  [ ] mqdoct-b-021  FX:   HALs EEG   DocT
+  [ ] mqdoct-b-022  Lead: Vollsaege   DocT
+  [ ] mqdoct-b-023  FX:   Critters    DocT
+  [ ] mqdoct-b-024  FX:   Schrott     DocT
+  [ ] mqdoct-b-025  FX:   Cavern      DocT
+  [ ] mqdoct-b-026  Lead: 3 Operators DocT
+<b>  [+] mqdoct-b-027  Lead: Thereminator DcT</b>
+  [ ] mqdoct-b-028  Lead: DSPExBrass  DocT
+  [ ] mqdoct-b-029  Lead: OnceUponaT  DocT
+  [ ] mqdoct-b-030  Bass: noQ+req. ;) DocT
+  [ ] mqdoct-b-031  Keys: Sharpsichord Doc
+  [ ] mqdoct-b-032  Keys: !!Feedback!! Doc
+
+  [ ] mqdoct-b-033  Perc: WoodbloQ    DocT
+  [ ] mqdoct-b-034  FX:   Clickin'    DocT
+  [ ] mqdoct-b-035  Bass: Grummel     DocT
+  [ ] mqdoct-b-036  Pad:  Empore      DocT
+  [ ] mqdoct-b-037  Lead: emKju-Quint DocT
+  [ ] mqdoct-b-038  Arp:  FormantArp  DocT
+  [ ] mqdoct-b-039  FX:   IonStorm    DocT
+  [ ] mqdoct-b-040  Keys: OSClessClav DocT
+  [ ] mqdoct-b-041  FX:   Q-Modular   DocT
+  [ ] mqdoct-b-042  FX:   Stop It !   DocT
+  [ ] mqdoct-b-043  Pad:  Background  DocT
+  [ ] mqdoct-b-044  FX:   SubDivGames DocT
+  [ ] mqdoct-b-045  Pad:  Feierlich   DocT
+  [ ] mqdoct-b-046  Keys: B-Movie    DocT
+  [ ] mqdoct-b-047  Bass: Kamm-Bass   DocT
+  [ ] mqdoct-b-048  Bass: mQ+         DocT
+  [ ] mqdoct-b-049  FX:   Vulkan      DocT
+  [ ] mqdoct-b-050  FX:   Showdown    DocT
+  [ ] mqdoct-b-051  FX:   Ja!DiDeiDi  DocT
+  [ ] mqdoct-b-052  Pad:  MoreWaves   DocT
+  [ ] mqdoct-b-053  Pad:  5th Level   DocT
+  [ ] mqdoct-b-054  Lead: ChamberBrs DocT
+  [ ] mqdoct-b-055  Bass: Fretless    DocT
+  [ ] mqdoct-b-056  Bass: E-Bass      DocT
+  [ ] mqdoct-b-057  FX:   5 LFOs ?    DocT
+  [ ] mqdoct-b-058  Pad:  Mildessa    DocT
+  [ ] mqdoct-b-059  Pad:  CleanPulse  DocT
+  [ ] mqdoct-b-060  Atmo: Krypta      DocT
+  [ ] mqdoct-b-061  Pad:  Harmonium  DocT
+  [ ] mqdoct-b-062  FX:   Ruhe jetzt! DocT
+  [ ] mqdoct-b-063  Bass: Still available
+  [ ] mqdoct-b-064  Pad:  ThickMatrix DocT
+
+  [ ] mqdoct-b-065  Pad:  Ober-Flaeche Doc
+  [ ] mqdoct-b-066  Bass: Brummer     DocT
+  [ ] mqdoct-b-067  Arp:  ModWh&amp;PB !  DocT
+  [ ] mqdoct-b-068  Arp:  ExtremeMod  DocT
+  [ ] mqdoct-b-069  Arp:  Blue-Mechs1 DocT
+  [ ] mqdoct-b-070  FX:   Nervous     DocT
+  [ ] mqdoct-b-071  FX:   Unplayable  DocT
+  [ ] mqdoct-b-072  Bass: Blue-Bass   DocT
+  [ ] mqdoct-b-073  Bass: E-Dur-Bass  DocT
+  [ ] mqdoct-b-074  Arp:  Gelbfilter  DocT
+  [ ] mqdoct-b-075  Bass: Dumpfbacke  DocT
+  [ ] mqdoct-b-076  Bass: DigLow      DocT
+  [ ] mqdoct-b-077  Bass: Purist      DocT
+  [ ] mqdoct-b-078  Bass: AllyourBase DocT
+  [ ] mqdoct-b-079  FX:   S&amp;H-&gt;RM     DocT
+  [ ] mqdoct-b-080  FX:   Modifiers   DocT
+  [ ] mqdoct-b-081  FX:   Lava        DocT
+  [ ] mqdoct-b-082  Pad:  MoreWaves   DocT
+  [ ] mqdoct-b-083  FX:   Herbst      DocT
+  [ ] mqdoct-b-084  Lead: Rob-Lead2   DocT
+  [ ] mqdoct-b-085  Drum: Ana-Snare   DocT
+  [ ] mqdoct-b-086  Drum: UltimateBD  DocT
+  [ ] mqdoct-b-087  Drum: 808 Crash   DocT
+  [ ] mqdoct-b-088  Drum: 909HHCl     DocT
+  [ ] mqdoct-b-089  Drum: 909HHO      DocT
+  [ ] mqdoct-b-090  Drum: Crash       DocT
+  [ ] mqdoct-b-091  FX:   Unsinn      DocT
+  [ ] mqdoct-b-092  Lead: Vektor-Lead DocT
+  [ ] mqdoct-b-093  Keys: MechLullaby DocT
+  [ ] mqdoct-b-094  Pad:  Lanthan     DocT
+  [ ] mqdoct-b-095  FX:   Bluescreen  DocT
+  [ ] mqdoct-b-096  Bass: Riddle-Bass DocT
+
+  [ ] mqdoct-b-097  Arp:  Klingeling  DocT
+  [ ] mqdoct-b-098  Bass: MaxDSP-Load DocT
+  [ ] mqdoct-b-099  Keys: Wheely      DocT
+  [ ] mqdoct-b-100  Keys: ZupfKuh     DocT
+  [ ] mqdoct-b-101  Pad:  NotchFasing DocT
+  [ ] mqdoct-b-102  Drum: MonitorTest DocT
+  [ ] mqdoct-b-103  Lead: Sainus      DocT
+  [ ] mqdoct-b-104  Keys: Nasi Goreng DocT
+  [ ] mqdoct-b-105  Bass: Menace-Bass DocT
+  [ ] mqdoct-b-106  Keys: KeyBassSplit DcT
+  [ ] mqdoct-b-107  FX:   Eisregen    DocT
+  [ ] mqdoct-b-108  Arp:  H2SO4       DocT
+  [ ] mqdoct-b-109  Arp:  Digiseq     DocT
+  [ ] mqdoct-b-110  Arp:  mQ-StepSeq  DocT
+  [ ] mqdoct-b-111  Keys: GatedPad    DocT
+  [ ] mqdoct-b-112  Bass: RedBullBass DocT
+  [ ] mqdoct-b-113  Pad:  PeachPad    DocT
+  [ ] mqdoct-b-114  FX:   DudelQ      DocT
+  [ ] mqdoct-b-115  Lead: Emersun     DocT
+  [ ] mqdoct-b-116  Bass: Earthbound  DocT
+  [ ] mqdoct-b-117  Arp:  Spieluhr    DocT
+  [ ] mqdoct-b-118  Poly: MatrixBrass DocT
+  [ ] mqdoct-b-119  Poly: Sharp Brass DocT
+  [ ] mqdoct-b-120  Keys: LatteMachiata DT
+  [ ] mqdoct-b-121  Keys: Lhasa       DocT
+  [ ] mqdoct-b-122  Lead: Platz da !  DocT
+  [ ] mqdoct-b-123  Pad:  Walkuere    DocT
+  [ ] mqdoct-b-124  FX:   Wankelmotor DocT
+  [ ] mqdoct-b-125  Keys: Polarlicht  DocT
+  [ ] mqdoct-b-126  FX:   Simple FX   DocT
+  [ ] mqdoct-b-127  FX:   Melodei     DocT
+  [ ] mqdoct-b-128  Lead: Tretmine    DocT
+</pre>
+<p><strong>Bank MQDOCT-C 0-C (0-2)</strong></p>
+<pre>
+  [ ] mqdoct-c-001  Keys: SpectrShift DocT
+  [ ] mqdoct-c-002  Bass: Allinclusiv DocT
+  [ ] mqdoct-c-003  Bass: PBMorphBass DocT
+  [ ] mqdoct-c-004  Arp:  DoubleTB    DocT
+  [ ] mqdoct-c-005  Bass: Velo-Sub    DocT
+  [ ] mqdoct-c-006  Keys: Stac/Legat  DocT
+  [ ] mqdoct-c-007  Arp:  Schoen,gell?DocT
+  [ ] mqdoct-c-008  Keys: Steelophon  DocT
+  [ ] mqdoct-c-009  Arp:  Aljen Perc  DocT
+  [ ] mqdoct-c-010  FX:   Off We Go   DocT
+  [ ] mqdoct-c-011  Keys: Radio-Piano DocT
+  [ ] mqdoct-c-012  Pad:  Holzig      DocT
+  [ ] mqdoct-c-013  FX:   Cheap FX    DocT
+  [ ] mqdoct-c-014  Keys: KeyB-Split  DocT
+  [ ] mqdoct-c-015  Arp:  1st Diesel  DocT
+  [ ] mqdoct-c-016  FX:   Diesel2     DocT
+  [ ] mqdoct-c-017  Pad:  VeloSyncer  DocT
+  [ ] mqdoct-c-018  Keys: VeloFeedb.  DocT
+  [ ] mqdoct-c-019  Bass: SQ-Puncher  DocT
+  [ ] mqdoct-c-020  FX:   UranMine    DocT
+  [ ] mqdoct-c-021  Pad:  SadPad      DocT
+  [ ] mqdoct-c-022  Keys: 75V-Exp.req DocT
+  [ ] mqdoct-c-023  Arp:  Spielmannszug DT
+  [ ] mqdoct-c-024  Keys: PickItUp    DocT
+  [ ] mqdoct-c-025  Keys: Metamorph   DocT
+  [ ] mqdoct-c-026  Keys: Bombast     DocT
+  [ ] mqdoct-c-027  Keys: Funky Clavi DocT
+  [ ] mqdoct-c-028  Lead: MovDaWheels DocT
+  [ ] mqdoct-c-029  Arp:  Click'nR    DocT
+  [ ] mqdoct-c-030  Drum: VariDrum    DocT
+  [ ] mqdoct-c-031  Bass: Droehnung   DocT
+  [ ] mqdoct-c-032  Lead: DocsTrueN@ture;)
+
+  [ ] mqdoct-c-033  Keys: 4 Bits 4 U  DocT
+  [ ] mqdoct-c-034  Pad:  Valoron     DocT
+  [ ] mqdoct-c-035  FX:   HighVoltage DocT
+  [ ] mqdoct-c-036  Keys: HitAnyKey   DocT
+  [ ] mqdoct-c-037  Bass: Octobass    DocT
+  [ ] mqdoct-c-038  Lead: MontMartre  DocT
+  [ ] mqdoct-c-039  Lead: TinyMoogy   DocT
+  [ ] mqdoct-c-040  FX:   Precognitivs DcT
+  [ ] mqdoct-c-041  FX:   Nightelfes  DocT
+  [ ] mqdoct-c-042  FX:   Nightelfes2 DocT
+  [ ] mqdoct-c-043  Pad:  Lavendel    DocT
+  [ ] mqdoct-c-044  Pad:  Surface-Pad DocT
+  [ ] mqdoct-c-045  Arp:  BruteArp    DocT
+  [ ] mqdoct-c-046  Pad:  VA-Warmth
+  [ ] mqdoct-c-047  FX:   Satellite   DocT
+  [ ] mqdoct-c-048  Keys: 4th Manual  DocT
+  [ ] mqdoct-c-049  Pad:  Warmduscher DocT
+<b>  [?] mqdoct-c-050  Keys: DiXy        DocT</b>
+  [ ] mqdoct-c-051  FX:   Kamm-FX     DocT
+  [ ] mqdoct-c-052  FX:   Kamm-FX2    DocT
+  [ ] mqdoct-c-053  Keys: Flutoon     DocT
+  [ ] mqdoct-c-054  Arp:  Trippy-Loop DocT
+  [ ] mqdoct-c-055  Pad:  Pienzchen   DocT
+  [ ] mqdoct-c-056  Arp:  Zirpomat    DocT
+  [ ] mqdoct-c-057  Arp:  Trancistor  DocT
+  [ ] mqdoct-c-058  Arp:  Gabbatron   DocT
+  [ ] mqdoct-c-059  FX:   Schwarm     DocT
+  [ ] mqdoct-c-060  Lead: LeadsUnited DocT
+  [ ] mqdoct-c-061  Poly: Improv.Sax  DocT
+  [ ] mqdoct-c-062  Lead: Synthegeiger DcT
+  [ ] mqdoct-c-063  FX:   LilYammi :) DocT
+  [ ] mqdoct-c-064  FX:   Cheap FX    DocT
+
+  [ ] mqdoct-c-065  Pad:  Sentimental DocT
+  [ ] mqdoct-c-066  Pad:  PotemkinPad DocT
+  [ ] mqdoct-c-067  FX:   Platoon     DocT
+  [ ] mqdoct-c-068  Bass: 6-PoleBass  DocT
+  [ ] mqdoct-c-069  Keys: ArtDecoPad  DocT
+  [ ] mqdoct-c-070  Lead: VollDeProll DocT
+  [ ] mqdoct-c-071  FX:   Steamroller DocT
+  [ ] mqdoct-c-072  Bass: Kompressor  DocT
+  [ ] mqdoct-c-073  Keys: Kriechstrom DocT
+  [ ] mqdoct-c-074  FX:   Salve DocT
+  [ ] mqdoct-c-075  Keys: StickyRinger DcT
+  [ ] mqdoct-c-076  Pad:  Sandpapier  DocT
+  [ ] mqdoct-c-077  Pad:  FallWaves   DocT
+  [ ] mqdoct-c-078  Arp:  Espenlaub   DocT
+  [ ] mqdoct-c-079  Keys: Kuerbis     DocT
+  [ ] mqdoct-c-080  Keys: EarlyRefl.  DocT
+  [ ] mqdoct-c-081  FX:   Bimetall    DocT
+  [ ] mqdoct-c-082  Arp:  120bpmBase DocT
+  [ ] mqdoct-c-083  Keys: Separee     DocT
+  [ ] mqdoct-c-084  Keys: TripleSinus DocT
+</pre>
+
+<h2><a name="microq_flakscrambler_sound_programs" href="#_toc_microq_flakscrambler_sound_programs">MicroQ Flakscrambler sound programs</a></h2>
+<p>(d-001..128 e-001..128 f-001..128 g-001..128 h-001..007)</p>
+<p><strong>Bank MQFLAK-D 0-D (0-3)</strong></p>
+<pre>
+  [ ] mqflak-d-001  Lead: Rave syn      CJ
+  [ ] mqflak-d-002  Bass: Tundra        CJ
+  [ ] mqflak-d-003  Bass: Synth bass    CJ
+  [ ] mqflak-d-004  Poly: Clanger       CJ
+  [ ] mqflak-d-005  Pad:  Rave pad      CJ
+  [ ] mqflak-d-006  Pad:  Lush Pad      CJ
+  [ ] mqflak-d-007  Poly: Funk keys     CJ
+  [ ] mqflak-d-008  Arp:  Funk flick    CJ
+  [ ] mqflak-d-009  Arp:  Arizona       CJ
+  [ ] mqflak-d-010  Arp:  Lava arp      CJ
+  [ ] mqflak-d-011  Lead: Mayday        CJ
+  [ ] mqflak-d-012  Bass: Rumble Bros   CJ
+  [ ] mqflak-d-013  Bass: Squelch Bass  CJ
+  [ ] mqflak-d-014  Poly: Sand Piper    CJ
+  [ ] mqflak-d-015  Pad:  Danny boyo    CJ
+  [ ] mqflak-d-016  Pad:  Jamaikakaka   CJ
+  [ ] mqflak-d-017  Poly: Goldielox     CJ
+  [ ] mqflak-d-018  Arp:  Lorenz again  CJ
+  [ ] mqflak-d-019  Arp:  MagicStardust CJ
+  [ ] mqflak-d-020  Arp:  Mega rave arp CJ
+  [ ] mqflak-d-021  Lead: Vaseline      CJ
+  [ ] mqflak-d-022  Bass: Subb FM       CJ
+  [ ] mqflak-d-023  Bass: Technobakbass CJ
+  [ ] mqflak-d-024  Poly: Men At Work   CJ
+  [ ] mqflak-d-025  Pad:  Sahara        CJ
+  [ ] mqflak-d-026  Pad:  ElektricSunsetCJ
+  [ ] mqflak-d-027  Poly: Tinkerbell    CJ
+  [ ] mqflak-d-028  Arp:  Jelly bean    CJ
+  [ ] mqflak-d-029  Arp:  Whiplash      CJ
+  [ ] mqflak-d-030  Arp:  Night drive   CJ
+  [ ] mqflak-d-031  Lead: Pickle'in Joe CJ
+  [ ] mqflak-d-032  Bass: Thud Lump     CJ
+
+  [ ] mqflak-d-033  Bass: Jungle Bass   CJ
+  [ ] mqflak-d-034  Poly: Springer      CJ
+  [ ] mqflak-d-035  Pad:  Sceance       CJ
+  [ ] mqflak-d-036  Pad:  NothernLights CJ
+  [ ] mqflak-d-037  Poly: Tip toes      CJ
+  [ ] mqflak-d-038  Arp:  Rhythm sticks CJ
+  [ ] mqflak-d-039  Arp:  Fanfare       CJ
+  [ ] mqflak-d-040  Arp:  Sin vs Sin    CJ
+  [ ] mqflak-d-041  Lead: Plasma        CJ
+  [ ] mqflak-d-042  Bass: Acid bass     CJ
+  [ ] mqflak-d-043  Bass: Ajax 2        CJ
+  [ ] mqflak-d-044  Poly: LostinBermuda CJ
+  [ ] mqflak-d-045  Pad:  Sherbet Dip   CJ
+  [ ] mqflak-d-046  Pad:  Yellow pad    CJ
+  [ ] mqflak-d-047  Poly: Autumn Dew    CJ
+  [ ] mqflak-d-048  Arp:  Rave arp      CJ
+  [ ] mqflak-d-049  Arp:  Robtique      CJ
+  [ ] mqflak-d-050  Arp:  Rude boy      CJ
+  [ ] mqflak-d-051  Lead: Quaver        CJ
+  [ ] mqflak-d-052  Bass: Ana Bass      CJ
+  [ ] mqflak-d-053  Bass: Biffa Bass    CJ
+  [ ] mqflak-d-054  Poly: Resoflute     CJ
+  [ ] mqflak-d-055  Pad:  Fluffy        CJ
+  [ ] mqflak-d-056  Pad:  Coronal       CJ
+  [ ] mqflak-d-057  Poly: Caribean Sea  CJ
+  [ ] mqflak-d-058  Arp:  Hippy chic'   CJ
+  [ ] mqflak-d-059  Arp:  Hypnolux      CJ
+  [ ] mqflak-d-060  Arp:  Arpings       CJ
+  [ ] mqflak-d-061  Lead: Mouse Yodel   CJ
+  [ ] mqflak-d-062  Bass: Blotter       CJ
+  [ ] mqflak-d-063  Bass: Kipper        CJ
+  [ ] mqflak-d-064  Poly: Tubular bells CJ
+
+  [ ] mqflak-d-065  Pad:  Ground Mist   CJ
+  [ ] mqflak-d-066  Pad:  Radient       CJ
+  [ ] mqflak-d-067  Poly: Ice Towers    CJ
+  [ ] mqflak-d-068  Arp:  MistyMountain CJ
+  [ ] mqflak-d-069  Arp:  Choo choo     CJ
+  [ ] mqflak-d-070  Arp:  Ricochet      CJ
+  [ ] mqflak-d-071  Lead: Oooh! Matron  CJ
+  [ ] mqflak-d-072  Bass: Growler       CJ
+  [ ] mqflak-d-073  Bass: Resostab      CJ
+  [ ] mqflak-d-074  Poly: trumpet       CJ
+  [ ] mqflak-d-075  Pad:  Massiva       CJ
+  [ ] mqflak-d-076  Pad:  Predator 2    CJ
+  [ ] mqflak-d-077  Poly: Synth keys 4  CJ
+  [ ] mqflak-d-078  Arp:  Flux cap      CJ
+  [ ] mqflak-d-079  Arp:  ForgetTheTB   CJ
+  [ ] mqflak-d-080  Arp:  Dodah Dingo   CJ
+  [ ] mqflak-d-081  Lead: Slow sync     CJ
+  [ ] mqflak-d-082  Bass: Resowoof      CJ
+  [ ] mqflak-d-083  Bass: Ripcord       CJ
+  [ ] mqflak-d-084  Poly: Resonator     CJ
+  [ ] mqflak-d-085  Pad:  Mellow pad    CJ
+  [ ] mqflak-d-086  Pad:  Smoke wings   CJ
+  [ ] mqflak-d-087  Poly: Taj mahal     CJ
+  [ ] mqflak-d-088  Arp:  Indian summer CJ
+  [ ] mqflak-d-089  Arp:  Indiansummer2 CJ
+  [ ] mqflak-d-090  Arp:  Toasting      CJ
+  [ ] mqflak-d-091  Lead: Steel lead    CJ
+  [ ] mqflak-d-092  Bass: Disco bass    CJ
+  [ ] mqflak-d-093  Bass: Double bass   CJ
+  [ ] mqflak-d-094  Poly: Metal Can     CJ
+  [ ] mqflak-d-095  Pad:  Pugwash       CJ
+  [ ] mqflak-d-096  Pad:  Sodium        CJ
+
+  [ ] mqflak-d-097  Poly: Chopsticks    CJ
+  [ ] mqflak-d-098  Arp:  Acid bender   CJ
+  [ ] mqflak-d-099  Arp:  Acid bliss    CJ
+  [ ] mqflak-d-100  Arp:  Amber Tide    CJ
+  [ ] mqflak-d-101  Lead: Bring it on   CJ
+  [ ] mqflak-d-102  Bass: FM Blart      CJ
+  [ ] mqflak-d-103  Bass: Halfwit       CJ
+  [ ] mqflak-d-104  Poly: Orch hit      CJ
+  [ ] mqflak-d-105  Pad:  Warm pad      CJ
+  [ ] mqflak-d-106  Atmo: BasaltColumns CJ
+  [ ] mqflak-d-107  Poly: Coral lines   CJ
+  [ ] mqflak-d-108  Arp:  Exscape       CJ
+  [ ] mqflak-d-109  Arp:  Didgeri doop  CJ
+  [ ] mqflak-d-110  Arp:  Boiling point CJ
+  [ ] mqflak-d-111  Lead: Screamer 2    CJ
+  [ ] mqflak-d-112  Bass: House bass    CJ
+  [ ] mqflak-d-113  Bass: JungleHorn    CJ
+  [ ] mqflak-d-114  Poly: Wha-nalog     CJ
+  [ ] mqflak-d-115  Pad:  Orange peel   CJ
+  [ ] mqflak-d-116  Atmo: Obelisk       CJ
+  [ ] mqflak-d-117  Poly: Lunatear      CJ
+  [ ] mqflak-d-118  Arp:  Butterball    CJ
+  [ ] mqflak-d-119  Arp:  Celtic mist   CJ
+  [ ] mqflak-d-120  Arp:  Mr whipy      CJ
+  [ ] mqflak-d-121  Lead: Fahrenheit    CJ
+  [ ] mqflak-d-122  Bass: Junk phunk    CJ
+  [ ] mqflak-d-123  Bass: Mecha Void    CJ
+  [ ] mqflak-d-124  Poly: Wishbone      CJ
+  [ ] mqflak-d-125  Pad:  Swish         CJ
+  [ ] mqflak-d-126  Lead: Halloween     CJ
+  [ ] mqflak-d-127  Poly: Magic Carpet  CJ
+  [ ] mqflak-d-128  Arp:  Squelchliner  CJ
+</pre>
+<p><strong>Bank MQFLAK-E 0-E (0-4)</strong></p>
+<pre>
+  [ ] mqflak-e-001  Arp:  The Flim Flam CJ
+  [ ] mqflak-e-002  Arp:  Handsintheair CJ
+  [ ] mqflak-e-003  Lead: Buzzbee       CJ
+  [ ] mqflak-e-004  Bass: Prowler       CJ
+  [ ] mqflak-e-005  Bass: Recoil        CJ
+  [ ] mqflak-e-006  Poly: Drama Queen   CJ
+  [ ] mqflak-e-007  Pad:  U-Drone       CJ
+  [ ] mqflak-e-008  Atmo: Invaders      CJ
+  [ ] mqflak-e-009  Poly: Cyotee        CJ
+  [ ] mqflak-e-010  Arp:  Harlequin     CJ
+  [ ] mqflak-e-011  Arp:  Mellow trance CJ
+  [ ] mqflak-e-012  Arp:  Banjo dojo    CJ
+  [ ] mqflak-e-013  Lead: Litmus test   CJ
+  [ ] mqflak-e-014  Bass: Resolution    CJ
+  [ ] mqflak-e-015  Bass: blatt bass    CJ
+  [ ] mqflak-e-016  Poly: Glock 2       CJ
+  [ ] mqflak-e-017  Pad:  Ultra Pad     CJ
+  [ ] mqflak-e-018  Atmo: The daddy     CJ
+  [ ] mqflak-e-019  Poly: Disco Buscuit CJ
+  [ ] mqflak-e-020  Arp:  Banjo mango   CJ
+  [ ] mqflak-e-021  Arp:  Funkeridoo    CJ
+  [ ] mqflak-e-022  Arp:  Give it up    CJ
+  [ ] mqflak-e-023  Lead: What no Sync  CJ
+  [ ] mqflak-e-024  Bass: Whicker man   CJ
+  [ ] mqflak-e-025  Bass: Wide load     CJ
+  [ ] mqflak-e-026  Poly: Glock         CJ
+  [ ] mqflak-e-027  Pad:  Eclipse       CJ
+  [ ] mqflak-e-028  Atmo: Overlord      CJ
+  [ ] mqflak-e-029  Poly: Dr toe tapper CJ
+  [ ] mqflak-e-030  Arp:  Merangue      CJ
+  [ ] mqflak-e-031  Arp:  Trance arp    CJ
+  [ ] mqflak-e-032  Arp:  Vapoureyes    CJ
+
+  [ ] mqflak-e-033  Lead: slinky        CJ
+  [ ] mqflak-e-034  Bass: Wolfbass      CJ
+  [ ] mqflak-e-035  Bass: Bigboybasbin  CJ
+  [ ] mqflak-e-036  Poly: Silverfish    CJ
+  [ ] mqflak-e-037  Pad:  Jinx          CJ
+  [ ] mqflak-e-038  Atmo: Eye of newt   CJ
+  [ ] mqflak-e-039  Poly: Fist Full o'  CJ
+  [ ] mqflak-e-040  Arp:  FlamingHands  CJ
+  [ ] mqflak-e-041  Arp:  Morning song  CJ
+  [ ] mqflak-e-042  Arp:  Stacker       CJ
+  [ ] mqflak-e-043  Lead: Mega Sync     CJ
+  [ ] mqflak-e-044  Bass: Grunge bass   CJ
+  [ ] mqflak-e-045  Bass: Blubber       CJ
+  [ ] mqflak-e-046  Poly: Finger bell   CJ
+  [ ] mqflak-e-047  Pad:  LoverlySweeperCJ
+  [ ] mqflak-e-048  Atmo: Spectre       CJ
+  [ ] mqflak-e-049  Poly: Van bambi     CJ
+  [ ] mqflak-e-050  Arp:  NodderFodder  CJ
+  [ ] mqflak-e-051  Arp:  Nut brittle   CJ
+  [ ] mqflak-e-052  Arp:  Ehh Cheeky    CJ
+  [ ] mqflak-e-053  Lead: Mega sweep    CJ
+  [ ] mqflak-e-054  Bass: Breakbass     CJ
+  [ ] mqflak-e-055  Bass: Lazy bass     CJ
+  [ ] mqflak-e-056  Poly: Fairy boy     CJ
+  [ ] mqflak-e-057  Pad:  Analog pad    CJ
+  [ ] mqflak-e-058  Atmo: Psychosis     CJ
+  [ ] mqflak-e-059  Poly: Albatross     CJ
+  [ ] mqflak-e-060  Arp:  Enigma        CJ
+  [ ] mqflak-e-061  Arp:  Etherman      CJ
+  [ ] mqflak-e-062  Arp:  RunForestRun  CJ
+  [ ] mqflak-e-063  Lead: Overlead      CJ
+  [ ] mqflak-e-064  Bass: Liquid Bass   CJ
+
+  [ ] mqflak-e-065  Bass: Mellowmono    CJ
+  [ ] mqflak-e-066  Poly: Flute         CJ
+  [ ] mqflak-e-067  Pad:  Anawave 3     CJ
+  [ ] mqflak-e-068  Atmo: Purgatory     CJ
+  [ ] mqflak-e-069  Poly: Moody hues    CJ
+  [ ] mqflak-e-070  Arp:  Running man   CJ
+  [ ] mqflak-e-071  Arp:  Silk sawz     CJ
+  [ ] mqflak-e-072  Arp:  Nice arp      CJ
+  [ ] mqflak-e-073  Lead: Phunk Mod     CJ
+  [ ] mqflak-e-074  Lead: Four by four  CJ
+  [ ] mqflak-e-075  FX:   Whirlygig 2   CJ
+  [ ] mqflak-e-076  FX:   Spooked out   CJ
+  [ ] mqflak-e-077  Pad:  Sledge Heaven CJ
+  [ ] mqflak-e-078  Atmo: Riples        CJ
+  [ ] mqflak-e-079  Poly: Pipe dream    CJ
+  [ ] mqflak-e-080  Arp:  Sunflower     CJ
+  [ ] mqflak-e-081  Arp:  Lorenz Swirls CJ
+  [ ] mqflak-e-082  Arp:  DoYouDoVoodoo CJ
+  [ ] mqflak-e-083  Lead: Strawbery     CJ
+  [ ] mqflak-e-084  Lead: Freishan Lead CJ
+  [ ] mqflak-e-085  FX:   Arctic Sonar  CJ
+  [ ] mqflak-e-086  FX:   Chopper       CJ
+  [ ] mqflak-e-087  Pad:  The Calling   CJ
+  [ ] mqflak-e-088  Atmo: Poltergeist   CJ
+  [ ] mqflak-e-089  Poly: Rapid E M     CJ
+  [ ] mqflak-e-090  Arp:  Slow funk     CJ
+  [ ] mqflak-e-091  Arp:  Solstice      CJ
+  [ ] mqflak-e-092  Arp:  Sqeaky        CJ
+  [ ] mqflak-e-093  Lead: Technopunk    CJ
+  [ ] mqflak-e-094  Lead: Eden          CJ
+  [ ] mqflak-e-095  FX:   Whale song    CJ
+  [ ] mqflak-e-096  FX:   Acid Allarm 2 CJ
+
+  [ ] mqflak-e-097  Pad:  Pan flutes    CJ
+  [ ] mqflak-e-098  Atmo: Grease monkey CJ
+  [ ] mqflak-e-099  Poly: Space Feeder  CJ
+  [ ] mqflak-e-100  Arp:  Go Jethro     CJ
+  [ ] mqflak-e-101  Arp:  Greasy jiblet CJ
+  [ ] mqflak-e-102  Arp:  Stratophaser  CJ
+<b>  [+] mqflak-e-103  Lead: Theremin      CJ</b>
+  [ ] mqflak-e-104  Lead: Elastic Lead  CJ
+  [ ] mqflak-e-105  FX:   Acid Allarm   CJ
+  [ ] mqflak-e-106  FX:   Acid Whines   CJ
+  [ ] mqflak-e-107  Pad:  Praise be     CJ
+  [ ] mqflak-e-108  Atmo: Sliding       CJ
+  [ ] mqflak-e-109  Poly: onyx          CJ
+  [ ] mqflak-e-110  Arp:  Stutter arp   CJ
+  [ ] mqflak-e-111  Arp:  Subtle arp    CJ
+  [ ] mqflak-e-112  Arp:  Jitterbug     CJ
+  [ ] mqflak-e-113  Lead: Minor Lead    CJ
+  [ ] mqflak-e-114  Lead: Electic Love  CJ
+  [ ] mqflak-e-115  FX:   Flax          CJ
+  [ ] mqflak-e-116  FX:   Hive mind     CJ
+  [ ] mqflak-e-117  Pad:  Rivendel      CJ
+  [ ] mqflak-e-118  Atmo: The Fog       CJ
+  [ ] mqflak-e-119  Poly: Meridian      CJ
+  [ ] mqflak-e-120  Arp:  Delicious     CJ
+  [ ] mqflak-e-121  Arp:  Cerebral Tap  CJ
+  [ ] mqflak-e-122  Arp:  Ohnonotagain  CJ
+  [ ] mqflak-e-123  Lead: Monkey Punk   CJ
+  [ ] mqflak-e-124  Lead: Exothermic    CJ
+  [ ] mqflak-e-125  FX:   Thunder       CJ
+  [ ] mqflak-e-126  FX:   Warp drive    CJ
+  [ ] mqflak-e-127  Pad:  Anesthesia    CJ
+  [ ] mqflak-e-128  Atmo: Shivers       CJ
+</pre>
+<p><strong>Bank MQFLAK-F 0-F (0-5)</strong></p>
+<pre>
+  [ ] mqflak-f-001  Poly: Space Grand   CJ
+  [ ] mqflak-f-002  Arp:  Orgasamtic 2  CJ
+  [ ] mqflak-f-003  Arp:  JingleJangle  CJ
+  [ ] mqflak-f-004  Arp:  SilverDirtBox CJ
+  [ ] mqflak-f-005  Lead: Valhala       CJ
+  [ ] mqflak-f-006  Lead: Scream'in PWM CJ
+  [ ] mqflak-f-007  FX:   Thunder Drum  CJ
+  [ ] mqflak-f-008  FX:   Waveydavey    CJ
+  [ ] mqflak-f-009  Pad:  Chanpainge    CJ
+  [ ] mqflak-f-010  Atmo: Feedback      CJ
+  [ ] mqflak-f-011  Poly: Echo Harmonic CJ
+  [ ] mqflak-f-012  Arp:  Wha Wharp     CJ
+  [ ] mqflak-f-013  Arp:  Ocean spray   CJ
+  [ ] mqflak-f-014  Arp:  The real 303  CJ
+  [ ] mqflak-f-015  Lead: Gimme five    CJ
+  [ ] mqflak-f-016  Lead: Trip to Mars  CJ
+  [ ] mqflak-f-017  FX:   MetalDetecter CJ
+  [ ] mqflak-f-018  FX:   Ready Phazers CJ
+  [ ] mqflak-f-019  Pad:  Chill out     CJ
+  [ ] mqflak-f-020  Atmo: Flooky        CJ
+  [ ] mqflak-f-021  Poly: Fire  Flies   CJ
+  [ ] mqflak-f-022  Arp:  Surfs up      CJ
+  [ ] mqflak-f-023  Arp:  Synth harp    CJ
+  [ ] mqflak-f-024  Arp:  Tesla         CJ
+  [ ] mqflak-f-025  Lead: Grunt         CJ
+  [ ] mqflak-f-026  Lead: Caustic       CJ
+  [ ] mqflak-f-027  FX:   Resothwack    CJ
+  [ ] mqflak-f-028  FX:   Looney Tunes  CJ
+  [ ] mqflak-f-029  Pad:  Citrus Pad    CJ
+  [ ] mqflak-f-030  Atmo: Ghost ship    CJ
+  [ ] mqflak-f-031  Poly: Jack Frost    CJ
+  [ ] mqflak-f-032  Arp:  The Daddy     CJ
+
+  [ ] mqflak-f-033  Arp:  Click Clack   CJ
+  [ ] mqflak-f-034  Arp:  Daffys back   CJ
+  [ ] mqflak-f-035  Lead: Fly boy       CJ
+  [ ] mqflak-f-036  Lead: Air head      CJ
+  [ ] mqflak-f-037  FX:   Mercury       CJ
+  [ ] mqflak-f-038  FX:   Moby dick     CJ
+  [ ] mqflak-f-039  Pad:  Cold fusion   CJ
+  [ ] mqflak-f-040  Atmo: Ghostly echos CJ
+  [ ] mqflak-f-041  Poly: Halogen       CJ
+  [ ] mqflak-f-042  Arp:  Astrall Man   CJ
+  [ ] mqflak-f-043  Arp:  Mud flats     CJ
+  [ ] mqflak-f-044  Arp:  Summer Rain   CJ
+  [ ] mqflak-f-045  Bass: 4th of july   CJ
+  [ ] mqflak-f-046  Arp:  Acid arp      CJ
+  [ ] mqflak-f-047  FX:   Acid whines 2 CJ
+  [ ] mqflak-f-048  Lead: A I           CJ
+  [ ] mqflak-f-049  Bass: Ajax          CJ
+  [ ] mqflak-f-050  FX:   Alien spleen  CJ
+  [ ] mqflak-f-051  Arp:  Amber Soul    CJ
+  [ ] mqflak-f-052  Bass: Ana bass 2    CJ
+  [ ] mqflak-f-053  Bass: Ana bass 3    CJ
+  [ ] mqflak-f-054  Poly: Analog        CJ
+  [ ] mqflak-f-055  Keys: Anaseed balls CJ
+  [ ] mqflak-f-056  Pad:  Anawave 2     CJ
+  [ ] mqflak-f-057  Pad:  Anawave 3     CJ
+  [ ] mqflak-f-058  Pad:  Anawave       CJ
+  [ ] mqflak-f-059  Arp:  AnotherAcidarpCJ
+  [ ] mqflak-f-060  Arp:  Argon         CJ
+  [ ] mqflak-f-061  Pad:  Atlantis 2    CJ
+  [ ] mqflak-f-062  Pad:  Atlantis      CJ
+  [ ] mqflak-f-063  Pad:  Aurora        CJ
+  [ ] mqflak-f-064  Arp:  Bang To The   CJ
+
+  [ ] mqflak-f-065  Bass: Bass bin      CJ
+  [ ] mqflak-f-066  Bass: bass runner   CJ
+  [ ] mqflak-f-067  Bass: Bazzippy      CJ
+  [ ] mqflak-f-068  Bass: Bazzippysix   CJ
+  [ ] mqflak-f-069  Lead: Be there      CJ
+  [ ] mqflak-f-070  Bass: Big end       CJ
+  [ ] mqflak-f-071  Keys: BillyGoatBlue CJ
+  [ ] mqflak-f-072  Bass: Bin lid Jam   CJ
+  [ ] mqflak-f-073  Lead: Bizsqit       CJ
+  [ ] mqflak-f-074  Bass: Blowhole      CJ
+  [ ] mqflak-f-075  Bass: Blusher bass  CJ
+  [ ] mqflak-f-076  Arp:  Boing Blong   CJ
+  [ ] mqflak-f-077  Arp:  Boing boing   CJ
+  [ ] mqflak-f-078  Bass: Booty bass    CJ
+  [ ] mqflak-f-079  Lead: Bring it on   CJ
+  [ ] mqflak-f-080  Arp:  Bubleboble    CJ
+  [ ] mqflak-f-081  Pad:  Bungee pad    CJ
+  [ ] mqflak-f-082  Arp:  Buzzahsid     CJ
+  [ ] mqflak-f-083  Arp:  Cats Eyes     CJ
+  [ ] mqflak-f-084  Atmo: Celtit lock   CJ
+  [ ] mqflak-f-085  Arp:  Chedar Arp    CJ
+  [ ] mqflak-f-086  Lead: Cheeky lead   CJ
+  [ ] mqflak-f-087  Lead: Cheesy Geezer CJ
+  [ ] mqflak-f-088  Lead: Chikens lip   CJ
+  [ ] mqflak-f-089  Perc: Clap Happy    CJ
+  [ ] mqflak-f-090  Arp:  Cloud Cuckoo  CJ
+  [ ] mqflak-f-091  Arp:  Coaster       CJ
+  [ ] mqflak-f-092  Lead: Cockroach     CJ
+  [ ] mqflak-f-093  Lead: Comegetsome   CJ
+  [ ] mqflak-f-094  Atmo: Comunion      CJ
+  [ ] mqflak-f-095  Pad:  Conviction    CJ
+  [ ] mqflak-f-096  Poly: Cry baby      CJ
+
+  [ ] mqflak-f-097  Poly: Cryptonite    CJ
+  [ ] mqflak-f-098  Arp:  CrystalShower CJ
+  [ ] mqflak-f-099  Pad:  Damned        CJ
+  [ ] mqflak-f-100  Lead: DeathBySciFi  CJ
+  [ ] mqflak-f-101  Bass: DeathStepDnB2 CJ
+  [ ] mqflak-f-102  Bass: DeathStepDnB  CJ
+  [ ] mqflak-f-103  Pad:  Desert Train  CJ
+  [ ] mqflak-f-104  Arp:  Didgeri doop  CJ
+  [ ] mqflak-f-105  Bass: Dig that      CJ
+  [ ] mqflak-f-106  Lead: Dimonds are   CJ
+  [ ] mqflak-f-107  Bass: Dirt bass     CJ
+  [ ] mqflak-f-108  Atmo: DistantHorns  CJ
+  [ ] mqflak-f-109  Keys: Driftwood     CJ
+  [ ] mqflak-f-110  Arp:  Duct monkey   CJ
+  [ ] mqflak-f-111  Bass: Dum dum       CJ
+  [ ] mqflak-f-112  Poly: Dusty Roads   CJ
+  [ ] mqflak-f-113  Arp:  Ehh Cheeky2   CJ
+  [ ] mqflak-f-114  Arp:  Elasticass    CJ
+  [ ] mqflak-f-115  Pad:  Eureka        CJ
+  [ ] mqflak-f-116  Bass: Fat Harry     CJ
+  [ ] mqflak-f-117  Lead: Fist Full o'  CJ
+  [ ] mqflak-f-118  Poly: Flintlock     CJ
+  [ ] mqflak-f-119  Poly: FM piano      CJ
+  [ ] mqflak-f-120  Arp:  ForgetTheTB 3 CJ
+  [ ] mqflak-f-121  Arp:  ForgetTheTB 4 CJ
+  [ ] mqflak-f-122  Arp:  ForgetTheTB 5 CJ
+  [ ] mqflak-f-123  Arp:  ForgetTheTB 6 CJ
+  [ ] mqflak-f-124  Arp:  Freaky beepy  CJ
+  [ ] mqflak-f-125  Pad:  Frog Choir    CJ
+  [ ] mqflak-f-126  Arp:  Gieger        CJ
+  [ ] mqflak-f-127  Lead: Ginger Nut    CJ
+  [ ] mqflak-f-128  Poly: Glass eyes    CJ
+</pre>
+<p><strong>Bank MQFLAK-G 0-G (0-6)</strong></p>
+<pre>
+  [ ] mqflak-g-001  Perc: GrannyElastic CJ
+  [ ] mqflak-g-002  Lead: Gruff Munch   CJ
+  [ ] mqflak-g-003  Keys: H2O           CJ
+  [ ] mqflak-g-004  Arp:  Half moon     CJ
+  [ ] mqflak-g-005  Lead: Happy Haunter CJ
+  [ ] mqflak-g-006  Bass: Harvester     CJ
+  [ ] mqflak-g-007  Pad:  Hipazsaws     CJ
+  [ ] mqflak-g-008  Pad:  Hippy House   CJ
+  [ ] mqflak-g-009  Arp:  House Arp     CJ
+  [ ] mqflak-g-010  Atmo: Indecision    CJ
+  [ ] mqflak-g-011  Pad:  Ion storm     CJ
+  [ ] mqflak-g-012  Arp:  Jumbo Rumble  CJ
+  [ ] mqflak-g-013  Bass: Jungle bass 2 CJ
+  [ ] mqflak-g-014  Arp:  Kazoodedoop   CJ
+  [ ] mqflak-g-015  Lead: La`la         CJ
+  [ ] mqflak-g-016  Lead: Laser         CJ
+  [ ] mqflak-g-017  Pad:  Latis         CJ
+  [ ] mqflak-g-018  Keys: Lava fools    CJ
+  [ ] mqflak-g-019  Bass: Legacy bass   CJ
+  [ ] mqflak-g-020  Lead: Lightening    CJ
+  [ ] mqflak-g-021  Lead: Litmus test2  CJ
+  [ ] mqflak-g-022  Atmo: Lizard breat2 CJ
+  [ ] mqflak-g-023  Atmo: Lizard breath CJ
+  [ ] mqflak-g-024  FX:   Locust        CJ
+  [ ] mqflak-g-025  Arp:  Lost winter   CJ
+  [ ] mqflak-g-026  Atmo: MagicRundabut CJ
+  [ ] mqflak-g-027  Bass: Mainline      CJ
+  [ ] mqflak-g-028  Lead: Mambo jangly  CJ
+  [ ] mqflak-g-029  Pad:  Mellovox 2    CJ
+  [ ] mqflak-g-030  Pad:  Mellovox      CJ
+  [ ] mqflak-g-031  Arp:  Mellow trance CJ
+  [ ] mqflak-g-032  Poly: Meloncholic   CJ
+
+  [ ] mqflak-g-033  Atmo: Menace        CJ
+  [ ] mqflak-g-034  Pad:  Minor intro   CJ
+  [ ] mqflak-g-035  Pad:  Mirage        CJ
+  [ ] mqflak-g-036  Pad:  Moby dick 2   CJ
+  [ ] mqflak-g-037  Pad:  Moby dick 3   Cj
+  [ ] mqflak-g-038  Lead: Mono beam     CJ
+  [ ] mqflak-g-039  Bass: MotherofPulse CJ
+  [ ] mqflak-g-040  FX:   Mushy Madness CJ
+  [ ] mqflak-g-041  FX:   Music box     CJ
+  [ ] mqflak-g-042  Arp:  Nightrider    CJ
+  [ ] mqflak-g-043  Arp:  Noseblead     CJ
+  [ ] mqflak-g-044  Pad:  Nose yodeler  CJ
+  [ ] mqflak-g-045  Bass: Nylon Bass    CJ
+  [ ] mqflak-g-046  Pad:  Octopusy      CJ
+  [ ] mqflak-g-047  Arp:  Odd arp       CJ
+  [ ] mqflak-g-048  Lead: Phat Attack   CJ
+  [ ] mqflak-g-049  Bass: Pherite       CJ
+  [ ] mqflak-g-050  Pad:  Plancton      CJ
+  [ ] mqflak-g-051  Pad:  Plateau       CJ
+  [ ] mqflak-g-052  Keys: Pray Sinner   CJ
+  [ ] mqflak-g-053  Pad:  Predator      CJ
+  [ ] mqflak-g-054  Lead: Prism         CJ
+  [ ] mqflak-g-055  Bass: Prowler 2     CJ
+  [ ] mqflak-g-056  Lead: Quantium      CJ
+  [ ] mqflak-g-057  Keys: Qubik munk    CJ
+  [ ] mqflak-g-058  Bass: Quiver        CJ
+  [ ] mqflak-g-059  Bass: Rasputin      CJ
+  [ ] mqflak-g-060  Poly: Red planet    CJ
+  [ ] mqflak-g-061  Pad:  Red Shift     CJ
+  [ ] mqflak-g-062  Arp:  Reflex        CJ
+  [ ] mqflak-g-063  Lead: Renagade 2    CJ
+  [ ] mqflak-g-064  Lead: Renagade      CJ
+
+  [ ] mqflak-g-065  Lead: Resonator     CJ
+  [ ] mqflak-g-066  Pad:  Rezonature    CJ
+  [ ] mqflak-g-067  Arp:  Road trip     CJ
+  [ ] mqflak-g-068  Pad:  Rollin Home   CJ
+  [ ] mqflak-g-069  Arp:  RubberLover2  CJ
+  [ ] mqflak-g-070  Bass: Rumble bass 2 CJ
+  [ ] mqflak-g-071  FX:   Scrambler v1.1
+  [ ] mqflak-g-072  Lead: Screamer      CJ
+  [ ] mqflak-g-073  Arp:  Seaquins      CJ
+  [ ] mqflak-g-074  Pad:  Sea Sawz      CJ
+  [ ] mqflak-g-075  Atmo: Sewer rats    CJ
+  [ ] mqflak-g-076  Pad:  Shmooothie 2  CJ
+  [ ] mqflak-g-077  Pad:  Shmooothie    CJ
+  [ ] mqflak-g-078  Arp:  Silk pulse    CJ
+  [ ] mqflak-g-079  Lead: Silk sawz  2  CJ
+  [ ] mqflak-g-080  Arp:  Simple arp    CJ
+  [ ] mqflak-g-081  Poly: Sitar         CJ
+  [ ] mqflak-g-082  FX:   Skipy jitters CJ
+  [ ] mqflak-g-083  Pad:  Slow coach    CJ
+  [ ] mqflak-g-084  Pad:  Slumber       CJ
+  [ ] mqflak-g-085  Arp:  Snow drops    CJ
+  [ ] mqflak-g-086  Lead: Soda Stream 2 CJ
+  [ ] mqflak-g-087  Lead: Soda Stream   CJ
+  [ ] mqflak-g-088  Pad:  Soft pad      CJ
+  [ ] mqflak-g-089  Arp:  Soggy lobon   CJ
+  [ ] mqflak-g-090  Pad:  Someday       CJ
+  [ ] mqflak-g-091  Keys: Space Grand 2 CJ
+  [ ] mqflak-g-092  Lead: Space Strings CJ
+  [ ] mqflak-g-093  Pad:  Sparklesyn    CJ
+  [ ] mqflak-g-094  FX:   Sparks        CJ
+  [ ] mqflak-g-095  Atmo: Spooky        CJ
+  [ ] mqflak-g-096  Atmo: StandingStonesCJ
+
+  [ ] mqflak-g-097  Pad:  Step on       CJ
+  [ ] mqflak-g-098  Poly: Strumpet      CJ
+  [ ] mqflak-g-099  Bass: Sub Bass 2    CJ
+  [ ] mqflak-g-100  Poly: Synth keys 2  CJ
+  [ ] mqflak-g-101  Poly: Synth keys    CJ
+  [ ] mqflak-g-102  Arp:  Tangle        CJ
+  [ ] mqflak-g-103  Lead: Tech mouse    CJ
+  [ ] mqflak-g-104  Arp:  Technodoodah  CJ
+  [ ] mqflak-g-105  Bass: Teck Bass     CJ
+  [ ] mqflak-g-106  Atmo: Terminator    CJ
+  [ ] mqflak-g-107  Pad:  The Darkside  CJ
+  [ ] mqflak-g-108  Bass: Thick Bass    CJ
+  [ ] mqflak-g-109  Bass: Thud lump 2   CJ
+  [ ] mqflak-g-110  Bass: Thunder       CJ
+  [ ] mqflak-g-111  Arp:  Tin Man       CJ
+  [ ] mqflak-g-112  Atmo: Tip toes      CJ
+  [ ] mqflak-g-113  Arp:  Tribal 2      CJ
+  [ ] mqflak-g-114  Arp:  Tribal        CJ
+  [ ] mqflak-g-115  Bass: Tubby bubba   CJ
+  [ ] mqflak-g-116  Arp:  Twange 2      CJ
+  [ ] mqflak-g-117  Arp:  Twange        CJ
+  [ ] mqflak-g-118  Arp:  Twang time    CJ
+  [ ] mqflak-g-119  Pad:  Twylight      CJ
+  [ ] mqflak-g-120  Perc: Uncle Junk    CJ
+  [ ] mqflak-g-121  Pad:  Undercurrents CJ
+  [ ] mqflak-g-122  Lead: Uppercut      CJ
+  [ ] mqflak-g-123  Pad:  Western wind  CJ
+  [ ] mqflak-g-124  FX:   Whaaat        CJ
+  [ ] mqflak-g-125  Lead: Whail song    CJ
+  [ ] mqflak-g-126  Bass: Whicky whawha CJ
+  [ ] mqflak-g-127  Arp:  Whishywashy   CJ
+  [ ] mqflak-g-128  Pad:  Whisp         CJ
+</pre>
+<p><strong>Bank MQFLAK-H 0-H (0-7)</strong></p>
+<pre>
+  [ ] mqflak-h-001  Pad:  Whispers      CJ
+  [ ] mqflak-h-002  Poly: Whistler      CJ
+  [ ] mqflak-h-003  Pad:  Whistl'n wind CJ
+  [ ] mqflak-h-004  Bass: Wideboy       CJ
+  [ ] mqflak-h-005  Lead: Wishbone      CJ
+  [ ] mqflak-h-006  Lead: Yoyo agogo    CJ
+  [ ] mqflak-h-007  Lead: Zippy hippy   CJ
+</pre>
+
+<h2><a name="microq_forumonetwothree_user_sound_programs" href="#_toc_microq_forumonetwothree_user_sound_programs">MicroQ ForumOneTwoThree User sound programs</a></h2>
+<p>(a-001..128 b-001..128 c-001..128 d-001..128 e-001..128 f-001..128 g-001..128
+h-001)</p>
+<p><strong>Bank MQFORUM-A 0-A (0-0)</strong></p>
+<pre>
+  [ ] mqforum-a-001  Pad:  "Forum One"   SK
+  [ ] mqforum-a-002  Keys: JupiterKoto   AT
+  [ ] mqforum-a-003  Bass: VitaBass-4   VVZ
+  [ ] mqforum-a-004  Arp:  Kraftwerk Clk3CC
+  [ ] mqforum-a-005  Lead: Cello         EB
+  [ ] mqforum-a-006  Keys: OrganiQ       AG
+  [ ] mqforum-a-007  Keys: Beta Sound 3  GM
+  [ ] mqforum-a-008  Arp:  RubberLover   CJ
+  [ ] mqforum-a-009  Bass: Saftig       MiB
+  [ ] mqforum-a-010  Keys: Evolvatron   JJB
+  [ ] mqforum-a-011  Pad:  Polymorfotron AT
+  [ ] mqforum-a-012  Pad:  Sweep-pad    SCD
+  [ ] mqforum-a-013  Keys: Geodesic      DB
+  [ ] mqforum-a-014  Keys: PurpleDragon  KP
+  [ ] mqforum-a-015  Lead: Balsamic Saw  JM
+  [ ] mqforum-a-016  Keys: Just Weird    JS
+  [ ] mqforum-a-017  Keys: Jump         TEK
+  [ ] mqforum-a-018  Lead: Tsching Lead   T
+  [ ] mqforum-a-019  Bass: BASSiQue 5th  UA
+  [ ] mqforum-a-020  Lead: FM 2001       SK
+  [ ] mqforum-a-021  Keys: AZ1-2        SCD
+  [ ] mqforum-a-022  Lead: DeeperJamiro MDS
+  [ ] mqforum-a-023  Keys: Glass M'bira  JM
+  [ ] mqforum-a-024  Keys: HammerPad     SK
+  [ ] mqforum-a-025  Keys: Icepsycle     CJ
+  [ ] mqforum-a-026  Keys: Compo Sound  SCD
+  [ ] mqforum-a-027  Keys: Poly 2600     AT
+  [ ] mqforum-a-028  Bass: PPQ ClunQ 2.2 CC
+  [ ] mqforum-a-029  Bass: VeryLo Bass   SK
+  [ ] mqforum-a-030  Keys: CS80 V2       AT
+  [ ] mqforum-a-031  Keys: Beta Sound 1  GM
+  [ ] mqforum-a-032  Lead: Dual Lead     DG
+
+  [ ] mqforum-a-033  Bass: EierKocher   MiB
+  [ ] mqforum-a-034  Keys: Heavy Bell    EB
+  [ ] mqforum-a-035  Pad:  Parallel Motn KP
+  [ ] mqforum-a-036  Bass: MetalloBase   P2
+  [ ] mqforum-a-037  Seq:  Dr. Strange    T
+  [ ] mqforum-a-038  Bass: PhazeBaze     SK
+  [ ] mqforum-a-039  Keys: Ionized       JS
+  [ ] mqforum-a-040  Lead: Spinettish   MDS
+  [ ] mqforum-a-041  Atmo: HyperStrings  AT
+  [ ] mqforum-a-042  Keys: Harpsichord   AT
+  [ ] mqforum-a-043  Lead: DW2001        AT
+<b>  [?] mqforum-a-044  Pad:  Qling Qlang   CC</b>
+  [ ] mqforum-a-045  Keys: 1942 Ethereal AT
+  [ ] mqforum-a-046  Keys: SuperManPiano EB
+  [ ] mqforum-a-047  Bass: Pulsar Beamer SK
+  [ ] mqforum-a-048  Lead: Du Dreckiger  GM
+  [ ] mqforum-a-049  Pad:  BockWurst    MiB
+  [ ] mqforum-a-050  Keys: DudelSack     JS
+  [ ] mqforum-a-051  Pad:  Slow Strings1TEK
+  [ ] mqforum-a-052  Pad:  Blakes 7 Brs  AT
+  [ ] mqforum-a-053  Keys: Oort Cloud    DB
+  [ ] mqforum-a-054  Pad:  Xynth Brass   EB
+  [ ] mqforum-a-055  Bass: Kazoom        CJ
+  [ ] mqforum-a-056  Bass: BelowBass     SK
+  [ ] mqforum-a-057  Pad:  Cousteau 1    AT
+  [ ] mqforum-a-058  Bass: SubBass      MDS
+  [ ] mqforum-a-059  Pad:  CS500 8PoleSt AT
+  [ ] mqforum-a-060  Bass: Picky Woof    SK
+  [ ] mqforum-a-061  Pad:  CS500 Sweep1  AT
+  [ ] mqforum-a-062  Bass: BassFlute     DG
+  [ ] mqforum-a-063  Keys: Heat 2       SCD
+  [ ] mqforum-a-064  Keys: CS80 V1       AT
+
+  [ ] mqforum-a-065  Atmo:      G.      MiB
+  [ ] mqforum-a-066  Keys: CS80 V3       AT
+  [ ] mqforum-a-067  Keys: OPL3 Piano    EB
+  [ ] mqforum-a-068  Bass: VitaBass-3   VVZ
+  [ ] mqforum-a-069  Keys: Sweet Reso    AT
+  [ ] mqforum-a-070  Seq:  TD-seq 104   SCD
+  [ ] mqforum-a-071  Pad:  Table Sweep   KP
+  [ ] mqforum-a-072  Atmo: NME With in 1 CC
+  [ ] mqforum-a-073  Pad:  Equi-Strings  AT
+  [ ] mqforum-a-074  Lead: Haunted Beast JS
+  [ ] mqforum-a-075  Pad:  CS80 EnsBrass AT
+  [ ] mqforum-a-076  Keys: CheesyOrgan  MDS
+  [ ] mqforum-a-077  Pad:  CoherentLight DB
+  [ ] mqforum-a-078  Keys: Lubrisyn      JM
+  [ ] mqforum-a-079  Seq:  2usefulSynthsMiB
+  [ ] mqforum-a-080  Pad:  Expo2kStrngs  CC
+  [ ] mqforum-a-081  Pad:  MegastringathnAT
+  [ ] mqforum-a-082  Keys: Lyra          EB
+  [ ] mqforum-a-083  Keys: MemoryMoog 2  AT
+  [ ] mqforum-a-084  Keys: NoiseMod     JJB
+  [ ] mqforum-a-085  Lead: MiniLead 1    AT
+  [ ] mqforum-a-086  Bass: Badassbass    CJ
+  [ ] mqforum-a-087  Keys: Modular Brass AT
+  [ ] mqforum-a-088  Bass: RangDaBace    SK
+  [ ] mqforum-a-089  Keys: MegaRezzyStrg AT
+  [ ] mqforum-a-090  Keys: Chorustrings MDS
+  [ ] mqforum-a-091  Keys: ModwheelPlea SCD
+  [ ] mqforum-a-092  Keys: Shimmer EP    EB
+  [ ] mqforum-a-093  Pad:  Polymorfotron2AT
+  [ ] mqforum-a-094  Pad:  QuietSound   NH
+  [ ] mqforum-a-095  Keys: SlowMotion   TEK
+  [ ] mqforum-a-096  Lead: OneSickMotha  JS
+
+  [ ] mqforum-a-097  Bass: ZeroBaze      SK
+  [ ] mqforum-a-098  Keys: Sayer10      SCD
+  [ ] mqforum-a-099  Lead: Matrix6Rmembr EB
+  [ ] mqforum-a-100  Bass: AthmoBass     SK
+  [ ] mqforum-a-101  Pad:  CS500 8PoleS2 AT
+  [ ] mqforum-a-102  Keys: Organ        MDS
+  [ ] mqforum-a-103  Keys: King B3       AT
+  [ ] mqforum-a-104  Keys: Dr Phibes     AT
+  [ ] mqforum-a-105  Bass: Nice Bass     KP
+  [ ] mqforum-a-106  Keys: Wave Organ    AG
+  [ ] mqforum-a-107  Keys: Billig&amp;Gut     T
+  [ ] mqforum-a-108  Lead: Bass'n Piano  SK
+  [ ] mqforum-a-109  Lead: Haunted Organ SK
+  [ ] mqforum-a-110  Keys: sQueeze       NH
+<b>  [?] mqforum-a-111  Keys: WAVEtable    TEK</b>
+  [ ] mqforum-a-112  Keys: MarathonRush2 CC
+  [ ] mqforum-a-113  Bass: Low Base     MiB
+  [ ] mqforum-a-114  Keys: Xynth Celli   EB
+  [ ] mqforum-a-115  Lead: FM Porta Lead DG
+  [ ] mqforum-a-116  Keys: Fat Max!      SK
+  [ ] mqforum-a-117  Bass: VitaBass-2   VVZ
+  [ ] mqforum-a-118  Keys: WaveFun       DG
+  [ ] mqforum-a-119  Keys: High         SCD
+  [ ] mqforum-a-120  Bass: PunchyPup     EB
+  [ ] mqforum-a-121  Pad:  Drama Strings AT
+  [ ] mqforum-a-122  FX:   ESQuire Bell  KP
+  [ ] mqforum-a-123  Keys: VeloTronic   JJB
+  [ ] mqforum-a-124  Lead: Le Big Mack!  SK
+  [ ] mqforum-a-125  Pad:  ChromaParSwp  AT
+  [ ] mqforum-a-126  Bass: XT Bell Qlav  EB
+  [ ] mqforum-a-127  Pad:  Voices?? MW  SCD
+  [ ] mqforum-a-128  Pad:  PhasePad     SCD
+</pre>
+<p><strong>Bank MQFORUM-B 0-B (0-1)</strong></p>
+<pre>
+  [ ] mqforum-b-001  Keys: Steel Beads   JM
+  [ ] mqforum-b-002  Keys: Slackman      CJ
+  [ ] mqforum-b-003  Pad:  Mega OBX      AT
+  [ ] mqforum-b-004  Bass: LiveWyre      EB
+  [ ] mqforum-b-005  Keys: CS80 V4       AT
+  [ ] mqforum-b-006  Keys: Purple Bells  SK
+  [ ] mqforum-b-007  Keys: ConcertIntro SCD
+  [ ] mqforum-b-008  Keys: Boele`s Choi SCD
+  [ ] mqforum-b-009  Keys: Comb 2 Much   AT
+  [ ] mqforum-b-010  Bass: LekkaSmakka   SK
+  [ ] mqforum-b-011  Pad:  Motion Pad    KP
+  [ ] mqforum-b-012  FX:   LFO-ne Chord  UA
+  [ ] mqforum-b-013  Pad:  Str+Noxe      AT
+  [ ] mqforum-b-014  Keys: Modutable    TEK
+  [ ] mqforum-b-015  Keys: Moog Prodigy2TEK
+  [ ] mqforum-b-016  Keys: FreddyKruegerMiB
+  [ ] mqforum-b-017  Init: Accidentor    SK
+  [ ] mqforum-b-018  Keys: Beta Sound 2  GM
+  [ ] mqforum-b-019  Pad:  3:17am       MiB
+  [ ] mqforum-b-020  Bass: TubeBass     MDS
+  [ ] mqforum-b-021  Keys: Lilly Curl    JM
+  [ ] mqforum-b-022  Keys: RaindropJump  SK
+  [ ] mqforum-b-023  Keys: Obie         TEK
+  [ ] mqforum-b-024  Keys: FM Fuzi       EB
+  [ ] mqforum-b-025  Bass: Solid Jammer  SK
+  [ ] mqforum-b-026  Lead: Don't Ask     JS
+  [ ] mqforum-b-027  Bass: Select-A-baS  EB
+<b>  [?] mqforum-b-028  Keys: Modular Chiff AT</b>
+  [ ] mqforum-b-029  Keys: BellWave      DG
+  [ ] mqforum-b-030  Pad:  Xynth Tremi   EB
+  [ ] mqforum-b-031  Pad:  MemoryMoog 1  AT
+  [ ] mqforum-b-032  Lead: LectricBaritonEB
+
+  [ ] mqforum-b-033  Pad:  Big OBX 2     AT
+  [ ] mqforum-b-034  Seq:  Seq PPG 124  SCD
+  [ ] mqforum-b-035  FX:   Sandom Sound TEK
+  [ ] mqforum-b-036  Lead: Resweep       CJ
+  [ ] mqforum-b-037  Keys: Syncoid       AT
+  [ ] mqforum-b-038  Keys: AlienJawHarp  DB
+  [ ] mqforum-b-039  Keys: Thunder FM    SK
+  [ ] mqforum-b-040  Keys: Brass-lead   SCD
+  [ ] mqforum-b-041  Keys: Whispers      AT
+  [ ] mqforum-b-042  Keys: Dirty FMPiano SK
+  [ ] mqforum-b-043  Keys: MegaStrings   AT
+  [ ] mqforum-b-044  Keys: ChimePad      EB
+  [ ] mqforum-b-045  Keys: MiniWave      AT
+  [ ] mqforum-b-046  Keys: JupiterSticks KP
+  [ ] mqforum-b-047  Pad:  CS500 Sweep2  AT
+  [ ] mqforum-b-048  Lead: OldFashioned MDS
+  [ ] mqforum-b-049  Keys: Blakes 7 Str  AT
+  [ ] mqforum-b-050  Keys: Piano Murks   SK
+  [ ] mqforum-b-051  Lead: DidgeriFlute  JS
+  [ ] mqforum-b-052  Bass: VitaBass-1   VVZ
+  [ ] mqforum-b-053  Lead: Mini Lead 2   AT
+  [ ] mqforum-b-054  Bass: BAss Licker    T
+  [ ] mqforum-b-055  Keys: NeedsChord    DG
+  [ ] mqforum-b-056  Lead: Psyied Out    JS
+  [ ] mqforum-b-057  Keys: Palais Fluffy JS
+  [ ] mqforum-b-058  Keys: Swell         EB
+  [ ] mqforum-b-059  Lead: Oldfield Xa1  AT
+  [ ] mqforum-b-060  Lead: Rainbow Ody   AT
+  [ ] mqforum-b-061  Bass: VeLowBass     SK
+  [ ] mqforum-b-062  Lead: KrazyKorus    EB
+  [ ] mqforum-b-063  Pad:  Plain Pad    TEK
+  [ ] mqforum-b-064  Keys: SwitchedOn-Q  AT
+
+  [ ] mqforum-b-065  Pad:  Cousteau 2001 AT
+  [ ] mqforum-b-066  Pad:  Space MusiQ 1 CC
+  [ ] mqforum-b-067  Pad:  Sound Track   AT
+  [ ] mqforum-b-068  Keys: Buddha Pad   MiB
+  [ ] mqforum-b-069  Lead: Pro5 Brass    AT
+  [ ] mqforum-b-070  Bass: VintageBass   SK
+  [ ] mqforum-b-071  Init: Perc Xtrnal   RK
+  [ ] mqforum-b-072  Init: Ext. Mangeler KP
+  [ ] mqforum-b-073  Perc: BD analog 03  SK
+  [ ] mqforum-b-074  Perc: Pkic. drum    Lp
+  [ ] mqforum-b-075  Perc: BD analog 01  SK
+  [ ] mqforum-b-076  Perc: DJ'sChoice BD SK
+  [ ] mqforum-b-077  Perc: X-Base BD 1   SK
+  [ ] mqforum-b-078  Perc: Analog SN 01  SK
+  [ ] mqforum-b-079  Perc: Real HH cl    SK
+  [ ] mqforum-b-080  Perc: Clicky HH     SK
+  [ ] mqforum-b-081  Perc: Tick-Tack    TEK
+  [ ] mqforum-b-082  Perc: Classic cl HH SK
+  [ ] mqforum-b-083  Perc: 100% Hihat    Lp
+  [ ] mqforum-b-084  Perc: Open Cym HH   SK
+  [ ] mqforum-b-085  Perc: Analog HH op  SK
+  [ ] mqforum-b-086  Perc: One o Clock   Lp
+  [ ] mqforum-b-087  Perc: Analog Clap1  SK
+  [ ] mqforum-b-088  Perc: Analog Clap4  SK
+  [ ] mqforum-b-089  Perc: Bot-Tom      MiB
+  [ ] mqforum-b-090  Perc: TriMetal      SK
+  [ ] mqforum-b-091  Perc: FM Stick      SK
+  [ ] mqforum-b-092  Perc: FM Bell       SK
+  [ ] mqforum-b-093  Perc: PockPock      SK
+  [ ] mqforum-b-094  Perc: Synth Cymbal  SK
+  [ ] mqforum-b-095  Perc: ZappaDappa    SK
+  [ ] mqforum-b-096  FX:   Crazy Gong    SK
+
+  [ ] mqforum-b-097  Perc: Analog Stick1 SK
+  [ ] mqforum-b-098  FX:   Photon Laser  SK
+  [ ] mqforum-b-099  Pad:  Sci-Fi Japan  CC
+  [ ] mqforum-b-100  FX:   Thunder Storm Lp
+  [ ] mqforum-b-101  FX:   TD MystSound TEK
+  [ ] mqforum-b-102  Keys: Twylight      CJ
+  [ ] mqforum-b-103  FX:   Drone'ish 1   CC
+  [ ] mqforum-b-104  Pad:  Broom Water   KP
+  [ ] mqforum-b-105  FX:   InzeKtaNdRoiD KP
+  [ ] mqforum-b-106  FX:   Compute       Lp
+  [ ] mqforum-b-107  FX:   WeirdMod     MDS
+  [ ] mqforum-b-108  Keys: In Your Face  JS
+  [ ] mqforum-b-109  FX:   OhhMmmm       CJ
+  [ ] mqforum-b-110  Lead: BG1          SCD
+  [ ] mqforum-b-111  Atmo: Not guilty2!   T
+  [ ] mqforum-b-112  Lead: CombHoover    CJ
+  [ ] mqforum-b-113  Pad:  Metal Eerie   DG
+  [ ] mqforum-b-114  FX:   Reverse Lab   SK
+  [ ] mqforum-b-115  FX:   Lost Planet   KP
+  [ ] mqforum-b-116  FX:   ApplesInStereoKP
+  [ ] mqforum-b-117  Lead: Ewwbell       DG
+  [ ] mqforum-b-118  Seq:  DragonflyTech UA
+  [ ] mqforum-b-119  FX:   E-Q-Noxe      AT
+  [ ] mqforum-b-120  Pad:  Big Synthex   AT
+  [ ] mqforum-b-121  FX:   Diving Echos TEK
+  [ ] mqforum-b-122  FX:   Cicada        EB
+  [ ] mqforum-b-123  Lead: PocketCalQl8r CC
+  [ ] mqforum-b-124  FX:   Mod'in da subsKP
+  [ ] mqforum-b-125  FX:   Wobbler FX    SK
+  [ ] mqforum-b-126  FX:   Cheapo Subst  SK
+  [ ] mqforum-b-127  FX:   Deathray      CJ
+  [ ] mqforum-b-128  FX:   Ghostly Visit P2
+</pre>
+<p><strong>Bank MQFORUM-C 0-C (0-2)</strong></p>
+<pre>
+  [ ] mqforum-c-001  FX:   Three Horses  DB
+  [ ] mqforum-c-002  FX:   Sea Sound    SCD
+  [ ] mqforum-c-003  FX:   Robot        VVZ
+  [ ] mqforum-c-004  FX:   InDustRialGruvRK
+  [ ] mqforum-c-005  Keys: Laboratory    SK
+  [ ] mqforum-c-006  FX:   NoiseInTune  SCD
+  [ ] mqforum-c-007  Keys: VA AA ala K5k KP
+  [ ] mqforum-c-008  FX:   Synthex BPF1  AT
+  [ ] mqforum-c-009  FX:   4n4106       JJB
+  [ ] mqforum-c-010  FX:   BrknSpaceship KP
+  [ ] mqforum-c-011  FX:   4 %...        SK
+  [ ] mqforum-c-012  FX:   E-Q-Noise     AT
+  [ ] mqforum-c-013  FX:   OceanMass     UA
+  [ ] mqforum-c-014  Arp:  NoizARP      JJB
+  [ ] mqforum-c-015  Arp:  More Haste    CJ
+  [ ] mqforum-c-016  Arp:  AN1q          AT
+  [ ] mqforum-c-017  Arp:  Evolution     Lp
+  [ ] mqforum-c-018  Arp:  The Q Bots 5  CC
+  [ ] mqforum-c-019  Arp:  Sequence 14   AT
+  [ ] mqforum-c-020  Arp:  Tribal        CJ
+  [ ] mqforum-c-021  Arp:  LFO Groover   SK
+  [ ] mqforum-c-022  Arp:  SYNAPS        Lp
+  [ ] mqforum-c-023  Arp:  Morgenlatte  MiB
+  [ ] mqforum-c-024  Arp:  TransEuropeE  CC
+  [ ] mqforum-c-025  Arp:  Quasimorph    AT
+  [ ] mqforum-c-026  Arp:  Patch 14      AT
+  [ ] mqforum-c-027  Arp:  Orgasmatic    CJ
+  [ ] mqforum-c-028  Arp:  Trance4Seq    UA
+  [ ] mqforum-c-029  Arp:  4n4106 Arp   JJB
+  [ ] mqforum-c-030  Arp:  Ethereal Arp  AT
+  [ ] mqforum-c-031  Arp:  TeQno Tribal  CC
+  [ ] mqforum-c-032  Arp:  Koblenz Nord   T
+
+  [ ] mqforum-c-033  Arp:  Arp Mac       AT
+  [ ] mqforum-c-034  Arp:  Qristian'sArp CC
+  [ ] mqforum-c-035  Arp:  ChromaCrasher AT
+  [ ] mqforum-c-036  Arp:  BubbleLite    DG
+  [ ] mqforum-c-037  Arp:  Schaltwerk    AT
+  [ ] mqforum-c-038  Arp:  XTk Bass 2    CC
+  [ ] mqforum-c-039  Arp:  ArpRachel     AT
+  [ ] mqforum-c-040  Arp:  Twange        CJ
+  [ ] mqforum-c-041  Arp:  4n4106 Arp2  JJB
+  [ ] mqforum-c-042  Arp:  ArpSabrina    AT
+  [ ] mqforum-c-043  Arp:  SynthetiQ Bs  CC
+  [ ] mqforum-c-044  Lead: Meltdown     BiX
+  [ ] mqforum-c-045  Pad:  Jarre     SCD/AG
+  [ ] mqforum-c-046  Arp:  Antarticato  M.@
+  [ ] mqforum-c-047  Pad:  Greenland     dB
+  [ ] mqforum-c-048  Pad:  StereoSpheres3Ey
+  [ ] mqforum-c-049  Keys: PassivLiv    Dim
+  [ ] mqforum-c-050  Keys: Sway          CJ
+  [ ] mqforum-c-051  Bass: Eeevil Bass  SMB
+  [ ] mqforum-c-052  Keys: DirtyS&amp;H     Dim
+  [ ] mqforum-c-053  Lead: Ravi's uMini RIS
+  [ ] mqforum-c-054  Keys: BrauneButterDocT
+  [ ] mqforum-c-055  Arp:  Meglomaniac!  DF
+  [ ] mqforum-c-056  Atmo: Ethereal Lead FH
+  [ ] mqforum-c-057  Lead: AN1XRebuild  MDS
+  [ ] mqforum-c-058  Pad:  Reverse Voice SK
+  [ ] mqforum-c-059  Poly: TableSax    DocT
+  [ ] mqforum-c-060  Arp:  TanDreamSeq  SCD
+  [ ] mqforum-c-061  Keys: Clean Sine   M.@
+  [ ] mqforum-c-062  Pad:  Choir in Hell DF
+  [ ] mqforum-c-063  Arp:  Quno Six      RJ
+  [ ] mqforum-c-064  Init: into Moog    TEK
+
+  [ ] mqforum-c-065  Poly: Aztek Night   CJ
+  [ ] mqforum-c-066  Bass: Notchy Bass   AO
+  [ ] mqforum-c-067  Pad:  TheDarkSide    N
+  [ ] mqforum-c-068  Keys: Q-Birth       RJ
+  [ ] mqforum-c-069  Atmo: D-Sphere      Lp
+  [ ] mqforum-c-070  FX:   Combuter2   DocT
+  [ ] mqforum-c-071  Keys: Viperatic     dB
+  [ ] mqforum-c-072  FX:   Wanderphone   dB
+  [ ] mqforum-c-073  Keys: Tom Sawyer    DF
+  [ ] mqforum-c-074  Keys: Well Hard     CJ
+  [ ] mqforum-c-075  Atmo: CerebralVortexLp
+  [ ] mqforum-c-076  Arp:  Glass House  MiB
+  [ ] mqforum-c-077  Keys: Zupf          SK
+  [ ] mqforum-c-078  Arp:  The Chase     Lp
+  [ ] mqforum-c-079  Keys: Frozen Metal  DF
+  [ ] mqforum-c-080  Bass: -= Lube =-    Ey
+  [ ] mqforum-c-081  Lead: Boeles Lead  SCD
+  [ ] mqforum-c-082  Pad:  Eisvogel    DocT
+  [ ] mqforum-c-083  Bass: Resonautilus  Ey
+  [ ] mqforum-c-084  Arp:  TubbThumper   CJ
+  [ ] mqforum-c-085  Pad:  Voyage 34    SMB
+  [ ] mqforum-c-086  Lead: VitaLead-1   VVZ
+  [ ] mqforum-c-087  Bass: QB-303        RJ
+  [ ] mqforum-c-088  Lead: Baeuerchen  DocT
+  [ ] mqforum-c-089  Bass: DeepSynthBass Ey
+  [ ] mqforum-c-090  Pad:  Kwk Pad R     CC
+  [ ] mqforum-c-091  FX:   IntroSweep    FH
+  [ ] mqforum-c-092  Pad:  Vibra Strings Lp
+  [ ] mqforum-c-093  Poly: Was e Brett! MiB
+  [ ] mqforum-c-094  Bass: VollSatt!     SK
+  [ ] mqforum-c-095  FX:   ILoveAtaris    N
+  [ ] mqforum-c-096  Atmo: IllbientPing MiB
+
+  [ ] mqforum-c-097  Bass: Q Trance Base Ey
+  [ ] mqforum-c-098  Arp:  2 Or More    Dim
+  [ ] mqforum-c-099  Bass: Woof Bass    SMB
+  [ ] mqforum-c-100  Pad:  Sweep Res.   SER
+  [ ] mqforum-c-101  Lead: Tightrope     CJ
+  [ ] mqforum-c-102  Bass: PulseDrive  DocT
+  [ ] mqforum-c-103  Keys: Mooq Pluck    RJ
+  [ ] mqforum-c-104  Pad:  StereoSperes  Ey
+  [ ] mqforum-c-105  Poly: ResoBells   DocT
+  [ ] mqforum-c-106  Bass: TricoloreBass SK
+  [ ] mqforum-c-107  Arp:  Rickets       CJ
+  [ ] mqforum-c-108  Bass: Logged Bass   Ey
+  [ ] mqforum-c-109  Lead: Ancient Lead Spa
+  [ ] mqforum-c-110  Arp:  PhunQy        CC
+  [ ] mqforum-c-111  Pad:  SHIQ          Lp
+  [ ] mqforum-c-112  Pad:  MetaFlange   M.@
+  [ ] mqforum-c-113  Keys: Tubeworm      dB
+  [ ] mqforum-c-114  Arp:  Arp Scream   SER
+  [ ] mqforum-c-115  Lead: SpaceModulatorDF
+  [ ] mqforum-c-116  Arp:  Inner Phase   FH
+  [ ] mqforum-c-117  Bass: PulseDrive4 DocT
+  [ ] mqforum-c-118  Bass: bncr bass   rvl8
+  [ ] mqforum-c-119  Pad:  Shimmering   MDS
+  [ ] mqforum-c-120  Bass: Dubassub '35  Ey
+  [ ] mqforum-c-121  Bass: VitaBass-5   VVZ
+  [ ] mqforum-c-122  Lead: 1000malGeho docT
+  [ ] mqforum-c-123  Keys: CosmicDust    RJ
+  [ ] mqforum-c-124  Bass: Sqr Bass     SMB
+  [ ] mqforum-c-125  FX:   70's Sci-Fi   RJ
+  [ ] mqforum-c-126  Bass: RoehrenBass DocT
+  [ ] mqforum-c-127  Bass: Lubestortion  Ey
+  [ ] mqforum-c-128  Keys: My house      CJ
+</pre>
+<p><strong>Bank MQFORUM-D 0-D (0-3)</strong></p>
+<pre>
+  [ ] mqforum-d-001  Keys: Wurlitzer?   SCD
+  [ ] mqforum-d-002  FX:   Intro         Lp
+  [ ] mqforum-d-003  Bass: TrashDown     SK
+  [ ] mqforum-d-004  Pad:  Saw U There  M.@
+  [ ] mqforum-d-005  Bass: Game Bwuoy   MiB
+  [ ] mqforum-d-006  Pad:  Decay Pad    SER
+  [ ] mqforum-d-007  FX:   MiniMoogThndrTEK
+  [ ] mqforum-d-008  Lead: Tech         MDS
+  [ ] mqforum-d-009  Arp:  Randomized   M.@
+  [ ] mqforum-d-010  Poly: Orch&amp;Harp   DocT
+  [ ] mqforum-d-011  Bass: wave mod    rvl8
+  [ ] mqforum-d-012  Pad:  Industrale    dB
+  [ ] mqforum-d-013  Keys: Comb Harp    Spa
+  [ ] mqforum-d-014  Atmo: Plzma Field 1 CC
+  [ ] mqforum-d-015  Keys: mntlydvrgnt rvl8
+  [ ] mqforum-d-016  FX:   DontLetGo    Dim
+  [ ] mqforum-d-017  Arp:  K3 BASS+ARP  JJB
+  [ ] mqforum-d-018  Keys: DarkSideNoise  N
+  [ ] mqforum-d-019  FX:   Qommodore 64  RJ
+  [ ] mqforum-d-020  Lead: Read My Teeth CJ
+  [ ] mqforum-d-021  FX:   ModuWaltz #   RJ
+  [ ] mqforum-d-022  Lead: Suenck      DocT
+  [ ] mqforum-d-023  Lead: DSP Hog      RIS
+  [ ] mqforum-d-024  Pad:  DelicatePad  MDS
+  [ ] mqforum-d-025  Pad:  Kitschig    DocT
+  [ ] mqforum-d-026  Keys: Birthday     SCD
+  [ ] mqforum-d-027  Pad:  StainedGlass  dB
+  [ ] mqforum-d-028  Bass: Resonautilus2 Ey
+  [ ] mqforum-d-029  FX:   Darkling      Lp
+  [ ] mqforum-d-030  Bass: Simple Pulse  SK
+  [ ] mqforum-d-031  FX:   We are here DocT
+  [ ] mqforum-d-032  Atmo: Noodle...    MiB
+
+  [ ] mqforum-d-033  Poly: TwiligtWave 2 CC
+  [ ] mqforum-d-034  Arp:  Another Arp   CJ
+  [ ] mqforum-d-035  Keys: Trops       DocT
+  [ ] mqforum-d-036  Bass: Punchy Bass  SMB
+  [ ] mqforum-d-037  Keys: Schmatz     DocT
+  [ ] mqforum-d-038  Keys: Oldshcool     CJ
+  [ ] mqforum-d-039  Pad:  Simple Minded1CC
+  [ ] mqforum-d-040  Bass: Real Bassy    SK
+  [ ] mqforum-d-041  Arp:  GoaTiQue      FH
+  [ ] mqforum-d-042  Pad:  Reversi       dB
+  [ ] mqforum-d-043  Keys: Ampere      DocT
+  [ ] mqforum-d-044  Keys: Power-Q!!    SCD
+  [ ] mqforum-d-045  Keys: Bubblebath   BiX
+  [ ] mqforum-d-046  Bass: Carpet burn   CJ
+  [ ] mqforum-d-047  Bass: -= Deep 6 =-  Ey
+  [ ] mqforum-d-048  FX:   Star Trekish3 CC
+  [ ] mqforum-d-049  Atmo: Sphere Tone   Lp
+  [ ] mqforum-d-050  Lead: Lazy Jones    RJ
+  [ ] mqforum-d-051  Arp:  QussySound   MiB
+  [ ] mqforum-d-052  Bass: Pulse Bass 1 SMB
+  [ ] mqforum-d-053  Lead: Stacato BrassM.@
+  [ ] mqforum-d-054  Bass: Punchy Bass   Ey
+  [ ] mqforum-d-055  Arp:  Arp+Lead+Delay N
+  [ ] mqforum-d-056  Keys: PlayTheFilter  N
+  [ ] mqforum-d-057  Keys: PassivLiv2   Dim
+  [ ] mqforum-d-058  Bass: Phat FM Bass SMB
+  [ ] mqforum-d-059  Keys: Oily Joe      CJ
+  [ ] mqforum-d-060  Pad:  Fat&amp;Useless DocT
+  [ ] mqforum-d-061  Lead: Jan's Moog    Ey
+  [ ] mqforum-d-062  Keys: Haende Hoch   RJ
+  [ ] mqforum-d-063  Keys:    Miranda     U
+  [ ] mqforum-d-064  FX:   Cinema Scare  Lp
+
+  [ ] mqforum-d-065  Pad:  Crystal Q    M.@
+  [ ] mqforum-d-066  FX:   Red Horde     dB
+  [ ] mqforum-d-067  Arp:  Fanfaround   SER
+  [ ] mqforum-d-068  Lead: Fula Flugan   FH
+  [ ] mqforum-d-069  Pad:  Emergent      Ey
+  [ ] mqforum-d-070  Bass: Telaviv Bass  CC
+  [ ] mqforum-d-071  FX:   Wait&amp;Hear     RJ
+  [ ] mqforum-d-072  Lead: PatsyPorta    SK
+  [ ] mqforum-d-073  Bass: Mono Squidge SMB
+  [ ] mqforum-d-074  Keys: YellowSteel DocT
+  [ ] mqforum-d-075  Lead: Sizzle Stab   DF
+  [ ] mqforum-d-076  Pad:  Oblong        CJ
+  [ ] mqforum-d-077  FX:   innerspace  rvl8
+  [ ] mqforum-d-078  Arp:  Leki Acid    SMB
+  [ ] mqforum-d-079  FX:   ResSolution   FH
+  [ ] mqforum-d-080  Pad:  HeavyStuff    SK
+  [ ] mqforum-d-081  Atmo: inocuous    rvl8
+  [ ] mqforum-d-082  Atmo: FH's Brain    FH
+  [ ] mqforum-d-083  Bass: Dance Bass   Spa
+  [ ] mqforum-d-084  Keys: Sand Qorm     RJ
+  [ ] mqforum-d-085  FX:   Ultraman! 2   CC
+  [ ] mqforum-d-086  Arp:  Mod Edge     BiX
+  [ ] mqforum-d-087  Pad:  Nostradamite  dB
+  [ ] mqforum-d-088  Arp:  Electro Harp  Ey
+  [ ] mqforum-d-089  Arp:  REM-Phase   DocT
+  [ ] mqforum-d-090  FX:   Sub Orbiting  Lp
+  [ ] mqforum-d-091  FX:   Random FM    MiB
+  [ ] mqforum-d-092  Bass: Frog Bass    SMB
+  [ ] mqforum-d-093  Arp:  FM-Osc 'ass! SER
+  [ ] mqforum-d-094  Pad:  MetallicPad  MDS
+  [ ] mqforum-d-095  Poly: EastrnZither  Ey
+  [ ] mqforum-d-096  Pad:  Air            N
+
+  [ ] mqforum-d-097  Keys: New Ethnic   SCD
+  [ ] mqforum-d-098  Arp:  ForgetTheTB 2 CJ
+  [ ] mqforum-d-099  FX:   China Hit     Ey
+  [ ] mqforum-d-100  Keys: Distinguish  M.@
+  [ ] mqforum-d-101  Atmo: s&amp;h pad     rvl8
+  [ ] mqforum-d-102  Keys: Jump V.Halen SER
+  [ ] mqforum-d-103  Bass: Bass Six      RJ
+  [ ] mqforum-d-104  Keys: Rectangle   DocT
+  [ ] mqforum-d-105  Bass: BasMannen(tm) FH
+  [ ] mqforum-d-106  Pad:  Eerrie        CJ
+  [ ] mqforum-d-107  Lead: Event Horizon DF
+  [ ] mqforum-d-108  Keys: Fizzical      dB
+  [ ] mqforum-d-109  Bass: HarpsiBass    SK
+  [ ] mqforum-d-110  Poly: NL-Organ     TEK
+  [ ] mqforum-d-111  Bass: Stub Bass    SMB
+  [ ] mqforum-d-112  Lead: SynTar (AT)  TEK
+  [ ] mqforum-d-113  Pad:  Voll Normal DocT
+  [ ] mqforum-d-114  Pad:  IceQream Pad Spa
+  [ ] mqforum-d-115  FX:   Falling Q    M.@
+  [ ] mqforum-d-116  Bass: Dubble Bass  SMB
+  [ ] mqforum-d-117  Arp:  DeluXaflex    RJ
+  [ ] mqforum-d-118  Bass: Bassketball   dB
+  [ ] mqforum-d-119  Pad:  WeirdVoxTrek  CC
+  [ ] mqforum-d-120  Bass: FeelingBass   SK
+  [ ] mqforum-d-121  Keys: AdamsFamily  Dim
+  [ ] mqforum-d-122  Keys: Fracture      PH
+  [ ] mqforum-d-123  Keys: Lead The Way  Lp
+  [ ] mqforum-d-124  Bass: Chaff Bass    CJ
+  [ ] mqforum-d-125  Keys: Poland       SCD
+  [ ] mqforum-d-126  Lead: Mini Moog    SER
+  [ ] mqforum-d-127  Bass: Weeping Bass SMB
+  [ ] mqforum-d-128  Pad:  Lonely Q     MiB
+</pre>
+<p><strong>Bank MQFORUM-E 0-E (0-4)</strong></p>
+<pre>
+  [ ] mqforum-e-001  Bass: Dub Bass     SMB
+  [ ] mqforum-e-002  Bass: Tubular Bass  DF
+  [ ] mqforum-e-003  Atmo: Ambient Sun   Ey
+  [ ] mqforum-e-004  Keys: Try 6 OSCs     N
+  [ ] mqforum-e-005  Pad:  Digitalesque M.@
+  [ ] mqforum-e-006  Arp:  HarpArp     DocT
+  [ ] mqforum-e-007  FX:   Gilette       RJ
+  [ ] mqforum-e-008  Bass: Drop Bass    SMB
+  [ ] mqforum-e-009  Pad:  BasicSynth   MDS
+  [ ] mqforum-e-010  Bass: Drive(s)low   SK
+  [ ] mqforum-e-011  Keys: Plastic      RIS
+  [ ] mqforum-e-012  Pad:  SadSweep     Dim
+  [ ] mqforum-e-013  Lead: Tabasco     DocT
+  [ ] mqforum-e-014  Arp:  Half Chariot1 RJ
+  [ ] mqforum-e-015  Poly: QuartzCelesta Ey
+  [ ] mqforum-e-016  Arp:  Custard Pie   CJ
+  [ ] mqforum-e-017  Pad:  Me is Growl  M.@
+  [ ] mqforum-e-018  Bass: Droid Bass   SMB
+  [ ] mqforum-e-019  Pad:  Mot.AFT Wave SER
+  [ ] mqforum-e-020  Bass: RatzFatzBass MiB
+  [ ] mqforum-e-021  Pad:  Spacey Sweep  DF
+  [ ] mqforum-e-022  FX:   Wellen &amp; WindTEK
+  [ ] mqforum-e-023  Keys: TranceHouse   Ey
+  [ ] mqforum-e-024  Bass: Bassted       dB
+  [ ] mqforum-e-025  Init: Talk 2 me    TEK
+  [ ] mqforum-e-026  FX:   Atomuhr     DocT
+  [ ] mqforum-e-027  Seq:  Ikea Arsvik eugh
+  [ ] mqforum-e-028  Poly: Q-Sax         AO
+  [ ] mqforum-e-029  Bass: CrispyBass   MDS
+  [ ] mqforum-e-030  Pad:  Rundherum   DocT
+  [ ] mqforum-e-031  FX:   SpaceJungle  Dim
+  [ ] mqforum-e-032  Bass: BassStn Reso  SK
+
+  [ ] mqforum-e-033  FX:   New York     SCD
+  [ ] mqforum-e-034  Keys: WetMetalDrops DF
+  [ ] mqforum-e-035  Keys: SuperVolt     Ey
+  [ ] mqforum-e-036  Bass:   5 Hertz    MiB
+  [ ] mqforum-e-037  Bass: Darkside      CJ
+  [ ] mqforum-e-038  FX:   Beta C Sweep  CC
+  [ ] mqforum-e-039  Pad:  PWManiac     M.@
+  [ ] mqforum-e-040  Pad:  MY Res Pad   SER
+  [ ] mqforum-e-041  Lead: Twenty 106    RJ
+  [ ] mqforum-e-042  Bass: Exprei        Ey
+  [ ] mqforum-e-043  Pad:  Bladescape    dB
+  [ ] mqforum-e-044  Pad:  SupersQaw     AG
+  [ ] mqforum-e-045  Lead: WildesTier   MiB
+  [ ] mqforum-e-046  FX:   FM-Birdies  DocT
+  [ ] mqforum-e-047  Pad:  Binary Pool  SMB
+  [ ] mqforum-e-048  Pad:  Ominous       RJ
+  [ ] mqforum-e-049  Lead: Lead01       Spa
+  [ ] mqforum-e-050  Keys: DecaySaw       N
+  [ ] mqforum-e-051  Lead: Robotik      BiX
+  [ ] mqforum-e-052  Atmo: ZahmesTier   MiB
+  [ ] mqforum-e-053  Keys: Elastic Pants CJ
+  [ ] mqforum-e-054  Bass: Tech Bass    SMB
+  [ ] mqforum-e-055  Poly: 70sSpaceOrgan SK
+  [ ] mqforum-e-056  Lead: Big Fuzz      AG
+  [ ] mqforum-e-057  Bass: Chip Bass    SMB
+  [ ] mqforum-e-058  Keys: FM Drill 4    AG
+  [ ] mqforum-e-059  Pad:  Evo           dB
+  [ ] mqforum-e-060  Bass: -=Resonaut=-  Ey
+  [ ] mqforum-e-061  FX:   EMS AKS      TEK
+  [ ] mqforum-e-062  FX:   Waldorfians  SCD
+  [ ] mqforum-e-063  Drum: DnB Lo-fi Fx  Ey
+  [ ] mqforum-e-064  Drum: Numbers Drum  CC
+
+  [ ] mqforum-e-065  Drum: BD Good4Dance SK
+  [ ] mqforum-e-066  Drum: Dumb drum     CJ
+  [ ] mqforum-e-067  Drum: HipHop Kick  SMB
+  [ ] mqforum-e-068  Drum: BD LowCut909  SK
+  [ ] mqforum-e-069  Drum: Closed Hat   SMB
+  [ ] mqforum-e-070  Drum: Open Hat     SMB
+  [ ] mqforum-e-071  Drum: Synth Snare  SMB
+  [ ] mqforum-e-072  Drum: Electon Snare CJ
+  [ ] mqforum-e-073  Drum: DnB PhaseSD  MiB
+  [ ] mqforum-e-074  Drum: Zap Perc     SMB
+  [ ] mqforum-e-075  Drum: Poly Blips   SMB
+  [ ] mqforum-e-076  Drum: FM-Snappy   DocT
+  [ ] mqforum-e-077  Drum: Invader Drum SMB
+  [ ] mqforum-e-078  Drum: BoelesPerk   SCD
+  [ ] mqforum-e-079  Drum: Skratch Perc SMB
+  [ ] mqforum-e-080  FX:   PWM Gong      AG
+  [ ] mqforum-e-081  Init: Helmholtz 7   AG
+  [ ] mqforum-e-082  FX:   Helmholtz 8   AG
+  [ ] mqforum-e-083  Keys: Osc Orgy      AG
+  [ ] mqforum-e-084  Init: Ambient3Pad RvdK
+  [ ] mqforum-e-085  Init: Ambient3ThemRvdK
+  [ ] mqforum-e-086  Init: Ambient3BassRvdK
+  [ ] mqforum-e-087  Keys: E-Piano Tines AG
+  [ ] mqforum-e-088  Keys: PPG Pluck     Sp
+  [ ] mqforum-e-089  Keys: MechLullaby DocT
+  [ ] mqforum-e-090  Lead: MinimoogLead2 CC
+  [ ] mqforum-e-091  FX:   Arcade Bomb  IDS
+  [ ] mqforum-e-092  FX:   Schwarm     DocT
+  [ ] mqforum-e-093  Bass: Repolainen    KA
+  [ ] mqforum-e-094  Arp:  BaroqueNerve SAW
+  [ ] mqforum-e-095  Pad:  BraasBreez   TEK
+  [ ] mqforum-e-096  Pad:  AstralTravel SGR
+
+  [ ] mqforum-e-097  Poly: Improv.Sax  DocT
+  [ ] mqforum-e-098  Keys: Waiting4Night DF
+  [ ] mqforum-e-099  Keys: Synth Brass  SGR
+  [ ] mqforum-e-100  Lead: Emersun     DocT
+  [ ] mqforum-e-101  Lead: Acieed        KA
+  [ ] mqforum-e-102  FX:   Birds         Sp
+  [ ] mqforum-e-103  Bass: SQ-Puncher  DocT
+  [ ] mqforum-e-104  Arp:  Golden Arp 3  AG
+  [ ] mqforum-e-105  Pad:  PeachPad    DocT
+  [ ] mqforum-e-106  Pad:  Echoing Pipes DF
+  [ ] mqforum-e-107  Keys: PPG 2010     TEK
+  [ ] mqforum-e-108  Keys: Kriechstrom DocT
+  [ ] mqforum-e-109  Keys: Sweet Sweep   RS
+  [ ] mqforum-e-110  Lead: dikke trance  SV
+  [ ] mqforum-e-111  FX:   Kamm-FX2    DocT
+  [ ] mqforum-e-112  FX:   Metal Jelly 3 AG
+  [ ] mqforum-e-113  Bass: Acid Phunk   IDS
+  [ ] mqforum-e-114  Arp:  Digiseq     DocT
+  [ ] mqforum-e-115  Pad:  FM Pads      SGR
+  [ ] mqforum-e-116  Pad:  Qraftwerq 3.2 CC
+  [ ] mqforum-e-117  Keys: HarpsiWah    SAW
+  [ ] mqforum-e-118  Keys: SuperSaw V2   AG
+  [ ] mqforum-e-119  Keys: Metallica Q  SCD
+  [ ] mqforum-e-120  Lead: Texas MassacreKA
+  [ ] mqforum-e-121  Lead: frogger       SV
+  [ ] mqforum-e-122  FX:   Statix        DF
+  [ ] mqforum-e-123  Bass: Don't Fret   SGR
+  [ ] mqforum-e-124  Arp:  Vegetal Melt  KA
+  [ ] mqforum-e-125  Pad:  VeloSyncer  DocT
+  [ ] mqforum-e-126  Pad:  Planetarium  SAW
+  [ ] mqforum-e-127  Keys: Clear Organ   Sp
+  [ ] mqforum-e-128  Keys: Pulse Str1   SGR
+</pre>
+<p><strong>Bank MQFORUM-F 0-F (0-5)</strong></p>
+<pre>
+  [ ] mqforum-f-001  Keys: Snowform      KA
+  [ ] mqforum-f-002  Lead: DocsTrueN@ture;)
+  [ ] mqforum-f-003  FX:   Blubber      TEK
+  [ ] mqforum-f-004  FX:   Generatok    SGR
+  [ ] mqforum-f-005  Bass: PBMorphBass DocT
+  [ ] mqforum-f-006  Arp:  XTk Bass Xt2  CC
+  [ ] mqforum-f-007  Pad:  Darkwaver     DF
+  [ ] mqforum-f-008  Pad:  string        SV
+  [ ] mqforum-f-009  Keys: Old Wurt     SGR
+  [ ] mqforum-f-010  Keys: 70'ish Wave 3 CC
+  [ ] mqforum-f-011  Keys: 4 Bits 4 U  DocT
+  [ ] mqforum-f-012  Lead: Ancient Lead2 Sp
+  [ ] mqforum-f-013  Lead: Big Syncer2  SGR
+  [ ] mqforum-f-014  FX:   Elfin Candy   KA
+  [ ] mqforum-f-015  Bass: RedBullBass DocT
+  [ ] mqforum-f-016  Arp:  bassarp2      SV
+  [ ] mqforum-f-017  Pad:  AnimWobble   SGR
+  [ ] mqforum-f-018  Pad:  PotemkinPad DocT
+  [ ] mqforum-f-019  Keys: Jitter 3      AG
+  [ ] mqforum-f-020  Keys: SequentiSitarTEK
+  [ ] mqforum-f-021  Keys: glider        SV
+  [ ] mqforum-f-022  Lead: Krys-ID       KA
+  [ ] mqforum-f-023  FX:   Precognitivs DcT
+  [ ] mqforum-f-024  FX:   Dropped      SGR
+  [ ] mqforum-f-025  Bass: Head Hunter   DF
+  [ ] mqforum-f-026  Arp:  Schoen,gell?DocT
+  [ ] mqforum-f-027  Pad:  D-50 Noise 1  CC
+  [ ] mqforum-f-028  Pad:  BeautyBaby    RS
+  [ ] mqforum-f-029  Keys: DiXy        DocT
+  [ ] mqforum-f-030  Keys: Motorcord    IDS
+  [ ] mqforum-f-031  Keys: SpectrShift DocT
+  [ ] mqforum-f-032  Lead: Howlies      SAW
+
+  [ ] mqforum-f-033  Lead: Drippy Lead  IDS
+  [ ] mqforum-f-034  FX:   Nightelfes  DocT
+  [ ] mqforum-f-035  Bass: Big Modular2 SGR
+  [ ] mqforum-f-036  Arp:  Space        SCD
+  [ ] mqforum-f-037  Pad:  FallWaves   DocT
+  [ ] mqforum-f-038  Pad:  AnalogVoices SCD
+  [ ] mqforum-f-039  Poly: Basson       TEK
+  [ ] mqforum-f-040  Keys: VeloFeedb.  DocT
+  [ ] mqforum-f-041  Keys: Baroque Vow  SGR
+  [ ] mqforum-f-042  Lead: Suvetar       KA
+  [ ] mqforum-f-043  FX:   Off We Go   DocT
+  [ ] mqforum-f-044  FX:   Darkens      IDS
+  [ ] mqforum-f-045  Bass: Riddle-Bass DocT
+  [ ] mqforum-f-046  Arp:  Arpeggiochord KA
+  [ ] mqforum-f-047  Pad:  Slowpulse     DF
+  [ ] mqforum-f-048  Pad:  2v Sawpad     Sp
+  [ ] mqforum-f-049  Keys: Separee     DocT
+  [ ] mqforum-f-050  Keys: Triangles    SGR
+  [ ] mqforum-f-051  Keys: Shivadance    KA
+  [ ] mqforum-f-052  Lead: Tretmine    DocT
+  [ ] mqforum-f-053  Lead: WorldInMyEyes DF
+  [ ] mqforum-f-054  FX:   Arrivals     SGR
+  [ ] mqforum-f-055  Bass: Space Lab 1   CC
+  [ ] mqforum-f-056  Arp:  Spielmannszug DT
+  [ ] mqforum-f-057  Pad:  Sunnydaysrain KA
+  [ ] mqforum-f-058  Pad:  PulseMonica  SGR
+  [ ] mqforum-f-059  Keys: Qammond      SCD
+  [ ] mqforum-f-060  Keys: Glzierr       KA
+  [ ] mqforum-f-061  Keys: Alty Strng   SGR
+  [ ] mqforum-f-062  Lead: SunnRaw      SAW
+  [ ] mqforum-f-063  Drum: EleQ Trniq!   CC
+  [ ] mqforum-f-064  FX:   data bomb    scr
+
+  [ ] mqforum-f-065  Bass: Stepper Bass IDS
+  [ ] mqforum-f-066  Arp:  2625 ;-)) Q  SCD
+  [ ] mqforum-f-067  Pad:  Alter Current DF
+  [ ] mqforum-f-068  Pad:  SpaceSound 3.2CC
+  [ ] mqforum-f-069  Keys: ZupfKuh     DocT
+  [ ] mqforum-f-070  Keys: Rich Waves   SGR
+  [ ] mqforum-f-071  Keys: EarlyRefl.  DocT
+  [ ] mqforum-f-072  Lead: gelikte trld  SV
+  [ ] mqforum-f-073  Lead: Brassaws     SGR
+  [ ] mqforum-f-074  FX:   Wankelmotor DocT
+  [ ] mqforum-f-075  Bass: Saw Bass 604  KA
+  [ ] mqforum-f-076  Arp:  hArps        SGR
+  [ ] mqforum-f-077  Pad:  Mod Pad MW    RS
+  [ ] mqforum-f-078  Pad:  Holzig      DocT
+  [ ] mqforum-f-079  Poly: MatrixBrass DocT
+  [ ] mqforum-f-080  Keys: Disappearing SCD
+  [ ] mqforum-f-081  Keys: Juno Saws    SGR
+  [ ] mqforum-f-082  Lead: Caleban lead IDS
+  [ ] mqforum-f-083  Drum: MonitorTest DocT
+  [ ] mqforum-f-084  FX:   Captive       KA
+  [ ] mqforum-f-085  Bass: Sub Space    SGR
+  [ ] mqforum-f-086  Arp:  StrangeArp    RS
+  [ ] mqforum-f-087  Pad:  Qoir 3.2      CC
+  [ ] mqforum-f-088  Pad:  Lanthan     DocT
+  [ ] mqforum-f-089  Keys: Jitter        AG
+  [ ] mqforum-f-090  Keys: Farfisa Wave SGR
+  [ ] mqforum-f-091  Keys: Earthborn     KA
+  [ ] mqforum-f-092  Lead: Platz da !  DocT
+  [ ] mqforum-f-093  Lead: trance hpf    SV
+  [ ] mqforum-f-094  FX:   Before Bang  SGR
+  [ ] mqforum-f-095  Bass: PWMBass       KA
+  [ ] mqforum-f-096  Arp:  VSOP-Bass   DocT
+
+  [ ] mqforum-f-097  Pad:  Space Comb+  SGR
+  [ ] mqforum-f-098  Pad:  Synthetique   DF
+  [ ] mqforum-f-099  Poly: VowelStrings SGR
+  [ ] mqforum-f-100  Keys: Polarlicht  DocT
+  [ ] mqforum-f-101  Keys: PPQ Sweep 3.2 CC
+  [ ] mqforum-f-102  Lead: Combrazzor    KA
+  [ ] mqforum-f-103  Drum: Vienna BD     RS
+  [ ] mqforum-f-104  FX:   Diesel2     DocT
+  [ ] mqforum-f-105  Bass: Simpleton     DF
+  [ ] mqforum-f-106  Arp:  bright tr arp SV
+  [ ] mqforum-f-107  Pad:  Angelic       KA
+  [ ] mqforum-f-108  Pad:  Sentimental DocT
+  [ ] mqforum-f-109  Keys: Funky Clavi DocT
+  [ ] mqforum-f-110  Keys: MonkeyPiano   KA
+  [ ] mqforum-f-111  Keys: Chopper BP    AG
+  [ ] mqforum-f-112  Lead: MovDaWheels DocT
+  [ ] mqforum-f-113  Lead: Laserharp     DF
+  [ ] mqforum-f-114  FX:   Eisregen    DocT
+  [ ] mqforum-f-115  Bass: Droehnung   DocT
+  [ ] mqforum-f-116  Arp:  Skeletorrrr   KA
+  [ ] mqforum-f-117  Pad:  Queen-Dad    TEK
+  [ ] mqforum-f-118  Pad:  Walkuere    DocT
+  [ ] mqforum-f-119  Keys: Radio-Piano DocT
+  [ ] mqforum-f-120  Keys: Flutoon     DocT
+  [ ] mqforum-f-121  Keys: SimpleFM Wave AG
+  [ ] mqforum-f-122  Lead: Eclipsed      KA
+  [ ] mqforum-f-123  Drum: VariDrum    DocT
+  [ ] mqforum-f-124  FX:   Ripper1      SGR
+  [ ] mqforum-f-125  Bass: Menace-Bass DocT
+  [ ] mqforum-f-126  Arp:  8bit ARP     IDS
+  [ ] mqforum-f-127  Pad:  SpaceFloats SGR
+  [ ] mqforum-f-128  Pad:  padScrape    scr
+</pre>
+<p><strong>Bank MQFORUM-G 0-G (0-6)</strong></p>
+<pre>
+  [ ] mqforum-g-001  Keys: PickItUp    DocT
+  [ ] mqforum-g-002  Keys: JCage 3      SGR
+  [ ] mqforum-g-003  Keys: Steelophon  DocT
+  [ ] mqforum-g-004  Lead: Moog55 Porta SGR
+  [ ] mqforum-g-005  Lead: Plock Lead   IDS
+  [ ] mqforum-g-006  FX:   Melodei     DocT
+  [ ] mqforum-g-007  Bass: Ghettomaster  KA
+  [ ] mqforum-g-008  Arp:  Golden Arp 4  AG
+  [ ] mqforum-g-009  Pad:  Qoir Spect 1+ CC
+  [ ] mqforum-g-010  Pad:  Arctic Dunes  DF
+  [ ] mqforum-g-011  Keys: E-Piano Phase AG
+  [ ] mqforum-g-012  Keys: Kuerbis     DocT
+  [ ] mqforum-g-013  Keys: Simple FM     AG
+  [ ] mqforum-g-014  Lead: TinyMoogy   DocT
+  [ ] mqforum-g-015  Drum: ExpensiveCrashAG
+  [ ] mqforum-g-016  FX:   Invaders     SGR
+  [ ] mqforum-g-017  Bass: Liquidbass    DF
+  [ ] mqforum-g-018  Arp:  Aljen Perc  DocT
+  [ ] mqforum-g-019  Pad:  Qeltique      CC
+  [ ] mqforum-g-020  Pad:  NotchFasing DocT
+  [ ] mqforum-g-021  Keys: TripleSinus DocT
+  [ ] mqforum-g-022  Keys: ranzig        SV
+  [ ] mqforum-g-023  Keys: ArtDecoPad  DocT
+  [ ] mqforum-g-024  Lead: Therapin     IDS
+  [ ] mqforum-g-025  Lead: Rezzo Freak1 SGR
+  [ ] mqforum-g-026  FX:   PWM Gong 2    AG
+  [ ] mqforum-g-027  Bass: MaxDSP-Load DocT
+  [ ] mqforum-g-028  Arp:  Space Numbrs  CC
+  [ ] mqforum-g-029  Pad:  Surface-Pad DocT
+  [ ] mqforum-g-030  Pad:  Q+XT*WAVE-OS4SCD
+  [ ] mqforum-g-031  Keys: DX7 sound    SGR
+  [ ] mqforum-g-032  Keys: Threepwood    KA
+
+  [ ] mqforum-g-033  Keys: Ploqqer BP    AG
+  [ ] mqforum-g-034  Lead: Que Es?       RS
+  [ ] mqforum-g-035  Drum: Noise Snare  IDS
+  [ ] mqforum-g-036  FX:   SpaceWave2   SGR
+  [ ] mqforum-g-037  Bass: Bassclass 202 KA
+  [ ] mqforum-g-038  Arp:  RUSH Arp      CC
+  [ ] mqforum-g-039  Pad:  SadPad      DocT
+  [ ] mqforum-g-040  Pad:  Mellow Paddy SGR
+  [ ] mqforum-g-041  Keys: Wheely      DocT
+  [ ] mqforum-g-042  Keys: Down!        SCD
+  [ ] mqforum-g-043  Keys: O2BA Q+!     SAW
+  [ ] mqforum-g-044  Lead: Nastly Lead  SGR
+  [ ] mqforum-g-045  Lead: O-Vals        KA
+  [ ] mqforum-g-046  FX:   Steamroller DocT
+  [ ] mqforum-g-047  Bass: Low Nois      RS
+  [ ] mqforum-g-048  Arp:  Espenlaub   DocT
+  [ ] mqforum-g-049  Pad:  Giant Pad    SGR
+  [ ] mqforum-g-050  Pad:  Sci-Fi Cicada CC
+  [ ] mqforum-g-051  Poly: ClassyCornet SGR
+  [ ] mqforum-g-052  Keys: HitAnyKey   DocT
+  [ ] mqforum-g-053  Keys: IsleOfTheHappyKA
+  [ ] mqforum-g-054  Lead: sloggy trlead SV
+  [ ] mqforum-g-055  Drum: ElecSn1     DocT
+  [ ] mqforum-g-056  FX:   Metal Jelly 2 AG
+  [ ] mqforum-g-057  Bass: Inertiabots   DF
+  [ ] mqforum-g-058  Arp:  Click'nR    DocT
+  [ ] mqforum-g-059  Pad:  KrystalGliss SGR
+  [ ] mqforum-g-060  Pad:  Impending     DF
+  [ ] mqforum-g-061  Poly: Sharp Brass DocT
+  [ ] mqforum-g-062  Keys: FlyByFly Mod  RS
+  [ ] mqforum-g-063  Keys: Alt Ommms    SGR
+  [ ] mqforum-g-064  Lead: Sainus      DocT
+
+  [ ] mqforum-g-065  Lead: Eight Virtues KA
+  [ ] mqforum-g-066  FX:   Intothedepths DF
+  [ ] mqforum-g-067  Bass: Octobass    DocT
+  [ ] mqforum-g-068  Arp:  Suvetar-arp   KA
+  [ ] mqforum-g-069  Pad:  VA-Warmth   DocT
+  [ ] mqforum-g-070  Pad:  SimpleLoveMod RS
+  [ ] mqforum-g-071  Keys: StickyRinger DcT
+  [ ] mqforum-g-072  Keys: Anim String1 SGR
+  [ ] mqforum-g-073  Keys: Strange  ish\ CC
+  [ ] mqforum-g-074  Lead: Vedatys       KA
+  [ ] mqforum-g-075  Drum: ElecHat1    DocT
+  [ ] mqforum-g-076  FX:   Grand Wah    SGR
+  [ ] mqforum-g-077  Bass: It's Alive!!  DF
+  [ ] mqforum-g-078  Arp:  DoubleTB    DocT
+  [ ] mqforum-g-079  Pad:  Moogy        SGR
+  [ ] mqforum-g-080  Pad:  Sci-Fi 7      CC
+  [ ] mqforum-g-081  Keys: LilYammi :) DocT
+  [ ] mqforum-g-082  Keys: Numetal       DF
+  [ ] mqforum-g-083  Keys: 75V-Exp.req DocT
+  [ ] mqforum-g-084  Lead: Velo 8va     SGR
+  [ ] mqforum-g-085  Lead: OBX Purple 3  AG
+  [ ] mqforum-g-086  FX:   SalaT        TEK
+  [ ] mqforum-g-087  Bass: Lightning Man DF
+  [ ] mqforum-g-088  Arp:  BruteArp    DocT
+  [ ] mqforum-g-089  Pad:  Where To?     RS
+  [ ] mqforum-g-090  Pad:  Valoron     DocT
+  [ ] mqforum-g-091  Keys: KeyBassSplitDocT
+  [ ] mqforum-g-092  Keys: Random Laws  SGR
+  [ ] mqforum-g-093  Keys: Nasi Goreng DocT
+  [ ] mqforum-g-094  Lead: raw lead      SV
+  [ ] mqforum-g-095  Drum: BD1         DocT
+  [ ] mqforum-g-096  FX:   Computer ErrorDF
+
+  [ ] mqforum-g-097  Bass: Bermuda       KA
+  [ ] mqforum-g-098  Arp:  vette trance  SV
+  [ ] mqforum-g-099  Pad:  Jacobs Ladder DF
+  [ ] mqforum-g-100  Pad:  Jarry Pads   SGR
+  [ ] mqforum-g-101  Keys: 4th Manual  DocT
+  [ ] mqforum-g-102  Keys: GatedPad    DocT
+  [ ] mqforum-g-103  Keys: PWM Bliss    SGR
+  [ ] mqforum-g-104  Lead: MessageFromGodKA
+  [ ] mqforum-g-105  Lead: Synthegeiger DcT
+  [ ] mqforum-g-106  FX:   Harmonics2   SGR
+  [ ] mqforum-g-107  Bass: Zinc Bass    IDS
+  [ ] mqforum-g-108  Arp:  Trancistor  DocT
+  [ ] mqforum-g-109  Pad:  D-50 Spect 1+ CC
+  [ ] mqforum-g-110  Pad:  trancenoise   SV
+  [ ] mqforum-g-111  Keys: Jitter 1      AG
+  [ ] mqforum-g-112  Keys: Alive 5th    SGR
+  [ ] mqforum-g-113  Keys: Bombast     DocT
+  [ ] mqforum-g-114  Lead: cygnus-x      SV
+  [ ] mqforum-g-115  Drum: Numbers Drum2 CC
+  [ ] mqforum-g-116  FX:   Radio Q      IDS
+  [ ] mqforum-g-117  Bass: Kompressor  DocT
+  [ ] mqforum-g-118  Arp:  Trippy-Loop DocT
+  [ ] mqforum-g-119  Pad:  IndigoSonata SGR
+  [ ] mqforum-g-120  Pad:  FFXII        SAW
+  [ ] mqforum-g-121  Keys: Osc Orgy 2    AG
+  [ ] mqforum-g-122  Keys: Riddle        AG
+  [ ] mqforum-g-123  Keys: Cherub Ens   IDS
+  [ ] mqforum-g-124  Lead: Velo 4ths    SGR
+  [ ] mqforum-g-125  Lead: Pirate Song!! KA
+  [ ] mqforum-g-126  FX:   Satellite   DocT
+  [ ] mqforum-g-127  Bass: SubSub       SGR
+  [ ] mqforum-g-128  Arp:  Gabbatron   DocT
+</pre>
+<p><strong>Bank MQFORUM-H 0-H (0-7)</strong></p>
+<pre>
+  [ ] mqforum-h-001  Pad:  Deepest Ocean DF
+</pre>
+
+<hr>
+<h1><a name="modulation" href="#_toc_modulation">Modulation</a></h1>
+
+<h2><a name="controllers" href="#_toc_controllers">Controllers</a></h2>
+<p><strong>Default values for controllers W X Y Z</strong></p>
+<pre>
+  Controller W:   2 (02h)  Breath Controller
+  Controller X:   4 (04h)  Foot Controller
+  Controller Y:  14 (0Eh)    undefined       (Blofeld: Arp Active)
+  Controller Z:  12 (0Ch)  Effect Control 1  (Blofeld: Arp Range)
+</pre>
+<p><strong>Used controllers</strong></p>
+<pre>
+    1 (01h)  Modulation Wheel
+    2 (02h)  Breath Controller
+    4 (04h)  Foot Controller
+    7 (07h)  Channel Volume
+   10 (0Ah)  Pan
+   32 (20h)  Bank Select LSB
+   64 (40h)  Damper Pedal On/Off (Sustain)
+</pre>
+<p><strong>Unused controllers</strong></p>
+<pre>
+    0 (00h)  Bank Select MSB
+    3 (03h)    undefined      (*) Control W
+    6 (06h)  Data Entry
+    8 (08h)  Balance          (*) Control X
+    9 (09h)    undefined      (*) Control Y
+   11 (0Bh)  Expression       (*) Control Z
+   63 (3Fh)    undefined      (*)
+  119 (77h)    undefined      (*)
+</pre>
+<p><strong>Using Proteus 2500 controllers with Waldorf Blofeld</strong></p>
+<p>Alt 1:</p>
+<pre>
+  ------------------ ------------------ ------------------ ------------------
+ | 1/A Mod-Wheel    | 2/B Breath       | 3/C C-W undef    | 4/D Foot         |
+ |     Filter Cutoff|     Filter Q     |     O2+O3 Pitch  |     O1+O2 WT/Smp |
+  ------------------ ------------------ ------------------ ------------------
+ | 5/E ...          | 6/F Data-Entry   | 7/G Volume       | 8/H C-X Balance  |
+ |     ...          |     ...          |     Volume       |     Filter Drive |
+  ------------------ ------------------ ------------------ ------------------
+ | 9/I C-Y undef    |10/J Pan          |11/K C-Z Express  |12/L ...          |
+ |     LFO1 -&gt; Pitch|     ...          |     LFO1 Speed   |     ...          |
+  ------------------ ------------------ ------------------ ------------------
+ |13/M ...          |14/N ...          |15/O ...          |16/P CC64 Sustain |
+ |     ...          |     ...          |     ...          |     Sustain      |
+  ------------------ ------------------ ------------------ ------------------
+</pre>
+<p>Alt 2:</p>
+<pre>
+  ------------------ ------------------ ------------------ ------------------
+   1/A Mod-Wheel      2/B Breath         3/C C-W undef      4/D Foot
+       Filter Cutoff      Filter Q           O2+O3 Pitch        O1+O2 WT/Smp
+  ------------------ ------------------ ------------------ ------------------
+   5/E ...            6/F Data-Entry     7/G Volume         8/H C-X Balance
+       ...                ...                Volume             Filter Drive
+  ------------------ ------------------ ------------------ ------------------
+   9/I C-Y undef     10/J Pan           11/K C-Z Express   12/L ...
+       LFO1 -&gt; Pitch      ...                LFO1 Speed         ...
+  ------------------ ------------------ ------------------ ------------------
+  13/M ...           14/N ...           15/O ...           16/P CC64 Sustain
+       ...                ...                ...                Sustain
+  ------------------ ------------------ ------------------ ------------------
+</pre>
+<p>Alt 3:</p>
+<pre>
+  -----------------  -----------------  -----------------  -----------------
+   1 Mod-Wheel        2 Breath           3 C-W undef        4 Foot
+     Filter Cutoff      Filter Q           O2+O3 Pitch        O1+O2 WT/Smp
+  -----------------  -----------------  -----------------  -----------------
+   5 ...              6 Data-Entry       7 Volume           8 C-X Balance
+     ...                ...                Volume             Filter Drive
+  -----------------  -----------------  -----------------  -----------------
+   9 C-Y undef       10 Pan             11 C-Z Express     12 ...
+     LFO1 -&gt; Pitch      ...                LFO1 Speed         ...
+  -----------------  -----------------  -----------------  -----------------
+  13 ...             14 ...             15 ...             16 CC64 Sustain
+     ...                ...                ...                Sustain
+  -----------------  -----------------  -----------------  -----------------
+</pre>
+<p>Alt 4:</p>
+<pre>
+   1                  2                  3                  4
+    Mod-Wheel          Breath             C-W undef          Foot
+    Filter Cutoff      Filter Q           O2+O3 Pitch        O1+O2 WT/Smp
+   5                  6                  7                  8
+    ...                Data-Entry         Volume             C-X Balance
+    ...                ...                Volume             Filter Drive
+   9                 10                 11                 12
+    C-Y undef          Pan                C-Z Express        ...
+    LFO1 -&gt; Pitch      ...                LFO1 Speed         ...
+  13                 14                 15                 16
+    ...                ...                ...                CC64 Sustain
+    ...                ...                ...                Sustain
+</pre>
+<p>Alt 5:</p>
+<pre>
+   1 Mod-Wheel        2 Breath           3 C-W undef        4 Foot
+     Filter Cutoff      Filter Q           O2+O3 Pitch        O1+O2 WT/Smp
+
+   5 ...              6 Data-Entry       7 Volume           8 C-X Balance
+     ...                ...                Volume             Filter Drive
+
+   9 C-Y undef       10 Pan             11 C-Z Express     12 ...
+     LFO1 -&gt; Pitch      ...                LFO1 Speed         ...
+
+  13 ...             14 ...             15 ...             16 CC64 Sustain
+     ...                ...                ...                Sustain
+</pre>
+<p>Alt 6:</p>
+<pre>
+   1 Mod-Wheel        2 Breath           3 C-W undef        4 Foot
+     Filter Cutoff      Filter Q           O2+O3 Pitch        O1+O2 WT/Smp
+   5 ...              6 Data-Entry       7 Volume           8 C-X Balance
+     ...                ...                Volume             Filter Drive
+   9 C-Y undef       10 Pan             11 C-Z Express     12 ...
+     LFO1 -&gt; Pitch      ...                LFO1 Speed         ...
+  13 ...             14 ...             15 ...             16 CC64 Sustain
+     ...                ...                ...                Sustain
+</pre>
+<p>Alt 7:</p>
+<pre>
+   1 Mod-Wheel        2 Breath           3 C-W undef        4 Foot
+       Filter Cutoff      Filter Q           O2+O3 Pitch        O1+O2 WT/Smp
+   5 ...              6 Data-Entry       7 Volume           8 C-X Balance
+       ...                ...                Volume             Filter Drive
+   9 C-Y undef       10 Pan             11 C-Z Express     12 ...
+       LFO1 -&gt; Pitch      ...                LFO1 Speed         ...
+  13 ...             14 ...             15 ...             16 CC64 Sustain
+       ...                ...                ...                Sustain
+</pre>
+<p><strong>Useful modulation destinations</strong></p>
+<pre>
+  Filter Cutoff
+  Filter Q
+  O2+O3 Pitch
+  O1+O2 WT/Smp
+  Filter Drive
+  LFO1 -&gt; Pitch
+  LFO1 Speed
+
+  Osc Pulse Width
+  Osc FM amount
+  Ring Level
+  Noise Level
+</pre>
+<p><strong>My default modulation sources and destinations</strong></p>
+<pre>
+   1 Mod-Wheel    -&gt;  Filter Cutoff
+   2 Breath       -&gt;  Filter Q
+   3 C-W undef    -&gt;  O2+O3 Pitch
+   4 Foot         -&gt;  O1+O2 WT/Smp
+   8 C-X Balance  -&gt;  Filter Drive
+   9 C-Y undef    -&gt;  LFO1 -&gt; Pitch
+  11 C-Z Express  -&gt;  LFO1 Speed
+</pre>
+<p><strong>My varations on modulation sources and destinations</strong></p>
+<p>The wheel modulates the most "important" destination.</p>
+<p>Filter Cutoff (default):</p>
+<pre>
+   1 Mod-Wheel        2 Breath           3 C-W undef        4 Foot
+       Filter Cutoff      Filter Q           O2+O3 Pitch        O1+O2 WT/Smp
+                                                            8 C-X Balance
+                                                                Filter Drive
+   9 C-Y undef                          11 C-Z Express
+       LFO1 -&gt; Pitch                         LFO1 Speed
+</pre>
+<p>LFO1 -&gt; Pitch:</p>
+<pre>
+  ...
+</pre>
+<p>O2+O3 Pitch (detuning):</p>
+<pre>
+  ...
+</pre>
+<p>Osc1 + Osc2 Pulse Width:</p>
+<pre>
+  ...
+</pre>
+<p>Osc1 + Osc2 wavetable/sample:</p>
+<pre>
+  ...
+</pre>
+
+<hr>
+<h1><a name="parameters" href="#_toc_parameters">Parameters</a></h1>
+
+<h2><a name="sound_parameters" href="#_toc_sound_parameters">Sound parameters</a></h2>
+<p><strong>The main parameter groups</strong></p>
+<pre>
+  Oscillators:
+  Filters:
+  Modulation:
+  Effects:
+  Arpeggiator:
+</pre>
+<p><strong>The main parameter groups and main pages</strong></p>
+<pre>
+  Oscillators:
+    Oscillator 1:
+    Oscillator 2:
+    Oscillator 3:
+    Oscillator Common:
+    Ring Modulation:
+    Noise:
+  Filters:
+    Filter 1:
+    Filter Routing:
+    Filter 2:
+  Modulation:
+    Filter Envelope:
+    Amp Envelope:
+    Envelope 3:
+    Envelope 4:
+    LFO 1:
+    LFO 2:
+    LFO 3:
+    Modulation 1..16:
+    Modifier 1..4:
+    Amplifier:
+  Effects:
+    ...
+  Arpeggiator:
+    ...
+</pre>
+<p><strong>All parameters</strong></p>
+<pre>
+  Name:              Init: Init
+  Oscillators:       Osc 1:              Osc 2:              Osc 3:
+   *Osc Shape:       0-002 Waveform 2    0-000 off           0-000 off
+                     Saw                 --                  --
+   *Osc Semitone:       0                   0                   0
+   *Osc Detune:         0                   0                   0
+   *Osc Level:        127                   0                   0
+   *Osc Octave:         8'                  8'                  8'
+    Osc Balance      F1 64               F1 64               F1 64
+    Osc Pulsewidth:   127                 127                 127
+    Osc PWM Source:  off                 off                 off
+    Osc PWM Amount:     0                   0                   0
+    Osc Limit WT:    on                  on                  on
+    Osc Brilliance:     0                   0                   0
+    Osc FM Source:   off                 off                 off
+    Osc FM Amount:      0                   0                   0
+    Osc Keytrack:    +100%               +100%               +100%
+    Osc Bend Range:    +2                  +2                  +2
+    Osc Sync to O3:                      off
+    Osc Common: Allocation:    Poly
+    Osc Common: Unisono:       off
+    Osc Common: Uni Detune:    0
+    Osc Common: Glide:         off
+    Osc Common: Rate:          0
+    Osc Common: Mode:          Portamento
+    Osc Common: Pitch Source:  off
+    Osc Common: Pitch Amount:  0
+    Ring Modulation: Level:    0
+    Ring Modulation: Balance:  F1 64
+    Noise: Level:              0
+    Noise: Balance:            F1 64
+    Noise: Colour:             0
+  Filters:                Filter 1:              Filter 2:
+   *Filter Cutoff:        0                      0
+   *Filter Resonance:     0                      0
+   *Filter Type:          LP 24dB                LP 24dB
+   *Filter Env Amount:    0                      0
+    Filter Keytrack:      +0%                    +0%
+    Filter Env Velocity:  0                      0
+    Filter Mod Source:    off                    off
+    Filter Mod Amount:    0                      0
+    Filter FM Source:     off                    off
+    Filter FM Amount:     off                    off
+    Filter Drive:         0                      0
+    Filter Drive Curve:   Clipping               Clipping
+    Filter Pan:           0 center               0 center
+    Filter Pan Source:    off                    off
+    Filter Pan Amount:    0                      0
+    Filter Common: Filter Routing:  parallell
+  Modulation: Envelopes:   *Filter Env:  *Amp Env:      Env 3:        Env 4:
+    Env: Trigger:           normal        normal        normal        normal
+    Env: Mode:              ADSR          ADSR          ADSR          ADSR
+    Env: Allocation:                      Poly
+   *Env: Attack + Level:      0  127        0  127        0  127        0  127
+   *Env: Decay Sustain:      32   64       32   64       32   64       32   64
+    Env: Decay Sustain 2:   100   48      100   48      100   48      100   48
+   *Env: Release:            28            28            28            28
+  Modulation: LFOs:     *LFO 1:     *LFO 2:      LFO 3:
+   *LFO: Shape:          Triangle    Triangle    Triangle
+   *LFO: Speed:             0           0           0
+    LFO: Sync:           off         off         off
+    LFO: Clocked:        off         off         off
+    LFO: Start Phase:    free          0         360
+    LFO: Keytrack:       +000%       +000%       +000%
+    LFO: Delay:             0           0           0
+    LFO: Fade:              0           0           0
+  Modulation: Matrix:
+    Modulation  1:    LFO1*MW     +00  Pitch
+    Modulation  2:    off         +00  off
+    Modulation  3:    off         +00  off
+    Modulation  4:    off         +00  off
+    Modulation  5:    off         +00  off
+    Modulation  6:    off         +00  off
+    Modulation  7:    off         +00  off
+    Modulation  8:    off         +00  off
+    Modulation  9:    off         +00  off
+    Modulation 10:    off         +00  off
+    Modulation 11:    off         +00  off
+    Modulation 12:    off         +00  off
+    Modulation 13:    off         +00  off
+    Modulation 14:    off         +00  off
+    Modulation 15:    off         +00  off
+    Modulation 16:    off         +00  off
+    Modifier 1:  ???
+    Modifier 2:  ???
+    Modifier 3:  ???
+    Modifier 4:  ???
+  Modulation: Amplifier:
+    Amplifier: Volume:      127
+    Amplifier: Velocity:    +50
+    Amplifier: Mod Source:  off
+    Amplifier: Mod Amount:    0
+  Effects:
+    ...  ???
+  Arpeggiator:
+    ...  ???
+</pre>
+
+<h2><a name="multimode_parameters" href="#_toc_multimode_parameters">Multimode parameters</a></h2>
+
+<hr>
+<h1><a name="miscellaneous" href="#_toc_miscellaneous">Miscellaneous</a></h1>
+
+<h2><a name="sending_sounds_from_vim_to_the_blofeld" href="#_toc_sending_sounds_from_vim_to_the_blofeld">Sending sounds from Vim to the Blofeld</a></h2>
+<p>Execute the following (adjust hw:2,0,0 to match the correct amidi port):</p>
+<pre>
+  $ cd ~/Downloads/waldorf-blofeld/synth.stromeko.net/
+  $ find -name *.syx | grep -i singles | sed 's:^[.]/::' | sort | view -
+      Vim:
+      :map &lt;f12&gt; :sil .w ! xargs -i bash -c 'amidi -p hw:2,0,0 -s "{}"'&lt;Enter&gt;
+        or
+      :map &lt;f12&gt; :sil .w ! shellquote \| xargs -i bash -c 'amidi -p hw:2,0,0 -s "{}"'&lt;Enter&gt;
+</pre>
+<p>Now pressing F12 in Vim will send the sound(s) in the file on the current line
+to the Blofeld (except the ones with single quotes in their name -- I don't
+know how to deal with them yet).</p>
+
+<h2><a name="my_presets" href="#_toc_my_presets">My presets</a></h2>
+<p>XXX: Start the numbering at 000 or 001?</p>
+<p><strong>001: Init: Sine</strong></p>
+<pre>
+  v0.01:
+    2010-12-13
+    Start: Init: Init
+    Osc 1: Shape: Sine
+</pre>
+<p><strong>002: Keys: Plain Piano</strong></p>
+<pre>
+  v0.01:
+    2010-12-13
+    Start: Init: Init
+    Osc 1: Shape: Sample A2 Piano
+    Amp Env: Release: 50
+  v0.02:
+    2010-12-13
+    Osc 2: Shape: Sample A2 Piano
+    Osc 2: Detune; +1
+    Matrix: Mod 2: Mod Wheel -&gt; +20 -&gt; O2 Pitch
+  TODO:
+    2010-12-13
+    - Add filtering similar to "Dexter Zither" below
+</pre>
+<p><strong>003: Poly: Dexter Zither</strong></p>
+<pre>
+  v0.01:
+    2010-12-13
+    Start: Init: Init
+    Osc 1: Shape: Sample A4 Zither
+    Amp Env: Release: 50
+  v0.02:
+    2010-12-13
+    Filter 1: Keytrack: +59%
+    Matrix: Mod 2: Mod Wheel -&gt; -51 -&gt; F1 Cutoff
+  Notes:
+    - From: The Third Man
+    - From: Dexter
+  TODO:
+    2010-12-13
+    - Add detuning similar to "Plain Piano" above
+    - Maybe change the name to one of the following:
+        Dexter 3rd Man
+        3rd Man Dexter
+        Dexter the 3rd
+        Dexter 3rd
+        Dexter III
+        Dexter Third
+        Dex 3rd
+</pre>
+<p><strong>???: Init: Controllers</strong></p>
+<pre>
+  v0.01:
+    2010-12-13
+    Start: Init: Init
+    Osc 1: Shape: Wavetable 36 Pulse Sync 1
+    Osc 1: Pulsewidth: 0  PWM Amount: +63
+    Osc 1: PWM Source: Mod Wheel  PWM Amount: +63
+    Osc 1: Bend Range: +12
+    Filter 1: Mod Source: Control W  Mod Amount: -64
+    Filter 1: Drive: 0  Drive Curve: Tube
+    Amp Env: Release: 25
+    Matrix; Mod 2: Control X -&gt; +63 -&gt; F1 Drive
+    Matrix; Mod 3: Control Y -&gt; +63 -&gt; F1 Resonance
+    Matrix; Mod 4: Control Z -&gt; +56 -&gt; O1 WT/SMP
+</pre>
+<p><strong>???: Keys: Plain Piano 2</strong></p>
+<pre>
+  v0.01:
+    2010-12-14
+    Start: Keys: Plain Piano 2
+    - lots of controllers
+    - saved in file sound-xxx-keys-plain_piano_2.001.syx but should be fixed up
+</pre>
+<p><strong>???: Atmo: Lynch Radiator</strong></p>
+<pre>
+  v0.01:
+    2011-02-08
+    Start: Init: Init
+    Osc 1: Shape:   off
+    Osc 2: Shape:   off
+    Osc 3: Shape:   off
+    Noise: Level:    127
+    Noise: Balance:  F1 64
+    Noise: Colour:   -64
+    Filter 1: Cutoff:      76
+    Filter 1: Resonance:   0
+    Filter 1: Type:        LP 24dB
+    Filter 1: Env Amount:  +0
+    Filter 1: Keytrack:    +100%
+    Amp Env: Attack:   0
+    Amp Env: Decay:    64
+    Amp Env: Sustain:  127
+    Amp Env: Release:  50
+    Effect 2: Type:       Reverb
+    Effect 2: Mix:        50
+    Effect 2: Highpass:   0
+    Effect 2: Lowpass:    127
+    Effect 2: Diffusion:  55
+    Effect 2: Size:       22
+    Effect 2: Shape:      5
+    Effect 2: Decay:      116
+    Effect 2: Damping:    10
+    - Maybe use:
+        Filter 1: Cutoff:     100
+        Filter 1: Keytrack:   +196%
+    - Set pitchbend to affect Filter 1 with mod amount ca +54
+    - Add Resonance modulation (+)
+    - Add Effect 2 modulation (-)
+    - Add Filter 1 Drive modulation (+)
+</pre>
+<p><strong>???: Poly: Sine Driver</strong></p>
+<pre>
+  v0.01:
+    2011-02-08
+    Start: Init: Init
+    Osc 1: Shape:  Sine
+    Osc 2: Shape:   off
+    Osc 3: Shape:   off
+    Filter 1: Drive:  0
+    Filter 1: Drive:  Clipping
+    Amp Env: Attack:   10
+    Amp Env: Decay:    70
+    Amp Env: Sustain:  0
+    Amp Env: Release:  42
+    Matrix; Mod 01:  Mod Wheel  +56  F1 Drive
+    Matrix; Mod 02:  Keytrack   -32  AE Decay
+    Effect 2: Type:       Reverb
+    Effect 2: Mix:        16
+    Effect 2: Highpass:   0
+    Effect 2: Lowpass:    100
+    Effect 2: Diffusion:  100
+    Effect 2: Size:       53
+    Effect 2: Shape:      64
+    Effect 2: Decay:      100
+    Effect 2: Damping:    110
+</pre>
+<hr>
+
+</body>
+</html>
+
