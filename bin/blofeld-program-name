@@ -1,0 +1,334 @@
+#!/usr/bin/perl -0777
+
+use strict;
+use warnings;
+
+my %Opt;
+
+my @cat;
+my @shape;
+
+my $sysex;
+
+my $bank;
+my $num;
+my $cat;
+my $name;
+my @shape_b;
+my @shape_n;
+my $n;
+
+# Printing the category and sound names of blofeld sounds
+
+@cat = (
+  "Init:",
+  "Arp: ",
+  "Atmo:",
+  "Bass:",
+  "Drum:",
+  "FX:  ",
+  "Keys:",
+  "Lead:",
+  "Mono:",
+  "Pad: ",
+  "Perc:",
+  "Poly:",
+  "Seq: ",
+);
+
+@shape = &make_shape_array();
+
+%Opt = ();
+$Opt{wave} = 0;
+if (@ARGV and $ARGV[0] eq "-w") {
+  shift(@ARGV);
+  $Opt{wave} = 1;
+}
+
+while (<>) {
+  while (m{
+            (
+              \xf0
+              .{4}
+              (.)      # bank
+              (.)      # number
+              .{363}
+              (.{16})  # name
+              (.)      # category (index)
+              .{4}
+              \xf7
+            )
+         }xsg) {
+
+    $sysex = $1;
+
+    # bank:
+    #   values in the range  0..25  are turned into  a..z
+    #   the value            127    is turned into   _ (underscore)
+    #   other numerical values are kept as they are, but zero-padded
+    $bank = ord($2);
+    if ($bank >= 0 and $bank < 26) {
+      $bank = chr($bank + 97);
+    }
+    elsif ($bank == 127) {
+      $bank = "_";
+    }
+    else {
+      $bank = sprintf("%03d", $bank);
+    }
+
+    # number:
+    #   these are in the range 0..127 and are turned into 1..128
+    $num = ord($3);
+    $num++;
+
+    # category
+    #   if unknown, "????:" is used
+    if (ord($5) < 0 or ord($5) > (scalar(@cat) - 1)) {
+      $cat = "????:";
+    }
+    else {
+      $cat = $cat[ord($5)];
+    }
+
+    # name
+    #   trailing whitespace is removed
+    $name = $4;
+    $name =~ s/\s+$//;
+
+    # shape
+    $shape_b[0] = ord(substr($sysex, 22, 1));
+    $shape_n[0] = ord(substr($sysex, 15, 1));
+    $shape_b[1] = ord(substr($sysex, 38, 1));
+    $shape_n[1] = ord(substr($sysex, 31, 1));
+    $shape_b[2] = ord(substr($sysex, 54, 1));
+    $shape_n[2] = ord(substr($sysex, 47, 1));
+
+    # print bank, number, category and name
+    printf("%s-%03d  %s %s\n", $bank, $num, $cat, $name);
+
+    if ($Opt{wave}) {
+      # print wave shape
+      foreach $n (0, 1, 2) {
+        #print "  " . $shape[ $shape_b[$n] ][ $shape_n[$n] ] . "\n";
+        print((" " x 4) . $shape[ $shape_b[$n] ][ $shape_n[$n] ] . "\n");
+        #print "  " . $shape_b[$n] . " " . $shape_n[$n] . "\n";
+      }
+
+      #for my $b (0 .. scalar(@shape) - 1) {
+      #  for my $n (0 .. scalar(@{$shape[$b]}) - 1) {
+      #    #my $n = scalar(@{$shape[$b]});
+      #    #print "$b $n\n";
+      #    print "$b ";
+      #    print "  " . $shape[ $b ][ $n ] . "\n";
+      #  }
+      #}
+    }
+
+  }
+}
+
+sub make_shape_array
+{
+  my $shape_str;
+  my @shape;
+  my $str;
+  my $n;
+
+  $shape_str = <<'EOF';
+
+  Num  Name + (Bank - Num) for samples
+  ---  ------------------------------------------------------------------------
+    0    off
+
+    1  Pulse
+    2  Sawtooth
+    3  Triangle
+    4  Sine
+
+    5  Wavetable     Alt 1
+    6  Wavetable     Alt 2
+
+    7  Wavetable 1   Resonant
+    8  Wavetable 2   Resonant2
+    9  Wavetable 3   MalletSyn
+   10  Wavetable 4   Sqr-Sweep
+   11  Wavetable 5   Bellish
+   12  Wavetable 6   Pul-Sweep
+   13  Wavetable 7   Saw-Sweep
+   14  Wavetable 8   MellowSaw
+   15  Wavetable 9   Feedback
+   16  Wavetable 10  Add Harm
+   17  Wavetable 11  Reso 3 HP
+   18  Wavetable 12  Wind Syn
+   19  Wavetable 13  High Harm
+   20  Wavetable 14  Clipper
+   21  Wavetable 15  Organ Syn
+   22  Wavetable 16  SquareSaw
+   23  Wavetable 17  Formant 1
+   24  Wavetable 18  Polated
+   25  Wavetable 19  Transient
+   26  Wavetable 20  ElectricP
+   27  Wavetable 21  Robotic
+   28  Wavetable 22  StrongHrm
+   29  Wavetable 23  PercOrgan
+   30  Wavetable 24  ClipSweep
+   31  Wavetable 25  ResoHarms
+   32  Wavetable 26  2 Echoes
+   33  Wavetable 27  Formant 2
+   34  Wavetable 28  FmntVocal
+   35  Wavetable 29  MicroSync
+   36  Wavetable 30  Micro PWM
+   37  Wavetable 31  Glassy
+   38  Wavetable 32  Square HP
+   39  Wavetable 33  SawSync 1
+   40  Wavetable 34  SawSync 2
+   41  Wavetable 35  SawSync 3
+   42  Wavetable 36  PulSync 1
+   43  Wavetable 37  PulSync 2
+   44  Wavetable 38  PulSync 3
+   45  Wavetable 39  SinSync 1
+   46  Wavetable 40  SinSync 2
+   47  Wavetable 41  SinSync 3
+   48  Wavetable 42  PWM Pulse
+   49  Wavetable 43  PWM Saw
+   50  Wavetable 44  Fuzz Wave
+   51  Wavetable 45  Distorted
+   52  Wavetable 46  HeavyFuzz
+   53  Wavetable 47  Fuzz Sync
+   54  Wavetable 48  K+Strong1
+   55  Wavetable 49  K+Strong2
+   56  Wavetable 50  K+Strong3
+   57  Wavetable 51  1-2-3-4-5
+   58  Wavetable 52  19/twenty
+   59  Wavetable 53  Wavetrip1
+   60  Wavetable 54  Wavetrip2
+   61  Wavetable 55  Wavetrip3
+   62  Wavetable 56  Wavetrip4
+   63  Wavetable 57  MaleVoice
+   64  Wavetable 58  Low Piano
+   65  Wavetable 59  ResoSweep
+   66  Wavetable 60  Xmas Bell
+   67  Wavetable 61  FM Piano
+   68  Wavetable 62  Fat Organ
+   69  Wavetable 63  Vibes
+   70  Wavetable 64  Chorus 2
+   71  Wavetable 65  True PWM
+
+   72  Wavetable 66  UpperWaves
+
+   73  Wavetable 67  reserved
+   74  Wavetable 68  reserved
+   75  Wavetable 69  reserved
+   76  Wavetable 70  reserved
+   77  Wavetable 71  reserved
+   78  Wavetable 72  reserved
+   79  Wavetable 73  reserved
+   80  Wavetable 74  reserved
+   81  Wavetable 75  reserved
+   82  Wavetable 76  reserved
+   83  Wavetable 77  reserved
+   84  Wavetable 78  reserved
+   85  Wavetable 79  reserved
+
+   86  Wavetable 80  User WT - SawWM enhanced (saw-tri-rvs_saw spec enh)
+   87  Wavetable 81  User WT - VS-ROM 32-95   (Prophet VS)
+   88  Wavetable 82  User WT - VS-ROM 64-127  (Prophet VS)
+   89  Wavetable 83  User WT - MW-ROM 1-64    (Waldorf Microwave)
+   90  Wavetable 84  User WT - MW-ROM 65-128  (Waldorf Microwave)
+   91  Wavetable 85  User WT - MW-ROM 129-192 (Waldorf Microwave)
+   92  Wavetable 86  User WT - MW-ROM 193-256 (Waldorf Microwave)
+   93  Wavetable 87  User WT - MW-ROM 257-320 (Waldorf Microwave)
+   94  Wavetable 88  User WT - SQ-ROM 1-64    (Ensoniq SQ80)
+   95  Wavetable 89  User WT - SQ-ROM 65-128  (Ensoniq SQ80)
+   96  Wavetable 90  User WT - SQ-ROM 129-192 (Ensoniq SQ80)
+   97  Wavetable 91  User WT - SQ-ROM 193-256 (Ensoniq SQ80)
+   98  Wavetable 92  User WT - SQ-ROM 257-320 (Ensoniq SQ80)
+   99  Wavetable 93  User WT - SQ-ROM 321-384 (Ensoniq SQ80)
+  100  Wavetable 94  User WT - SQ-ROM 385-448 (Ensoniq SQ80)
+  101  Wavetable 95  User WT - SQ-ROM 449-512 (Ensoniq SQ80)
+  102  Wavetable 96  User WT - Wavetrip1 UW   (Waldorf Wave/µWave II/XT)
+  103  Wavetable 97  User WT - Wavetrip2 UW   (Waldorf Wave/µWave II/XT)
+
+  104  Wavetable 98  User Wavetable
+  105  Wavetable 99  User Wavetable
+  106  Wavetable 100 User Wavetable
+  107  Wavetable 101 User Wavetable
+  108  Wavetable 102 User Wavetable
+  109  Wavetable 103 User Wavetable
+  110  Wavetable 104 User Wavetable
+  111  Wavetable 105 User Wavetable
+  112  Wavetable 106 User Wavetable
+  113  Wavetable 107 User Wavetable
+  114  Wavetable 108 User Wavetable
+  115  Wavetable 109 User Wavetable
+  116  Wavetable 110 User Wavetable
+  117  Wavetable 111 User Wavetable
+  118  Wavetable 112 User Wavetable
+  119  Wavetable 113 User Wavetable
+  120  Wavetable 114 User Wavetable
+  121  Wavetable 115 User Wavetable
+  122  Wavetable 116 User Wavetable
+  123  Wavetable 117 User Wavetable
+  124  Wavetable 118 User Wavetable
+
+  125  Sample A1     Clavinet           (1 -  0)
+  126  Sample A2     Piano              (1 -  1)
+  127  Sample A3     Acoustic Gtr       (1 -  2)
+  128  Sample A4     Zither             (1 -  3)
+  129  Sample A5     E-Organ            (1 -  4)
+  130  Sample A6     Mixed Choir        (1 -  5)
+  131  Sample A7     Ney Flute          (1 -  6)
+  132  Sample A8     Marimba            (1 -  7)
+  133  Sample A9     French Horn        (1 -  8)
+  134  Sample A10    Kalimba            (1 -  9)
+  135  Sample A11    Strings            (1 - 10)
+  136  Sample A12    Tubular Bell       (1 - 11)
+  137  Sample A13    Pizzicato          (1 - 12)
+  138  Sample A14    Hi Hat Open        (1 - 13)
+  139  Sample A15    Hi Hat Closed      (1 - 14)
+  140  Sample A16    Ride Cymbal        (1 - 15)
+  141  Sample A17    Cymbal             (1 - 16)
+  142  Sample A18    Crash Cymbal       (1 - 17)
+  143  Sample A19    Cymbal Bell        (1 - 18)
+  144  Sample A10    Tambourine         (1 - 19)
+  145  Sample A21    Triangle           (1 - 20)
+  146  Sample A22    Guiro              (1 - 21)
+  147  Sample A23    Bongo Low          (1 - 22)
+  148  Sample A24    Bongo High         (1 - 23)
+  149  Sample A25    Agogo              (1 - 24)
+  150  Sample A26    Infinite Ending    (1 - 25)
+  151  Sample A27    Sad Strings        (1 - 26)
+  152  Sample A28    String Chord       (1 - 27)
+  153  Sample A29    Sweet String       (1 - 28)
+  154  Sample A30    Score Spectrum     (1 - 29)
+  155  Sample A31    Gong Spectrum      (1 - 30)
+  156  Sample A32    Soft Gong          (1 - 31)
+  157  Sample A33    Hose               (1 - 32)
+  158  Sample A34    Electricity        (1 - 33)
+  159  Sample A35    AC230/50Hz         (1 - 34)
+  160  Sample A36    AC110/60Hz         (1 - 35)
+  161  Sample A37    Machine            (1 - 36)
+  162  Sample A38    Shellac            (1 - 37)
+  163  Sample A39    Sonar              (1 - 38)
+  164  Sample A40    Spring             (1 - 39)
+  165  Sample A41    Impulse            (1 - 40)
+
+  166  Sample A42      --               (1 - 41)
+
+EOF
+
+  while ($shape_str =~ m{ ^ [ ][ ] ( \s* ( \d+ ) \s+ [^\n]* ) \n }xmg) {
+    $str = $1;
+    $n   = $2;
+    if ($n < 125) {
+      $shape[0][$n] = $str;
+    }
+    else {
+      $shape[1][$n - 125] = $str;
+    }
+    #print $str . "\n";
+  }
+  return @shape;
+}
+
